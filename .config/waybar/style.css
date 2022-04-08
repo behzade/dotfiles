@@ -1,0 +1,95 @@
+* {
+	font-size: 14px;
+	font-family: JetBrainsMono Nerd Font;
+}
+
+window#waybar {
+	color: #fdf6e3;
+	background: orange;
+}
+
+#custom-right-arrow-dark,
+#custom-left-arrow-dark {
+	color: white;
+}
+#custom-right-arrow-light,
+#custom-left-arrow-light {
+	color: orange;
+	background: white;
+}
+
+#workspaces,
+#clock.1,
+#clock.2,
+#clock.3,
+#pulseaudio,
+#memory,
+#cpu,
+#battery,
+#disk,
+#tray {
+	background: white;
+}
+
+#workspaces button {
+	padding: 0 2px;
+	color: black;
+}
+#workspaces button.focused {
+	color: #268bd2;
+}
+#workspaces button:hover {
+	box-shadow: inherit;
+	text-shadow: inherit;
+}
+#workspaces button:hover {
+	background: #1a1a1a;
+	border: #1a1a1a;
+	padding: 0 3px;
+}
+
+#clock {
+    color: black;
+}
+#pulseaudio {
+	color: #268bd2;
+}
+#memory {
+	color: #2aa198;
+}
+#cpu {
+	color: #6c71c4;
+}
+#battery {
+	color: #850505;
+}
+#disk {
+	color: #2bbf6e;
+}
+#temperature {
+    color: #1b07f4;
+}
+#idle_inhibitor {
+    color: #5b552f;
+}
+#idle_inhibitor.activated {
+    color: #e5d56e;
+}
+#custom-mpris-media {
+    color: black;
+}
+
+#clock,
+#pulseaudio,
+#memory,
+#cpu,
+#battery,
+#disk,
+#custom-mpris-media,
+#idle_inhibitor,
+#temperature {
+	background: white;
+	border: white;
+	padding: 0 3px;
+}
+

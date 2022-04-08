@@ -1,0 +1,37 @@
+# General settings
+set previewer previewer.sh
+set cleaner cleaner.sh
+set drawbox
+set icons
+set shell fish
+set sortby time; set info time:size
+set reverse true
+
+
+
+# Unmap default bindings
+map m
+map d
+map n
+
+# Custom commands
+cmd drag %dragon-drag-and-drop -a $fx
+cmd trash %trash-put $fx
+cmd open-with %"$@" $fx
+cmd mkdir %IFS=" "; mkdir -- "$*"
+cmd newfold ${{
+    set -f
+    # read newd
+    mkdir -- "$@"
+    mv -- $fx "$@"
+}}
+
+# Mappings
+map t toggle
+map <enter> open
+map m cut
+map gm mark-save
+map dd trash
+map ` push :open-with<space>
+map a push :mkdir<space>
+map n push :newfold<space>
