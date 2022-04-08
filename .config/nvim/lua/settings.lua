@@ -115,3 +115,4 @@ opt.fillchars = "fold: "
 opt.foldnestmax = 2
 opt.foldminlines = 3
 
+cmd[[highlight Folded guibg=#e9f0f0]]
