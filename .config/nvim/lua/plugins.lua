@@ -15,7 +15,6 @@ return require("packer").startup(function(use)
 		"radenling/vim-dispatch-neovim",
 		"wellle/targets.vim",
 		"lukas-reineke/indent-blankline.nvim",
-		"nvim-lua/popup.nvim",
 		"srcery-colors/srcery-vim",
 		"p00f/nvim-ts-rainbow",
 		"neovim/nvim-lspconfig",
@@ -66,13 +65,6 @@ return require("packer").startup(function(use)
 	})
 
 	use({
-		"folke/which-key.nvim",
-		config = function()
-			require("which-key").setup({})
-		end,
-	})
-
-	use({
 		"nvim-lualine/lualine.nvim",
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 		config = function()
@@ -110,7 +102,6 @@ return require("packer").startup(function(use)
 			"L3MON4D3/LuaSnip",
 			"saadparwaiz1/cmp_luasnip",
 			"rafamadriz/friendly-snippets",
-			"ray-x/cmp-treesitter",
 			"PaterJason/cmp-conjure",
 		},
 		config = function()
