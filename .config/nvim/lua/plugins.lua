@@ -28,9 +28,20 @@ return require("packer").startup(function(use)
 		"vim-scripts/restore_view.vim",
 		"Olical/conjure",
 		"windwp/nvim-autopairs",
-		"ibhagwan/fzf-lua",
 	})
 
+	use({
+		"ibhagwan/fzf-lua",
+		config = function()
+			require("fzf-lua").setup({
+				winopts = {
+					preview = {
+						hidden = "hidden", -- hidden|nohidden)
+					},
+				},
+			})
+		end,
+	})
 	use({
 		"lewis6991/gitsigns.nvim",
 		config = function()
