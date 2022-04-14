@@ -7,7 +7,8 @@ if has_php then
         php_opts.php_source,
         php_opts.phpcs_source,
         php_opts.phpcbf_source,
-        php_opts.phpstan_source,
+        null.builtins.diagnostics.twigcs
+        -- php_opts.phpstan_source,
     })
 end
 
@@ -34,7 +35,7 @@ lsp_installer.on_server_ready(function(server)
     if server.name == "sumneko_lua" then
         opts.settings = { Lua = { diagnostics = { globals = { "vim" } } } }
     end
-    if server.name == "phpactor" then
+    if server.name == "phpactor" or server.name == "intelephense" then
         opts.root_dir = php_opts.root_dir
         opts.indexer = php_opts.indexer
     end
