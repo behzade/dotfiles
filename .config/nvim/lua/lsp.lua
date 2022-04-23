@@ -1,5 +1,3 @@
-require("lsp/diagnostics")
-
 local has_php, php_opts = pcall(require,"lsp/php")
 if has_php then
     local null = require("null-ls")

@@ -1,10 +1,10 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 local set = vim.keymap.set
-local del = vim.keymap.del
 local lsp = vim.lsp
-local gs = require('gitsigns')
-local fzf = require('fzf-lua')
+local gs = require("gitsigns")
+local telescope = require("telescope.builtin")
+local Diagnostics = require("lsp/diagnostics")
 
 -- insert mode
 set("i", "jk", "<esc>")
@@ -26,7 +26,6 @@ set("n", "gd", lsp.buf.definition)
 set("n", "<leader>bf", lsp.buf.formatting)
 set("v", "<leader>bf", lsp.buf.range_formatting)
 set("n", "<leader>r", lsp.buf.rename)
-set("n", "<leader>i", lsp.buf.implementation)
 
 -- delete keys no longer fill up the registers, cut functionality moved to m key
 set("n", "gm", "m")
@@ -49,25 +48,27 @@ set("n", "[d", Diagnostics.prev)
 set("n", "]d", Diagnostics.next)
 set("n", "[q", "<cmd>cp<cr>")
 set("n", "]q", "<cmd>cn<cr>")
-set("n", "[h", function()
-	gs.prev_hunk()
-end)
-set("n", "]h", function()
-	gs.next_hunk()
-end)
+set("n", "[h", function() gs.prev_hunk() end)
+set("n", "]h", function() gs.next_hunk() end)
 -- Other
 set("n", "<leader>n", "<cmd>noh<cr>")
 set("n", "<leader>t", "<cmd>SidebarNvimToggle<cr>")
 set("n", "<leader>s", "<cmd>update<cr>")
 set("n", "qq", "<cmd>cclose<cr>")
--- FZF
-set("n", "<leader>ff", fzf.files)
-set("n", "<leader>fg", fzf.grep_project)
-set("n", "<leader>fs", fzf.grep_cword)
-set("n", "<leader>fd", fzf.lsp_document_diagnostics)
-set("n", "<leader>fe", fzf.lsp_workspace_diagnostics)
-set("n", "<leader>fk", fzf.keymaps)
-set("n", "<leader>fl", fzf.lsp_live_workspace_symbols)
-set("n", "<leader>fa", fzf.lsp_code_actions)
-set("n", "gr", fzf.lsp_references)
-set("n", "<leader>gs", fzf.git_status)
+set("n", "<leader>fk", telescope.keymaps)
+-- Files
+set("n", "<leader>ff", telescope.find_files)
+-- Text Search
+set("n", "<leader>fg", telescope.live_grep)
+set("n", "<leader>fs", telescope.grep_string)
+
+set("n", "<leader>fd", telescope.diagnostics)
+set("n", "<leader>fl", telescope.lsp_workspace_symbols)
+set("n", "<leader>fa", telescope.lsp_code_actions)
+set("n", "gr", telescope.lsp_references)
+set("n", "<leader>fp", "<cmd>Telescope projects<cr>")
+set("n", "<leader>fi", telescope.lsp_implementations)
+-- Git
+set("n", "<leader>gs", telescope.git_status)
+set("n", "<leader>gb", function() gs.toggle_current_line_blame() end)
+set("n", "<leader>gu", function() gs.reset_hunk() end)

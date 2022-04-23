@@ -15,7 +15,6 @@ return require("packer").startup(function(use)
 		"radenling/vim-dispatch-neovim",
 		"wellle/targets.vim",
 		"lukas-reineke/indent-blankline.nvim",
-		"srcery-colors/srcery-vim",
 		"p00f/nvim-ts-rainbow",
 		"neovim/nvim-lspconfig",
 		"williamboman/nvim-lsp-installer",
@@ -23,23 +22,22 @@ return require("packer").startup(function(use)
 		"nvim-treesitter/nvim-treesitter-textobjects",
 		"ggandor/lightspeed.nvim",
 		"stevearc/dressing.nvim",
-		"mvpopuk/inspired-github.vim",
 		"vim-scripts/restore_view.vim",
 		"Olical/conjure",
 		"windwp/nvim-autopairs",
+		'rktjmp/lush.nvim',
+		"CodeGradox/onehalf-lush"
 	})
 
 	use({
-		"ibhagwan/fzf-lua",
+		"nvim-telescope/telescope.nvim",
 		config = function()
-			require("fzf-lua").setup({
-				winopts = {
-					preview = {
-						hidden = "hidden", -- hidden|nohidden)
-					},
-				},
-			})
+            require('telescope-conf').init()
 		end,
+        requires = {
+            "romgrk/fzy-lua-native",
+            "nvim-telescope/telescope-fzy-native.nvim"
+        }
 	})
 	use({
 		"lewis6991/gitsigns.nvim",
@@ -62,7 +60,7 @@ return require("packer").startup(function(use)
 			local null_ls = require("null-ls")
 			null_ls.setup({
 				sources = {
-					null_ls.builtins.formatting.stylua,
+					-- null_ls.builtins.formatting.stylua,
 				},
 			})
 		end,
