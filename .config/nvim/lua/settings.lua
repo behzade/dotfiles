@@ -58,7 +58,7 @@ augroup MyColors
 augroup END
     ]])
 
-cmd([[colorscheme onehalf-lush]])
+cmd([[colorscheme inspired-github]])
 opt.background = "light"
 
 -----------------------------------------------------------

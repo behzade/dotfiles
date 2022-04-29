@@ -19,6 +19,7 @@ window#waybar {
 }
 
 #workspaces,
+#window,
 #clock.1,
 #clock.2,
 #clock.3,
@@ -29,6 +30,10 @@ window#waybar {
 #disk,
 #tray {
 	background: white;
+}
+
+#window {
+	color: black;
 }
 
 #workspaces button {

@@ -11,7 +11,8 @@ local init = function()
             layout_strategy = "center",
             sorting_strategy = "ascending",
             layout_config = {
-                prompt_position = "top"
+                prompt_position = "top",
+                center = { width = 0.9 }
             }
 		},
 	})

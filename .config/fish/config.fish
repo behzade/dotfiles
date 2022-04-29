@@ -33,6 +33,7 @@ export ANDROID_SDK_ROOT=/opt/android-sdk
 
 export LF_ICONS=(sed ':a;N;$!ba;s/\n//g' ~/.config/diricons)
 
+zoxide init fish | source
 
 alias sudo="sudo "
 alias mv="mv -i"

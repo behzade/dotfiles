@@ -25,8 +25,7 @@ return require("packer").startup(function(use)
 		"vim-scripts/restore_view.vim",
 		"Olical/conjure",
 		"windwp/nvim-autopairs",
-		'rktjmp/lush.nvim',
-		"CodeGradox/onehalf-lush"
+        "mvpopuk/inspired-github.vim"
 	})
 
 	use({
