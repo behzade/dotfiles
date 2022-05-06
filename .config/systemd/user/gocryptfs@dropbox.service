@@ -3,6 +3,8 @@ Description=Mount a gocryptfs-encrypted folder inside Dropbox
 ConditionPathIsDirectory=%h/Dropbox/Encrypted
 ConditionPathIsDirectory=%h/Vaults
 ConditionPathExists=%h/.gocryptfs-dropbox
+After=dropbox.service
+BindsTo=dropbox.service
 
 [Service]
 Type=oneshot
@@ -12,4 +14,4 @@ ExecStartPre=/usr/bin/mkdir -p %h/Vaults/Dropbox
 ExecStop=/usr/bin/fusermount -u %h/Vaults/Dropbox
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=dropbox.service
