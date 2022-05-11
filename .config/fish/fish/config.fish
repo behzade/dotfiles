@@ -1,5 +1,3 @@
-export XDG_SESSION_TYPE='wayland' 
-export XDG_CURRENT_DESKTOP='sway'
 export EDITOR='nvim'
 export VISUAL=$EDITOR
 export OPENER='xdg-open'
@@ -17,7 +15,6 @@ export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/.config/emacs/bin"
 export PATH="$PATH:/opt/context-minimals/texmf-linux-64/bin"
-export TEXMF="/usr/share/context"
 export JAVA_OPTS="-XX:+IgnoreUnrecognizedVMOptions"
 export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
 export ANDROID_HOME="/opt/android-sdk"
@@ -27,19 +24,18 @@ export PATH="$PATH:$ANDROID_HOME/emulator/"
 export PATH="$PATH:$ANDROID_HOME/platform-tools"
 export FLUTTER_HOME=/opt/flutter
 export PATH="$PATH:$FLUTTER_HOME/bin"
-export LS_COLORS="(vivid generate ayu)"
-export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 
 export ANDROID_SDK_ROOT=/opt/android-sdk
 
 export LF_ICONS=(sed ':a;N;$!ba;s/\n//g' ~/.config/diricons)
+
 
 alias sudo="sudo "
 alias mv="mv -i"
 alias vim="nvim"
 alias tmux="tmux -2"
 alias mux="tmuxinator"
-alias vimrc="cd ~/.config/nvim/ && nvim init.lua"
+alias vimrc="nvim ~/.config/nvim/init.lua"
 alias top="btop"
 alias icat="kitty +kitten icat"
 alias ssh="kitty +kitten ssh"
@@ -59,47 +55,9 @@ alias lt='exa --tree --level=2'                                         # tree
 alias ncmpcpp='ncmpcpp --quiet'
 
 alias run='make run'
-alias cider='clj -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]" --interactive'
+
 
 function launch
     nohup $1 >/dev/null 2>/dev/null & disown;
 end
 
-if test (tty) = "/dev/tty1"
-  sway
-end
-
-function `e () 
-  nvim +noswapfile +"setlocal buftype=nofile" +"setlocal bufhidden=hide" $argv
-end
-
-function `gs ()
-    set file (git status --porcelain  | sed s/^...// | fzf)
-    if not test -n "$file"
-        echo 'no file selected'
-        return
-    end
-    nvim "$file"
-end
-
-function `ff ()
-    set file (fzf)
-    if not test -n "$file"
-        echo 'no file selected'
-        return
-    end
-    nvim "$file"
-end
-
-function `fg ()
-    if not test -n "$argv"
-        echo 'must pass an argument'
-        return
-    end
-    set file (rg -Sl $argv | fzf)
-    if not test -n "$file"
-        echo 'no file selected'
-        return
-    end
-    nvim "$file"
-end
