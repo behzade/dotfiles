@@ -31,6 +31,13 @@ set({ "n", "v" }, "x", '"_x')
 set({ "n", "v" }, "X", '"_X')
 set({ "n", "v" }, "c", '"_c')
 set({ "n", "v" }, "C", '"_C')
+
+set("n", "0", function()
+    return vim.fn.getline('.')
+        :sub(0, vim.fn.col('.') - 1)
+        :match("^%s+$") and "0" or "^"
+end, { expr = true })
+
 -- jump to last open buffer
 set("n", "<backspace>", "<c-^>")
 -- [] jumps
