@@ -27,6 +27,7 @@ return require("packer").startup(function(use)
         "windwp/nvim-autopairs",
         "mvpopuk/inspired-github.vim",
         "nelsyeung/twig.vim",
+        "jose-elias-alvarez/null-ls.nvim",
     })
 
     use({
@@ -36,7 +37,7 @@ return require("packer").startup(function(use)
         end,
         requires = {
             "romgrk/fzy-lua-native",
-            "nvim-telescope/telescope-fzy-native.nvim"
+            "nvim-telescope/telescope-fzy-native.nvim",
         }
     })
     use({
@@ -54,17 +55,6 @@ return require("packer").startup(function(use)
         end,
     })
 
-    use({
-        "jose-elias-alvarez/null-ls.nvim",
-        config = function()
-            local null_ls = require("null-ls")
-            null_ls.setup({
-                sources = {
-                    -- null_ls.builtins.formatting.stylua,
-                },
-            })
-        end,
-    })
 
     use({
         "numToStr/Comment.nvim",

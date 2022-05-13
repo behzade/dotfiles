@@ -1,10 +1,8 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 local set = vim.keymap.set
-local lsp = vim.lsp
 local gs = require("gitsigns")
 local telescope = require("telescope.builtin")
-local Diagnostics = require("lsp/diagnostics")
 
 -- insert mode
 set("i", "jk", "<esc>")
@@ -20,12 +18,6 @@ set("n", "k", "gk")
 -- better search
 set("n", "/", "/\\v")
 set("v", "//", [[y/\V<c-r>=escape(@",'/\')<cr><cr>]])
-
-set("n", "K", lsp.buf.hover)
-set("n", "gd", lsp.buf.definition)
-set("n", "<leader>bf", lsp.buf.formatting)
-set("v", "<leader>bf", lsp.buf.range_formatting)
-set("n", "<leader>r", lsp.buf.rename)
 
 -- delete keys no longer fill up the registers, cut functionality moved to m key
 set("n", "gm", "m")
@@ -44,8 +36,6 @@ set("n", "<backspace>", "<c-^>")
 -- [] jumps
 set("n", "[g", "g;")
 set("n", "]g", "g,")
-set("n", "[d", Diagnostics.prev)
-set("n", "]d", Diagnostics.next)
 set("n", "[q", "<cmd>cp<cr>")
 set("n", "]q", "<cmd>cn<cr>")
 set("n", "[h", function() gs.prev_hunk() end)
@@ -62,12 +52,7 @@ set("n", "<leader>ff", telescope.find_files)
 set("n", "<leader>fg", telescope.live_grep)
 set("n", "<leader>fs", telescope.grep_string)
 
-set("n", "<leader>fd", telescope.diagnostics)
-set("n", "<leader>fl", telescope.lsp_dynamic_workspace_symbols)
-set("n", "<leader>fa", lsp.buf.code_action)
-set("n", "gr", telescope.lsp_references)
 set("n", "<leader>fp", "<cmd>Telescope projects<cr>")
-set("n", "<leader>fi", telescope.lsp_implementations)
 -- Git
 set("n", "<leader>gs", telescope.git_status)
 set("n", "<leader>gb", function() gs.toggle_current_line_blame() end)
