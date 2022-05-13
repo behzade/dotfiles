@@ -24,7 +24,6 @@ return require("packer").startup(function(use)
         "stevearc/dressing.nvim",
         "vim-scripts/restore_view.vim",
         "windwp/nvim-autopairs",
-        "mvpopuk/inspired-github.vim",
         "nelsyeung/twig.vim",
         "jose-elias-alvarez/null-ls.nvim",
         "projekt0n/github-nvim-theme"

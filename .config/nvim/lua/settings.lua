@@ -58,7 +58,7 @@ augroup MyColors
 augroup END
     ]])
 
-cmd([[colorscheme inspired-github]])
+cmd([[colorscheme github_light]])
 opt.background = "light"
 
 -----------------------------------------------------------
