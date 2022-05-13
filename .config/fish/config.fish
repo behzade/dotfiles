@@ -73,33 +73,34 @@ function `e ()
   nvim +noswapfile +"setlocal buftype=nofile" +"setlocal bufhidden=hide" $argv
 end
 
-function `gs ()
+function `gs
     set file (git status --porcelain  | sed s/^...// | fzf)
-    if not test -n "$file"
-        echo 'no file selected'
-        return
-    end
-    nvim "$file"
+    nopener $file
 end
 
-function `ff ()
+function `ff
     set file (fzf)
-    if not test -n "$file"
-        echo 'no file selected'
-        return
-    end
-    nvim "$file"
+    nopener $file
 end
 
-function `fg ()
+function `fg
     if not test -n "$argv"
         echo 'must pass an argument'
         return
     end
     set file (rg -Sl $argv | fzf)
-    if not test -n "$file"
+    nopener $file
+end
+
+function `fz
+    set file (z -l | fzf)
+    nopener $file
+end
+
+function nopener 
+    if not test -n "$argv"
         echo 'no file selected'
         return
     end
-    nvim "$file"
+    nvim "$argv"
 end
