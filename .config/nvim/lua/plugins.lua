@@ -23,11 +23,11 @@ return require("packer").startup(function(use)
         "ggandor/lightspeed.nvim",
         "stevearc/dressing.nvim",
         "vim-scripts/restore_view.vim",
-        "Olical/conjure",
         "windwp/nvim-autopairs",
         "mvpopuk/inspired-github.vim",
         "nelsyeung/twig.vim",
         "jose-elias-alvarez/null-ls.nvim",
+        "projekt0n/github-nvim-theme"
     })
 
     use({
@@ -97,11 +97,8 @@ return require("packer").startup(function(use)
             }
             sidebar.setup(opts)
             vim.api.nvim_create_autocmd(
-                "BufReadPre",
-                {
-                    pattern = "*",
-                    callback = sidebar_lib.update
-                }
+                "BufEnter",
+                { pattern = "*", callback = sidebar_lib.update }
             )
         end,
     })
@@ -115,7 +112,6 @@ return require("packer").startup(function(use)
             "L3MON4D3/LuaSnip",
             "saadparwaiz1/cmp_luasnip",
             "rafamadriz/friendly-snippets",
-            "PaterJason/cmp-conjure",
         },
         config = function()
             require("completion")
@@ -129,4 +125,11 @@ return require("packer").startup(function(use)
             })
         end,
     })
+    use {
+        'goolord/alpha-nvim',
+        requires = { 'kyazdani42/nvim-web-devicons' },
+        config = function()
+            require 'alpha'.setup(require 'alpha.themes.startify'.config)
+        end
+    }
 end)

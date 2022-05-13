@@ -17,8 +17,8 @@ cmp.setup({
 			c = cmp.mapping.close(),
 		}),
 		["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-		["<tab>"] = cmp.mapping.select_next_item(),
-		["<s-tab>"] = cmp.mapping.select_prev_item(),
+		["<tab>"] = cmp.mapping(cmp.mapping.select_next_item(), {"i", "c"}),
+		["<s-tab>"] = cmp.mapping(cmp.mapping.select_prev_item(), {"i", "c"})
 	},
 	sources = cmp.config.sources({
 		{ name = "path" },
@@ -26,7 +26,6 @@ cmp.setup({
 		{ name = "luasnip" },
 		{ name = "treesitter" },
 		{ name = "buffer" },
-		{ name = "conjure" },
 	}),
 })
 

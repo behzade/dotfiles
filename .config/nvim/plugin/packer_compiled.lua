@@ -80,6 +80,12 @@ _G.packer_plugins = {
     path = "/home/behzad/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["alpha-nvim"] = {
+    config = { "\27LJ\2\n`\0\0\5\0\5\0\n6\0\0\0'\2\1\0B\0\2\0029\0\2\0006\2\0\0'\4\3\0B\2\2\0029\2\4\2B\0\2\1K\0\1\0\vconfig\26alpha.themes.startify\nsetup\nalpha\frequire\0" },
+    loaded = true,
+    path = "/home/behzad/.local/share/nvim/site/pack/packer/start/alpha-nvim",
+    url = "https://github.com/goolord/alpha-nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/behzad/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -89,11 +95,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/behzad/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
     url = "https://github.com/hrsh7th/cmp-cmdline"
-  },
-  ["cmp-conjure"] = {
-    loaded = true,
-    path = "/home/behzad/.local/share/nvim/site/pack/packer/start/cmp-conjure",
-    url = "https://github.com/PaterJason/cmp-conjure"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
@@ -110,11 +111,6 @@ _G.packer_plugins = {
     path = "/home/behzad/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  conjure = {
-    loaded = true,
-    path = "/home/behzad/.local/share/nvim/site/pack/packer/start/conjure",
-    url = "https://github.com/Olical/conjure"
-  },
   ["dressing.nvim"] = {
     loaded = true,
     path = "/home/behzad/.local/share/nvim/site/pack/packer/start/dressing.nvim",
@@ -130,8 +126,13 @@ _G.packer_plugins = {
     path = "/home/behzad/.local/share/nvim/site/pack/packer/start/fzy-lua-native",
     url = "https://github.com/romgrk/fzy-lua-native"
   },
+  ["github-nvim-theme"] = {
+    loaded = true,
+    path = "/home/behzad/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
+    url = "https://github.com/projekt0n/github-nvim-theme"
+  },
   ["gitsigns.nvim"] = {
-    config = { "\27LJ\2\n­\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\28current_line_blame_opts\1\0\1\23current_line_blame\1\1\0\4\14virt_text\2\22ignore_whitespace\2\ndelay\3è\a\18virt_text_pos\beol\nsetup\rgitsigns\frequire\0" },
+    config = { "\27LJ\2\n­\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\28current_line_blame_opts\1\0\1\23current_line_blame\1\1\0\4\22ignore_whitespace\2\ndelay\3è\a\18virt_text_pos\beol\14virt_text\2\nsetup\rgitsigns\frequire\0" },
     loaded = true,
     path = "/home/behzad/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
@@ -225,7 +226,7 @@ _G.packer_plugins = {
     url = "https://github.com/vim-scripts/restore_view.vim"
   },
   ["sidebar.nvim"] = {
-    config = { "\27LJ\2\nó\1\0\0\b\0\14\0\0216\0\0\0'\2\1\0B\0\2\0026\1\0\0'\3\2\0B\1\2\0025\2\3\0005\3\4\0=\3\5\0029\3\6\0\18\5\2\0B\3\2\0016\3\a\0009\3\b\0039\3\t\3'\5\n\0005\6\v\0009\a\f\1=\a\r\6B\3\3\1K\0\1\0\rcallback\vupdate\1\0\1\fpattern\6*\15BufReadPre\24nvim_create_autocmd\bapi\bvim\nsetup\rsections\1\4\0\0\nfiles\fbuffers\bgit\1\0\1\topen\2\21sidebar-nvim.lib\17sidebar-nvim\frequire\0" },
+    config = { "\27LJ\2\nñ\1\0\0\b\0\14\0\0216\0\0\0'\2\1\0B\0\2\0026\1\0\0'\3\2\0B\1\2\0025\2\3\0005\3\4\0=\3\5\0029\3\6\0\18\5\2\0B\3\2\0016\3\a\0009\3\b\0039\3\t\3'\5\n\0005\6\v\0009\a\f\1=\a\r\6B\3\3\1K\0\1\0\rcallback\vupdate\1\0\1\fpattern\6*\rBufEnter\24nvim_create_autocmd\bapi\bvim\nsetup\rsections\1\4\0\0\nfiles\fbuffers\bgit\1\0\1\topen\2\21sidebar-nvim.lib\17sidebar-nvim\frequire\0" },
     loaded = true,
     path = "/home/behzad/.local/share/nvim/site/pack/packer/start/sidebar.nvim",
     url = "https://github.com/sidebar-nvim/sidebar.nvim"
@@ -280,37 +281,41 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: project.nvim
-time([[Config for project.nvim]], true)
-try_loadstring("\27LJ\2\ni\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\15ignore_lsp\1\0\0\1\3\0\0\fnull-ls\rphpactor\nsetup\17project_nvim\frequire\0", "config", "project.nvim")
-time([[Config for project.nvim]], false)
+-- Config for: alpha-nvim
+time([[Config for alpha-nvim]], true)
+try_loadstring("\27LJ\2\n`\0\0\5\0\5\0\n6\0\0\0'\2\1\0B\0\2\0029\0\2\0006\2\0\0'\4\3\0B\2\2\0029\2\4\2B\0\2\1K\0\1\0\vconfig\26alpha.themes.startify\nsetup\nalpha\frequire\0", "config", "alpha-nvim")
+time([[Config for alpha-nvim]], false)
 -- Config for: nvim-cmp
 time([[Config for nvim-cmp]], true)
 try_loadstring("\27LJ\2\n*\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\15completion\frequire\0", "config", "nvim-cmp")
 time([[Config for nvim-cmp]], false)
--- Config for: Comment.nvim
-time([[Config for Comment.nvim]], true)
-try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
-time([[Config for Comment.nvim]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-try_loadstring("\27LJ\2\n­\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\28current_line_blame_opts\1\0\1\23current_line_blame\1\1\0\4\14virt_text\2\22ignore_whitespace\2\ndelay\3è\a\18virt_text_pos\beol\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
-time([[Config for gitsigns.nvim]], false)
--- Config for: todo-comments.nvim
-time([[Config for todo-comments.nvim]], true)
-try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")
-time([[Config for todo-comments.nvim]], false)
 -- Config for: telescope.nvim
 time([[Config for telescope.nvim]], true)
 try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\tinit\19telescope-conf\frequire\0", "config", "telescope.nvim")
 time([[Config for telescope.nvim]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+try_loadstring("\27LJ\2\n­\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\28current_line_blame_opts\1\0\1\23current_line_blame\1\1\0\4\22ignore_whitespace\2\ndelay\3è\a\18virt_text_pos\beol\14virt_text\2\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
+time([[Config for gitsigns.nvim]], false)
 -- Config for: lualine.nvim
 time([[Config for lualine.nvim]], true)
 try_loadstring("\27LJ\2\n]\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\foptions\1\0\0\1\0\1\17globalstatus\2\nsetup\flualine\frequire\0", "config", "lualine.nvim")
 time([[Config for lualine.nvim]], false)
+-- Config for: Comment.nvim
+time([[Config for Comment.nvim]], true)
+try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
+time([[Config for Comment.nvim]], false)
+-- Config for: todo-comments.nvim
+time([[Config for todo-comments.nvim]], true)
+try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")
+time([[Config for todo-comments.nvim]], false)
+-- Config for: project.nvim
+time([[Config for project.nvim]], true)
+try_loadstring("\27LJ\2\ni\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\15ignore_lsp\1\0\0\1\3\0\0\fnull-ls\rphpactor\nsetup\17project_nvim\frequire\0", "config", "project.nvim")
+time([[Config for project.nvim]], false)
 -- Config for: sidebar.nvim
 time([[Config for sidebar.nvim]], true)
-try_loadstring("\27LJ\2\nó\1\0\0\b\0\14\0\0216\0\0\0'\2\1\0B\0\2\0026\1\0\0'\3\2\0B\1\2\0025\2\3\0005\3\4\0=\3\5\0029\3\6\0\18\5\2\0B\3\2\0016\3\a\0009\3\b\0039\3\t\3'\5\n\0005\6\v\0009\a\f\1=\a\r\6B\3\3\1K\0\1\0\rcallback\vupdate\1\0\1\fpattern\6*\15BufReadPre\24nvim_create_autocmd\bapi\bvim\nsetup\rsections\1\4\0\0\nfiles\fbuffers\bgit\1\0\1\topen\2\21sidebar-nvim.lib\17sidebar-nvim\frequire\0", "config", "sidebar.nvim")
+try_loadstring("\27LJ\2\nñ\1\0\0\b\0\14\0\0216\0\0\0'\2\1\0B\0\2\0026\1\0\0'\3\2\0B\1\2\0025\2\3\0005\3\4\0=\3\5\0029\3\6\0\18\5\2\0B\3\2\0016\3\a\0009\3\b\0039\3\t\3'\5\n\0005\6\v\0009\a\f\1=\a\r\6B\3\3\1K\0\1\0\rcallback\vupdate\1\0\1\fpattern\6*\rBufEnter\24nvim_create_autocmd\bapi\bvim\nsetup\rsections\1\4\0\0\nfiles\fbuffers\bgit\1\0\1\topen\2\21sidebar-nvim.lib\17sidebar-nvim\frequire\0", "config", "sidebar.nvim")
 time([[Config for sidebar.nvim]], false)
 if should_profile then save_profiles() end
 
