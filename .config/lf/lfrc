@@ -15,7 +15,7 @@ map d
 map n
 
 # Custom commands
-cmd drag %dragon-drag-and-drop -a $fx
+cmd drag %dragon-drop -a $fx
 cmd trash %trash-put $fx
 cmd open-with %"$@" $fx
 cmd mkdir %IFS=" "; mkdir -- "$*"

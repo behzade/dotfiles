@@ -17,9 +17,7 @@ set $menu 'rofi -modi combi -combi-modi window,run,drun,ssh -show combi -opacity
 ### Clipboard manager
 #
 #
-exec wl-paste -t text --watch clipman store 
-bindsym $mod+p exec clipman pick -t rofi
-bindsym $mod+shift+p exec clipman clear -t rofi
+bindsym $mod+p exec copyq toggle
 ### Output configuration
 #
 # Wallpaper
@@ -227,6 +225,7 @@ for_window [app_id="telegramdesktop"] floating enable
 for_window [app_id="org.qbittorrent.qBittorrent"] floating enable
 for_window [app_id="com.rafaelmardojai.Blanket"] floating enable
 for_window [title="^Skype$"] floating enable
+for_window [app_id="com.github.hluk.copyq"] floating enable
 
 # Gap
 gaps inner 5
@@ -267,6 +266,7 @@ exec gammastep
 exec dunst
 exec systembus-notify
 exec keepassxc
+exec copyq
 
 workspace 10 
 exec slack
