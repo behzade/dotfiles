@@ -9,8 +9,13 @@ require("nvim-lsp-installer").setup({
     automatic_installation = true
 })
 local lspconfig = require("lspconfig")
+
 lspconfig.gopls.setup({
     settings = require("lsp/gopls"),
+    on_attach = on_attach,
+    capabilities = capabilities,
+})
+lspconfig.rust_analyzer.setup({
     on_attach = on_attach,
     capabilities = capabilities,
 })

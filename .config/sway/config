@@ -226,6 +226,7 @@ for_window [app_id="org.qbittorrent.qBittorrent"] floating enable
 for_window [app_id="com.rafaelmardojai.Blanket"] floating enable
 for_window [title="^Skype$"] floating enable
 for_window [app_id="com.github.hluk.copyq"] floating enable
+for_window [class="Steam"] floating enable
 
 # Gap
 gaps inner 5
@@ -262,7 +263,7 @@ exec_always {
 
 # application startup
 exec kanshi
-exec gammastep
+exec wlsunset
 exec dunst
 exec systembus-notify
 exec keepassxc

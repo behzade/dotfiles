@@ -26,7 +26,7 @@ return require("packer").startup(function(use)
         "windwp/nvim-autopairs",
         "nelsyeung/twig.vim",
         "jose-elias-alvarez/null-ls.nvim",
-        "projekt0n/github-nvim-theme"
+        "projekt0n/github-nvim-theme",
     })
 
     use({
@@ -125,10 +125,9 @@ return require("packer").startup(function(use)
         end,
     })
     use {
-        'goolord/alpha-nvim',
-        requires = { 'kyazdani42/nvim-web-devicons' },
+        'rmagatti/auto-session',
         config = function()
-            require 'alpha'.setup(require 'alpha.themes.startify'.config)
+            require('auto-session').setup {}
         end
     }
 end)

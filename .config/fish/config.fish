@@ -66,7 +66,7 @@ function launch
 end
 
 if test (tty) = "/dev/tty1"
-  sway
+  dbus-run-session sway
 end
 
 function `e () 
