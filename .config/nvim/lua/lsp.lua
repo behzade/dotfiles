@@ -11,13 +11,15 @@ local lspconfig = require("lspconfig")
 
 
 for _,server in pairs(installed_servers) do
-    conf = {
+    local conf = {
         on_attach = on_attach,
         capabilities = capabilities,
     }
-    has_opts, opts = pcall(require, "lsp/servers/" .. server)
-    if has_conf then
-        conf["settings"] = opts
+    local has_opts, opts = pcall(require, "lsp/servers/" .. server)
+    vim.pretty_print(opts)
+    if has_opts then
+        conf.root_dir = opts.root_dir
+        conf.settings = opts.opts
     end
     lspconfig[server].setup(conf)
 end
@@ -29,5 +31,4 @@ require("null-ls").setup({
         fallback_severity = vim.diagnostic.severity.WARNING,
     }
 })
-null_sources = require("lsp/servers/null_ls")
-require("null-ls").register(null_sources)
+require("null-ls").register(require("lsp/servers/null_ls"))

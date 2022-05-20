@@ -35,7 +35,7 @@ function Goimports(timeout_ms)
 	end
 end
 
-local options = {
+local opts = {
 	gopls = {
 		analyses = {
 			unusedparams = true,
@@ -59,4 +59,6 @@ local options = {
 	},
 }
 
-return options
+return {
+    opts = opts
+}
