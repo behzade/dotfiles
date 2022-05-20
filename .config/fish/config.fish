@@ -39,7 +39,6 @@ alias mv="mv -i"
 alias vim="nvim"
 alias tmux="tmux -2"
 alias mux="tmuxinator"
-alias vimrc="cd ~/.config/nvim/ && nvim init.lua"
 alias top="btop"
 alias icat="kitty +kitten icat"
 alias ssh="kitty +kitten ssh"
@@ -103,4 +102,10 @@ function nopener
         return
     end
     nvim "$argv"
+end
+
+function vimrc 
+    pushd ~/.config/nvim
+    nvim init.lua
+    popd
 end
