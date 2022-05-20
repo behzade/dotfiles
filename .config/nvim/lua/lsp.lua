@@ -16,7 +16,6 @@ for _,server in pairs(installed_servers) do
         capabilities = capabilities,
     }
     local has_opts, opts = pcall(require, "lsp/servers/" .. server)
-    vim.pretty_print(opts)
     if has_opts then
         conf.root_dir = opts.root_dir
         conf.settings = opts.opts
