@@ -277,9 +277,9 @@ exec firefox
 
 workspace 1
 
-exec_always systemd-run --property=Restart=always --user --unit dropdown1 $term -o background_opacity=0.85 --class dropdown1
+exec_always systemd-run --property=Restart=always --user --unit dropdown1 $term -o background_opacity=0.9 --class dropdown1
 for_window [app_id="dropdown1"] move container to scratchpad
-exec_always systemd-run --property=Restart=always --user --unit dropdown2 $term -o background_opacity=0.85 --class dropdown2
+exec_always systemd-run --property=Restart=always --user --unit dropdown2 $term -o background_opacity=0.9 --class dropdown2
 for_window [app_id="dropdown2"] move container to scratchpad
 
 
