@@ -33,6 +33,7 @@ export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 export ANDROID_SDK_ROOT=/opt/android-sdk
 
 export LF_ICONS=(sed ':a;N;$!ba;s/\n//g' ~/.config/diricons)
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 alias sudo="sudo "
 alias mv="mv -i"
