@@ -52,7 +52,7 @@ local phpcbf_source = null_ls.builtins.formatting.phpcbf.with({
 
 return {
     php_source,
-    phpstan_source,
+    -- phpstan_source,
     phpcs_source,
     phpcbf_source,
 }

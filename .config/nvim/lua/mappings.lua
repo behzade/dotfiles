@@ -65,3 +65,5 @@ set("n", "<leader>gs", telescope.git_status)
 set("n", "<leader>gb", function() gs.toggle_current_line_blame() end)
 set("n", "<leader>gu", function() gs.reset_hunk() end)
 set("n", "<leader>gd", function() gs.diffthis() end)
+
+set("n", "<leader>k", require("rtl"))

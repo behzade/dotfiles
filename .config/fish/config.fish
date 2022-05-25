@@ -110,3 +110,11 @@ function vimrc
     nvim init.lua
     popd
 end
+
+
+export PHPSTORM_VM_OPTIONS="/home/behzad/Projects/ja-netfilter/vmoptions/phpstorm.vmoptions"
+export GATEWAY_VM_OPTIONS="/home/behzad/Projects/ja-netfilter/vmoptions/gateway.vmoptions"
+export JETBRAINS_CLIENT_VM_OPTIONS="/home/behzad/Projects/ja-netfilter/vmoptions/jetbrains_client.vmoptions"
+export JETBRAINSCLIENT_VM_OPTIONS="/home/behzad/Projects/ja-netfilter/vmoptions/jetbrainsclient.vmoptions"
+export DATAGRIP_VM_OPTIONS="/home/behzad/Projects/ja-netfilter/vmoptions/datagrip.vmoptions"
+export APPCODE_VM_OPTIONS="/home/behzad/Projects/ja-netfilter/vmoptions/appcode.vmoptions"

@@ -129,4 +129,11 @@ return require("packer").startup(function(use)
             require('auto-session').setup {}
         end
     }
+    use {
+        'rcarriga/nvim-notify',
+        config = function()
+            vim.notify = require("notify")
+        end
+    }
+
 end)

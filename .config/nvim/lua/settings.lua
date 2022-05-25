@@ -32,7 +32,7 @@ opt.synmaxcol = 240 -- max column for syntax highlight
 opt.relativenumber = true
 opt.undofile = true
 g.tex_flavor = "context" -- use ConTeXt for tex files by default
-cmd([[set guifont =SauceCodePro\ Nerd\ Font:h16]])
+opt.guifont = "JetBrainsMono Nerd Font:h10.8"
 
 -- highlight on yank
 exec(
