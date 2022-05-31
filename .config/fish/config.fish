@@ -20,17 +20,9 @@ export PATH="$PATH:/opt/context-minimals/texmf-linux-64/bin"
 export TEXMF="/usr/share/context"
 export JAVA_OPTS="-XX:+IgnoreUnrecognizedVMOptions"
 export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
-export ANDROID_HOME="/opt/android-sdk"
-export PATH="$PATH:$ANDROID_HOME/tools/bin"
-export PATH="$PATH:$ANDROID_HOME/tools/"
-export PATH="$PATH:$ANDROID_HOME/emulator/"
-export PATH="$PATH:$ANDROID_HOME/platform-tools"
-export FLUTTER_HOME=/opt/flutter
-export PATH="$PATH:$FLUTTER_HOME/bin"
 export LS_COLORS="(vivid generate ayu)"
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 
-export ANDROID_SDK_ROOT=/opt/android-sdk
 
 export LF_ICONS=(sed ':a;N;$!ba;s/\n//g' ~/.config/diricons)
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
@@ -66,7 +58,7 @@ function launch
 end
 
 if test (tty) = "/dev/tty1"
-  dbus-run-session sway
+  sway
 end
 
 function `e () 
@@ -111,10 +103,14 @@ function vimrc
     popd
 end
 
-
-export PHPSTORM_VM_OPTIONS="/home/behzad/Projects/ja-netfilter/vmoptions/phpstorm.vmoptions"
-export GATEWAY_VM_OPTIONS="/home/behzad/Projects/ja-netfilter/vmoptions/gateway.vmoptions"
-export JETBRAINS_CLIENT_VM_OPTIONS="/home/behzad/Projects/ja-netfilter/vmoptions/jetbrains_client.vmoptions"
-export JETBRAINSCLIENT_VM_OPTIONS="/home/behzad/Projects/ja-netfilter/vmoptions/jetbrainsclient.vmoptions"
-export DATAGRIP_VM_OPTIONS="/home/behzad/Projects/ja-netfilter/vmoptions/datagrip.vmoptions"
-export APPCODE_VM_OPTIONS="/home/behzad/Projects/ja-netfilter/vmoptions/appcode.vmoptions"
+function orgmusic
+    mkdir -p "$argv/opus"
+    for filename in $argv/*;
+        switch $filename
+        case "*.flac"
+            set trackname (basename -- "$filename" .flac)
+            ffmpeg -i $filename -vn -c:a libopus -b:a 128K "$argv/opus/$trackname.ogg"
+        end
+    end
+    beet import "$argv/opus"
+end
