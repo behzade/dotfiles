@@ -7,7 +7,6 @@ export ZK_NOTEBOOK_DIR="$HOME/Documents/ZK"
 # Python
 export PROJECT_HOME=~/Projects
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-export WORKON_HOME=~/.virtualenvs
 
 export LESSKEY="$XDG_CONFIG_HOME"/less/lesskey, export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 

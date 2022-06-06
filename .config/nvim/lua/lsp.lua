@@ -10,7 +10,7 @@ local lspconfig = require("lspconfig")
 
 
 
-for _,server in pairs(installed_servers) do
+for _, server in pairs(installed_servers) do
     local conf = {
         on_attach = on_attach,
         capabilities = capabilities,
