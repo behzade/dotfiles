@@ -1,6 +1,5 @@
 local cmp = require("cmp")
-local luasnip = require('luasnip')
-local set = vim.api.nvim_set_keymap
+require'luasnip'.filetype_extend("twig", {"twig"})
 
 require("luasnip.loaders.from_vscode").lazy_load()
 cmp.setup({

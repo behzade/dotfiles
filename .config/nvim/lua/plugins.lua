@@ -27,7 +27,7 @@ return require("packer").startup(function(use)
         "nelsyeung/twig.vim",
         "jose-elias-alvarez/null-ls.nvim",
         "projekt0n/github-nvim-theme",
-        {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+        { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
     })
 
     use({
@@ -130,6 +130,13 @@ return require("packer").startup(function(use)
         'rcarriga/nvim-notify',
         config = function()
             vim.notify = require("notify")
+        end
+    }
+
+    use {
+        'windwp/nvim-ts-autotag',
+        config = function()
+            require('nvim-ts-autotag').setup()
         end
     }
 

@@ -1,58 +1,36 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
 add_newline = false
 
-[cmake]
-format = '\[[$symbol($version)]($style)\]'
+format = """
+$username\
+$hostname\
+$localip\
+$directory\
+$vcsh\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$docker_context\
+$memory_usage\
+$env_var\
+$sudo\
+$cmd_duration\
+$jobs\
+$battery\
+$time\
+$status\
+$shell
+$character"""
 
-[cmd_duration]
-format = '\[[⏱ $duration]($style)\]'
+[directory]
+truncate_to_repo = false
 
-[docker_context]
-format = '\[[$symbol$context]($style)\]'
-
-[elixir]
-format = '\[[$symbol($version \(OTP $otp_version\))]($style)\]'
-
-[elm]
-format = '\[[$symbol($version)]($style)\]'
-
-[erlang]
-format = '\[[$symbol($version)]($style)\]'
-
-[git_branch]
-format = '\[[$symbol$branch]($style)\]'
-
-[git_status]
-format = '([\[$all_status$ahead_behind\]]($style))'
-
-[golang]
-format = '\[[$symbol($version)]($style)\]'
-
-[julia]
-format = '\[[$symbol($version)]($style)\]'
-
-[lua]
-format = '\[[$symbol($version)]($style)\]'
+[git_metrics]
+disabled = false
 
 [memory_usage]
-format = '\[$symbol[$ram( | $swap)]($style)\]'
-
-[php]
-format = '\[[$symbol($version)]($style)\]'
-
-[pulumi]
-format = '\[[$symbol$stack]($style)\]'
-
-[rust]
-format = '\[[$symbol($version)]($style)\]'
-
-[sudo]
-format = '\[[as $symbol]\]'
-
-[terraform]
-format = '\[[$symbol$workspace]($style)\]'
-
-[time]
-format = '\[[$time]($style)\]'
-
-[username]
-format = '\[[$user]($style)\]'
+disabled = false
