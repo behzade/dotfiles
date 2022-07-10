@@ -22,7 +22,7 @@ set("v", "//", [[y/\V<c-r>=escape(@",'/\')<cr><cr>]])
 -- delete keys no longer fill up the registers, cut functionality moved to m key
 set("n", "gm", "m")
 set("n", "mm", "dd")
-set("v", "p", '"_dP')
+set("v", "p", [[<Plug>ReplaceWithRegisterVisual]])
 set({ "n", "v" }, "m", "d")
 set({ "n", "v" }, "M", "D")
 set({ "n", "v" }, "d", '"_d')

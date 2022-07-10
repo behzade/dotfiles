@@ -28,6 +28,7 @@ return require("packer").startup(function(use)
         "jose-elias-alvarez/null-ls.nvim",
         "projekt0n/github-nvim-theme",
         { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+        "vim-scripts/ReplaceWithRegister"
     })
 
     use({

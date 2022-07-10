@@ -14,7 +14,7 @@ local on_attach = function()
     set("n", "<leader>fa", lsp.buf.code_action)
     set("n", "<leader>fi", telescope.lsp_implementations)
     set("n", "<leader>fl", telescope.lsp_dynamic_workspace_symbols)
-    set("n", "gr", telescope.lsp_references)
+    set("n", "<leader>fr", telescope.lsp_references)
     set("n", "<leader>fd", telescope.diagnostics)
 end
 

@@ -21,6 +21,7 @@ export JAVA_OPTS="-XX:+IgnoreUnrecognizedVMOptions"
 export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
 export LS_COLORS="(vivid generate ayu)"
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+export FZF_DEFAULT_COMMAND='fd --type f'
 
 
 export LF_ICONS=(sed ':a;N;$!ba;s/\n//g' ~/.config/diricons)
@@ -34,8 +35,8 @@ alias mux="tmuxinator"
 alias top="btop"
 alias icat="kitty +kitten icat"
 alias ssh="kitty +kitten ssh"
-alias off="swaymsg output VGA-1 dpms off"
-alias on="swaymsg output VGA-1 dpms on"
+alias off="swaymsg output HDMI-1 dpms off"
+alias on="swaymsg output HDMI-1 dpms on"
 # general use
 alias ls='exa --icons'                                                 # ls
 alias l='exa -lbF --git'                                               # list, size, type, git
