@@ -48,6 +48,9 @@ local phpcs_source = null_ls.builtins.diagnostics.phpcs.with({
 
 local phpcbf_source = null_ls.builtins.formatting.phpcbf.with({
     command = home_bin .. "phpcbf",
+    args = {
+        "--standard=/var/www/vendor/digikala/supernova/cs_ruleset.xml",
+    },
 })
 
 return {

@@ -89,8 +89,8 @@ return require("packer").startup(function(use)
                 open = true,
                 sections = {
                     "files",
-                    "buffers",
                     "git",
+                    "containers"
                 },
             }
             sidebar.setup(opts)
