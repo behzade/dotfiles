@@ -27,6 +27,7 @@ return require("packer").startup(function(use)
         "nelsyeung/twig.vim",
         "jose-elias-alvarez/null-ls.nvim",
         "projekt0n/github-nvim-theme",
+        {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     })
 
     use({
@@ -34,10 +35,6 @@ return require("packer").startup(function(use)
         config = function()
             require('telescope-conf').init()
         end,
-        requires = {
-            "romgrk/fzy-lua-native",
-            "nvim-telescope/telescope-fzy-native.nvim",
-        }
     })
     use({
         "lewis6991/gitsigns.nvim",
