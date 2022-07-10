@@ -50,7 +50,9 @@ alias lt='exa --tree --level=2'                                         # tree
 alias ncmpcpp='ncmpcpp --quiet'
 
 alias run='make run'
-alias cider='clj -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]" --interactive'
+
+starship init fish | source
+
 
 function launch
     nohup $1 >/dev/null 2>/dev/null & disown;
