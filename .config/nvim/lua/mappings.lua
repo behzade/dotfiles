@@ -20,7 +20,6 @@ set("n", "/", "/\\v")
 set("v", "//", [[y/\V<c-r>=escape(@",'/\')<cr><cr>]])
 
 -- delete keys no longer fill up the registers, cut functionality moved to m key
-set("n", "gm", "m")
 set("n", "mm", "dd")
 set("v", "p", [[<Plug>ReplaceWithRegisterVisual]])
 set({ "n", "v" }, "m", "d")
@@ -52,7 +51,6 @@ set("n", "<leader>n", "<cmd>noh<cr>")
 set("n", "<leader>t", "<cmd>SidebarNvimToggle<cr>")
 set("n", "<leader>s", "<cmd>update<cr>")
 set("n", "qq", "<cmd>cclose<cr>")
-set("n", "<leader>fk", telescope.keymaps)
 -- Files
 set("n", "<leader>ff", telescope.find_files)
 -- Text Search
@@ -67,3 +65,10 @@ set("n", "<leader>gu", function() gs.reset_hunk() end)
 set("n", "<leader>gd", function() gs.diffthis() end)
 
 set("n", "<leader>k", require("rtl"))
+
+set("n", "``", require("harpoon.ui").toggle_quick_menu)
+set("n", "`1", function() require("harpoon.ui").nav_file(1) end)
+set("n", "`2", function() require("harpoon.ui").nav_file(2) end)
+set("n", "`3", function() require("harpoon.ui").nav_file(3) end)
+set("n", "`4", function() require("harpoon.ui").nav_file(4) end)
+set("n", "gm", require("harpoon.mark").add_file)

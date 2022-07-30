@@ -27,16 +27,19 @@ return require("packer").startup(function(use)
         "nelsyeung/twig.vim",
         "jose-elias-alvarez/null-ls.nvim",
         "projekt0n/github-nvim-theme",
-        { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
-        "vim-scripts/ReplaceWithRegister"
+        { "nvim-telescope/telescope-fzf-native.nvim", run = 'make' },
+        "vim-scripts/ReplaceWithRegister",
+        "ThePrimeagen/harpoon",
+        "jghauser/mkdir.nvim"
     })
 
     use({
         "nvim-telescope/telescope.nvim",
         config = function()
-            require('telescope-conf').init()
+            require("telescope-conf").init()
         end,
     })
+
     use({
         "lewis6991/gitsigns.nvim",
         config = function()
@@ -84,11 +87,11 @@ return require("packer").startup(function(use)
             local sidebar = require("sidebar-nvim")
             local sidebar_lib = require("sidebar-nvim.lib")
             local opts = {
+                update_interval = 5000,
                 open = true,
                 sections = {
                     "files",
                     "git",
-                    "containers"
                 },
             }
             sidebar.setup(opts)
@@ -122,23 +125,23 @@ return require("packer").startup(function(use)
         end,
     })
     use {
-        'rmagatti/auto-session',
+        "rmagatti/auto-session",
         config = function()
-            require('auto-session').setup {}
-        end
-    }
-    use {
-        'rcarriga/nvim-notify',
-        config = function()
-            vim.notify = require("notify")
+            require("auto-session").setup {}
         end
     }
 
     use {
-        'windwp/nvim-ts-autotag',
+        "windwp/nvim-ts-autotag",
         config = function()
-            require('nvim-ts-autotag').setup()
+            require("nvim-ts-autotag").setup()
         end
     }
 
+    use {
+        "norcalli/nvim-colorizer.lua",
+        config = function()
+            require("colorizer").setup()
+        end
+    }
 end)

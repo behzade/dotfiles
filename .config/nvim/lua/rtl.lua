@@ -8,6 +8,7 @@ local function get_inner_quote()
     if result == "" then
         vim.cmd([[noau normal! "vyit]])
     end
+
     return vim.fn.getreg('v')
 end
 
