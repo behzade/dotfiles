@@ -58,4 +58,5 @@ return {
     -- phpstan_source,
     phpcs_source,
     phpcbf_source,
+    null_ls.builtins.diagnostics.twigcs
 }

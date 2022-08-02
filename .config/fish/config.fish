@@ -69,6 +69,7 @@ end
 
 function `gs
     set file (git status --porcelain  | sed s/^...// | fzf)
+    cd (git rev-parse --show-cdup)
     nopener $file
 end
 
