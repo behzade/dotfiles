@@ -11,8 +11,6 @@ return require("packer").startup(function(use)
         "nvim-lua/plenary.nvim",
         "tpope/vim-repeat",
         "tpope/vim-surround",
-        "tpope/vim-dispatch",
-        "radenling/vim-dispatch-neovim",
         "wellle/targets.vim",
         "lukas-reineke/indent-blankline.nvim",
         "p00f/nvim-ts-rainbow",
@@ -30,7 +28,7 @@ return require("packer").startup(function(use)
         { "nvim-telescope/telescope-fzf-native.nvim", run = 'make' },
         "vim-scripts/ReplaceWithRegister",
         "ThePrimeagen/harpoon",
-        "jghauser/mkdir.nvim"
+        "jghauser/mkdir.nvim",
     })
 
     use({
@@ -137,5 +135,13 @@ return require("packer").startup(function(use)
         config = function()
             require("colorizer").setup()
         end
+    }
+
+    use {
+        "SmiteshP/nvim-navic",
+        config = function()
+            vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
+        end
+
     }
 end)
