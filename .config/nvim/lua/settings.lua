@@ -53,8 +53,8 @@ opt.termguicolors = true -- enable 24-bit RGB colors
 cmd([[
 augroup MyColors
     autocmd!
-    autocmd ColorScheme * highlight FloatermBorder guifg=orange
-                      \ | highlight FloatBorder guifg=orange
+    autocmd ColorScheme * highlight FloatermBorder guifg=#000080
+                      \ | highlight FloatBorder guifg=#000080
                       \ | highlight NormalFloat guibg=white
 augroup END
     ]])

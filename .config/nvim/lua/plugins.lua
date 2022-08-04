@@ -124,12 +124,6 @@ return require("packer").startup(function(use)
             })
         end,
     })
-    use {
-        "rmagatti/auto-session",
-        config = function()
-            require("auto-session").setup {}
-        end
-    }
 
     use {
         "windwp/nvim-ts-autotag",
