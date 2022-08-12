@@ -12,6 +12,12 @@ set("n", "<c-k>", "<cmd>wincmd k<cr>")
 set("n", "<c-j>", "<cmd>wincmd j<cr>")
 set("n", "<c-l>", "<cmd>wincmd l<cr>")
 set("n", "<c-h>", "<cmd>wincmd h<cr>")
+set('t', '<esc>', [[<C-\><C-n>]])
+set('t', 'jk', [[<C-\><C-n>]])
+set('t', '<C-h>', [[<Cmd>wincmd h<CR>]])
+set('t', '<C-j>', [[<Cmd>wincmd j<CR>]])
+set('t', '<C-k>', [[<Cmd>wincmd k<CR>]])
+set('t', '<C-l>', [[<Cmd>wincmd l<CR>]])
 -- better line movement in wrapped text
 set("n", "j", "gj")
 set("n", "k", "gk")
@@ -76,3 +82,5 @@ set("n", "`3", function() require("harpoon.ui").nav_file(3) end)
 set("n", "`4", function() require("harpoon.ui").nav_file(4) end)
 
 set("n", "gm", require("harpoon.mark").add_file)
+
+set({ "n", "t", "v", "i" }, "<c-t>", "<cmd>ToggleTerm<cr>")
