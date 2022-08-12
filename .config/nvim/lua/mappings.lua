@@ -51,18 +51,21 @@ set("n", "<leader>n", "<cmd>noh<cr>")
 set("n", "<leader>t", "<cmd>SidebarNvimToggle<cr>")
 set("n", "<leader>s", "<cmd>update<cr>")
 set("n", "qq", "<cmd>cclose<cr>")
--- Files
-set("n", "<leader>ff", telescope.find_files)
--- Text Search
-set("n", "<leader>fg", telescope.live_grep)
-set("n", "<leader>fs", telescope.grep_string)
 
-set("n", "<leader>fp", "<cmd>Telescope projects<cr>")
+set("n", "<leader>ff", telescope.find_files)
+set("n", "<leader>fs", telescope.live_grep)
+set("n", "<leader>fg", telescope.grep_string)
+
+set("n", "<leader>p", "<cmd>Telescope projects<cr>")
 -- Git
-set("n", "<leader>gs", telescope.git_status)
+set("n", "<leader>gg", require("lazygit"))
 set("n", "<leader>gb", function() gs.toggle_current_line_blame() end)
 set("n", "<leader>gu", function() gs.reset_hunk() end)
 set("n", "<leader>gd", function() gs.diffthis() end)
+set("n", "<leader>gc", telescope.git_commits)
+set("n", "<leader>gs", telescope.git_status)
+set("n", "<leader>gb", telescope.git_bcommits)
+
 
 set("n", "<leader>k", require("rtl"))
 
@@ -71,4 +74,5 @@ set("n", "`1", function() require("harpoon.ui").nav_file(1) end)
 set("n", "`2", function() require("harpoon.ui").nav_file(2) end)
 set("n", "`3", function() require("harpoon.ui").nav_file(3) end)
 set("n", "`4", function() require("harpoon.ui").nav_file(4) end)
+
 set("n", "gm", require("harpoon.mark").add_file)

@@ -151,4 +151,7 @@ return require("packer").startup(function(use)
             vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
         end
     }
+    use { "akinsho/toggleterm.nvim", tag = 'v2.*', config = function()
+        require("toggleterm").setup()
+    end }
 end)
