@@ -23,6 +23,7 @@ $jobs\
 $battery\
 $time\
 $status\
+$python\
 $shell
 $character"""
 

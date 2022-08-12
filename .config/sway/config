@@ -220,12 +220,16 @@ default_floating_border none
 font "JetBrains Mono NerdFont, FontAwesome, 0"
 hide_edge_borders vertical
 # Floating windows
-for_window [app_id="telegramdesktop"] floating enable
-for_window [app_id="org.qbittorrent.qBittorrent"] floating enable
-for_window [app_id="com.rafaelmardojai.Blanket"] floating enable
-for_window [title="^Skype$"] floating enable
 for_window [app_id="com.github.hluk.copyq"] floating enable
-for_window [class="Steam"] floating enable
+
+# Specific Workspace for app
+assign [class="firefox"] workspace browser
+assign [app_id="telegramdesktop"] workspace 10
+assign [title="^Skype$"] workspace 9
+assign [class="Spotify"] workspace 9
+assign [class="Steam"] workspace 8
+assign [class="Insomnia"] workspace 3
+assign [app_id="DBeaver"] workspace 2
 
 # Gap
 gaps inner 5
@@ -268,10 +272,9 @@ exec systembus-notify
 exec keepassxc
 exec copyq
 
-workspace 10 
 exec slack
+exec telegram-desktop
 
-workspace browser
 exec firefox
 
 workspace 1

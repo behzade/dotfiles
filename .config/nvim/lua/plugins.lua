@@ -10,7 +10,6 @@ return require("packer").startup(function(use)
         "wbthomason/packer.nvim",
         "nvim-lua/plenary.nvim",
         "tpope/vim-repeat",
-        "tpope/vim-surround",
         "wellle/targets.vim",
         "lukas-reineke/indent-blankline.nvim",
         "p00f/nvim-ts-rainbow",
@@ -29,6 +28,8 @@ return require("packer").startup(function(use)
         "vim-scripts/ReplaceWithRegister",
         "ThePrimeagen/harpoon",
         "jghauser/mkdir.nvim",
+        "mfussenegger/nvim-dap",
+
     })
 
     use({
@@ -72,8 +73,15 @@ return require("packer").startup(function(use)
         end,
     })
 
+    use {
+        "kylechui/nvim-surround",
+        config = function()
+            require("nvim-surround").setup()
+        end
+    }
+
     use({
-        "folke/todo-comments.nvim",
+        'folke/todo-comments.nvim',
         config = function()
             require("todo-comments").setup({})
         end,
@@ -142,6 +150,5 @@ return require("packer").startup(function(use)
         config = function()
             vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
         end
-
     }
 end)

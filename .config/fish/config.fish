@@ -1,5 +1,7 @@
 export XDG_SESSION_TYPE='wayland' 
 export XDG_CURRENT_DESKTOP='sway'
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_CACHE_HOME=$HOME/.cache
 export EDITOR='nvim'
 export VISUAL=$EDITOR
 export OPENER='xdg-open'
@@ -7,6 +9,7 @@ export ZK_NOTEBOOK_DIR="$HOME/Documents/ZK"
 # Python
 export PROJECT_HOME=~/Projects
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export VIRTUALFISH_HOME="$XDG_DATA_HOME/virtualenvs"
 
 export LESSKEY="$XDG_CONFIG_HOME"/less/lesskey, export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 
@@ -63,10 +66,6 @@ if test (tty) = "/dev/tty1"
   sway
 end
 
-function `e () 
-  nvim +noswapfile +"setlocal buftype=nofile" +"setlocal bufhidden=hide" $argv
-end
-
 function `gs
     set file (git status --porcelain  | sed s/^...// | fzf)
     cd (git rev-parse --show-cdup)
@@ -90,6 +89,9 @@ end
 function `fz
     set file (z -l | fzf)
     nopener $file
+end
+
+function `f
 end
 
 function nopener 
