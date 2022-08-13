@@ -35,8 +35,9 @@ return require("packer").startup(function(use)
     use({
         "nvim-telescope/telescope.nvim",
         config = function()
-            require("telescope-conf").init()
+            require("telescope-conf")
         end,
+        requires = { "nvim-telescope/telescope-file-browser.nvim" }
     })
 
     use({

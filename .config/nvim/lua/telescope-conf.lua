@@ -1,9 +1,8 @@
-local layout_actions = require("telescope.actions.layout")
-local init = function()
+return function()
 	require("telescope").setup({
 		defaults = {
 			mappings = {
-				i = { ["<c-space>"] = layout_actions.toggle_preview },
+				i = { ["<c-space>"] = require("telescope.actions.layout").toggle_preview },
 			},
 			-- preview = {
 			-- 	hide_on_startup = true,
@@ -18,8 +17,5 @@ local init = function()
 	})
 	require("telescope").load_extension("fzf")
 	require("telescope").load_extension("projects")
+    require("telescope").load_extension("file_browser")
 end
-
-return {
-	init = init,
-}

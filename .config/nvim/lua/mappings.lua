@@ -2,7 +2,8 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 local set = vim.keymap.set
 local gs = require("gitsigns")
-local telescope = require("telescope.builtin")
+local telescope_builtins = require("telescope.builtin")
+local telescope_extensions = require("telescope").extensions
 
 -- insert mode
 set("i", "jk", "<esc>")
@@ -58,19 +59,20 @@ set("n", "<leader>t", "<cmd>SidebarNvimToggle<cr>")
 set("n", "<leader>s", "<cmd>update<cr>")
 set("n", "qq", "<cmd>cclose<cr>")
 
-set("n", "<leader>ff", telescope.find_files)
-set("n", "<leader>fs", telescope.live_grep)
-set("n", "<leader>fg", telescope.grep_string)
+set("n", "<leader>ff", telescope_builtins.find_files)
+set("n", "<leader>fs", telescope_builtins.live_grep)
+set("n", "<leader>fg", telescope_builtins.grep_string)
+set("n", "<leader>fb", telescope_extensions.file_browser.file_browser)
 
-set("n", "<leader>p", "<cmd>Telescope projects<cr>")
+set("n", "<leader>p", telescope_extensions.projects.projects)
 -- Git
 set("n", "<leader>gg", require("lazygit"))
 set("n", "<leader>gb", function() gs.toggle_current_line_blame() end)
 set("n", "<leader>gu", function() gs.reset_hunk() end)
 set("n", "<leader>gd", function() gs.diffthis() end)
-set("n", "<leader>gc", telescope.git_commits)
-set("n", "<leader>gs", telescope.git_status)
-set("n", "<leader>gb", telescope.git_bcommits)
+set("n", "<leader>gc", telescope_builtins.git_commits)
+set("n", "<leader>gs", telescope_builtins.git_status)
+set("n", "<leader>gb", telescope_builtins.git_bcommits)
 
 
 set("n", "<leader>k", require("rtl"))
