@@ -13,8 +13,6 @@ return require("packer").startup(function(use)
         "wellle/targets.vim",
         "lukas-reineke/indent-blankline.nvim",
         "p00f/nvim-ts-rainbow",
-        "neovim/nvim-lspconfig",
-        "williamboman/nvim-lsp-installer",
         { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
         "nvim-treesitter/nvim-treesitter-textobjects",
         "ggandor/lightspeed.nvim",
@@ -29,8 +27,16 @@ return require("packer").startup(function(use)
         "ThePrimeagen/harpoon",
         "jghauser/mkdir.nvim",
         "mfussenegger/nvim-dap",
-
     })
+
+    use {
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+        "neovim/nvim-lspconfig",
+        config = function ()
+            require('lsp').setup()
+        end
+    }
 
     use({
         "nvim-telescope/telescope.nvim",
