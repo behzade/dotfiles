@@ -223,7 +223,7 @@ hide_edge_borders vertical
 for_window [app_id="com.github.hluk.copyq"] floating enable
 
 # Specific Workspace for app
-assign [app_id="firefox"] workspace browser
+assign [class="firefox"] workspace browser
 assign [app_id="telegramdesktop"] workspace 10
 assign [app_id="Slack"] workspace 10
 assign [title="^Skype$"] workspace 9
