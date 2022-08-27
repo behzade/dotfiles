@@ -56,7 +56,7 @@ return require("packer").startup(function(use)
                     delay = 1000,
                     ignore_whitespace = true,
                 },
-                current_line_blame = false,
+                current_line_blame = true,
             })
         end,
     })
