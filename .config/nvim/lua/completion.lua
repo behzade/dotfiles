@@ -1,5 +1,5 @@
 local cmp = require("cmp")
-require'luasnip'.filetype_extend("twig", {"twig"})
+require 'luasnip'.filetype_extend("twig", { "twig" })
 
 require("luasnip.loaders.from_vscode").lazy_load()
 cmp.setup({
@@ -28,6 +28,9 @@ cmp.setup({
         { name = "treesitter" },
         { name = "buffer" },
     }),
+    completion = {
+        keyword_length = 3;
+    }
 })
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
@@ -50,5 +53,3 @@ local autopairs = require("nvim-autopairs")
 local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 autopairs.setup({ check_ts = true })
 cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done({ map_char = { tex = "" } }))
-
-
