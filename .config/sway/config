@@ -232,6 +232,7 @@ assign [class="Spotify"] workspace 9
 assign [class="Steam"] workspace 8
 assign [class="Insomnia"] workspace 3
 assign [app_id="DBeaver"] workspace 2
+assign [title=".*Dbeaver.*"] workspace 2
 
 # Gap
 gaps inner 5
@@ -268,7 +269,7 @@ exec_always {
 
 # application startup
 exec kanshi
-exec wlsunset
+exec gammastep
 exec dunst
 exec systembus-notify
 exec keepassxc
