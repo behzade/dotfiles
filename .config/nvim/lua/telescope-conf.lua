@@ -3,17 +3,17 @@ return function()
         defaults = {
             mappings = {
                 i = {
-                    ["<C-p>"] = require('telescope.actions.layout').toggle_preview,
+                    ["<A-t>"] = require('telescope.actions.layout').toggle_preview,
                 },
-            },
-            preview = {
-                hide_on_startup = true
             },
             layout_strategy = "center",
             sorting_strategy = "ascending",
             layout_config = {
                 prompt_position = "top",
-                center = { width = 0.9 }
+                center = {
+                    anchor = "S",
+                    width = 0.9,
+                }
             },
         },
     })
