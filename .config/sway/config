@@ -227,6 +227,7 @@ assign [class="firefox"] workspace browser
 assign [app_id="firefox"] workspace browser
 assign [app_id="telegramdesktop"] workspace 10
 assign [app_id="Slack"] workspace 10
+assign [class="Slack"] workspace 10
 assign [title="^Skype$"] workspace 9
 assign [class="Spotify"] workspace 9
 assign [class="Steam"] workspace 8

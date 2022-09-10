@@ -33,16 +33,14 @@ return require("packer").startup(function(use)
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
         "neovim/nvim-lspconfig",
-        config = function ()
+        config = function()
             require('lsp').setup()
         end
     }
 
     use({
         "nvim-telescope/telescope.nvim",
-        config = function()
-            require("telescope-conf")
-        end,
+        config = require("telescope-conf"),
         requires = { "nvim-telescope/telescope-file-browser.nvim" }
     })
 
