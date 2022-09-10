@@ -1,5 +1,5 @@
 # nvim
-Neovim configuration files using the built-in lsp and treesitter.
+Neovim configuration files using the built-in lsp and treesitter. (Requires the nightly build)
 
 ## Usage
 1. Clone this repository to XDG_CONFIG_HOME/nvim/ or wherever your neovim config folder is.
