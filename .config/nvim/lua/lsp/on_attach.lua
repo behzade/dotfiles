@@ -13,6 +13,9 @@ local lsp_references = function() telescope.lsp_references(opts) end
 local lsp_implementations = function() telescope.lsp_implementations(opts) end
 local lsp_dynamic_workspace_symbols = function() telescope.lsp_dynamic_workspace_symbols(opts) end
 
+local formatter = function()
+    vim.lsp.buf.format({ async = true })
+end
 
 
 local on_attach = function(client, bufnr)
@@ -21,8 +24,8 @@ local on_attach = function(client, bufnr)
     set("n", "gD", lsp_references)
     set("n", "[d", Diagnostics.prev)
     set("n", "]d", Diagnostics.next)
-    set("n", "<leader>lf", vim.lsp.buf.formatting)
-    set("v", "<leader>lf", vim.lsp.buf.range_formatting)
+    set("n", "<leader>lf", formatter)
+    set("v", "<leader>lf", formatter)
     set("n", "<leader>lr", lsp.buf.rename)
     set("n", "<leader>la", lsp.buf.code_action)
     set("n", "<leader>li", lsp_implementations)
