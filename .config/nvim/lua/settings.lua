@@ -59,10 +59,6 @@ opt.termguicolors = true -- enable 24-bit RGB colors
 -- augroup END
 --     ]])
 
-require('onedark').setup {
-    style = 'warmer'
-}
-
 cmd([[colorscheme ayu-mirage]])
 
 -----------------------------------------------------------
