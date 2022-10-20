@@ -21,12 +21,13 @@ return require("packer").startup(function(use)
         "windwp/nvim-autopairs",
         "nelsyeung/twig.vim",
         "jose-elias-alvarez/null-ls.nvim",
-        "projekt0n/github-nvim-theme",
         { "nvim-telescope/telescope-fzf-native.nvim", run = 'make' },
         "vim-scripts/ReplaceWithRegister",
         "ThePrimeagen/harpoon",
         "jghauser/mkdir.nvim",
         "mfussenegger/nvim-dap",
+        "Shatur/neovim-ayu",
+
     })
 
     use {
@@ -159,4 +160,5 @@ return require("packer").startup(function(use)
     use { "akinsho/toggleterm.nvim", tag = 'v2.*', config = function()
         require("toggleterm").setup()
     end }
+
 end)

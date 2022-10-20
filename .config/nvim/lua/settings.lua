@@ -50,16 +50,20 @@ exec(
 -- Colorscheme
 -----------------------------------------------------------
 opt.termguicolors = true -- enable 24-bit RGB colors
-cmd([[
-augroup MyColors
-    autocmd!
-    autocmd ColorScheme * highlight FloatermBorder guifg=#000080
-                      \ | highlight FloatBorder guifg=#000080
-                      \ | highlight NormalFloat guibg=white
-augroup END
-    ]])
+-- cmd([[
+-- augroup MyColors
+--     autocmd!
+--     autocmd ColorScheme * highlight FloatermBorder guifg=#000080
+--                       \ | highlight FloatBorder guifg=#000080
+--                       \ | highlight NormalFloat guibg=white
+-- augroup END
+--     ]])
 
-cmd([[colorscheme github_dark]])
+require('onedark').setup {
+    style = 'warmer'
+}
+
+cmd([[colorscheme ayu-mirage]])
 
 -----------------------------------------------------------
 -- Tabs, indent
@@ -109,5 +113,3 @@ opt.foldmethod = "indent"
 opt.fillchars = "fold: "
 opt.foldnestmax = 2
 opt.foldminlines = 3
-
-cmd [[highlight Folded guibg=#e9f0f0]]

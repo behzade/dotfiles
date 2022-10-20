@@ -66,6 +66,22 @@ if test (tty) = "/dev/tty1"
   sway
 end
 
+function nopener 
+    if not test -n "$argv"
+        echo 'no file selected'
+        return
+    end
+    switch $argv
+    case "*:*"
+        set parameters (string split : $argv)
+        commandline "nvim +$parameters[2] $parameters[1]"
+    case "*"
+        commandline "nvim $argv"
+    end
+
+    commandline -f execute
+end
+
 function `gs
     set file (git status --porcelain  | sed s/^...// | fzf)
     cd (git rev-parse --show-cdup)
@@ -82,24 +98,13 @@ function `fg
         echo 'must pass an argument'
         return
     end
-    set file (rg -Sl $argv | fzf)
+    set file (rg -S --no-heading --line-number $argv | cut -d':' -f1-2 | fzf)
     nopener $file
 end
 
 function `fz
     set file (z -l | fzf)
     nopener $file
-end
-
-function `f
-end
-
-function nopener 
-    if not test -n "$argv"
-        echo 'no file selected'
-        return
-    end
-    nvim "$argv"
 end
 
 function vimrc 

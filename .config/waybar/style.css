@@ -10,12 +10,12 @@ window#waybar {
 
 #custom-right-arrow-dark,
 #custom-left-arrow-dark {
-	color: black;
+	color: #111114;
 }
 #custom-right-arrow-light,
 #custom-left-arrow-light {
 	color: #9e5303;
-	background: black;
+	background: #111114;
 }
 
 #workspaces,
@@ -29,7 +29,7 @@ window#waybar {
 #battery,
 #disk,
 #tray {
-	background: black;
+	background: #111114;
 }
 
 #window {
@@ -93,8 +93,8 @@ window#waybar {
 #custom-mpris-media,
 #idle_inhibitor,
 #temperature {
-	background: black;
-	border: black;
+	background: #111114;
+	border: #111114;
 	padding: 0 3px;
 }
 
