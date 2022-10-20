@@ -38,3 +38,4 @@ null_ls.setup({
     }
 })
 null_ls.register(null_ls.builtins.diagnostics.twigcs)
+null_ls.register(null_ls.builtins.formatting.black)

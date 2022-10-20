@@ -5,17 +5,17 @@
 
 window#waybar {
 	color: #fdf6e3;
-	background: orange;
+	background: #9e5303;
 }
 
 #custom-right-arrow-dark,
 #custom-left-arrow-dark {
-	color: white;
+	color: black;
 }
 #custom-right-arrow-light,
 #custom-left-arrow-light {
-	color: orange;
-	background: white;
+	color: #9e5303;
+	background: black;
 }
 
 #workspaces,
@@ -29,16 +29,16 @@ window#waybar {
 #battery,
 #disk,
 #tray {
-	background: white;
+	background: black;
 }
 
 #window {
-	color: black;
+	color: white;
 }
 
 #workspaces button {
 	padding: 0 2px;
-	color: black;
+	color: white;
 }
 #workspaces button.focused {
 	color: #268bd2;
@@ -54,7 +54,7 @@ window#waybar {
 }
 
 #clock {
-    color: black;
+    color: white;
 }
 #pulseaudio {
 	color: #268bd2;
@@ -81,7 +81,7 @@ window#waybar {
     color: #e5d56e;
 }
 #custom-mpris-media {
-    color: black;
+    color: white;
 }
 
 #clock,
@@ -93,8 +93,8 @@ window#waybar {
 #custom-mpris-media,
 #idle_inhibitor,
 #temperature {
-	background: white;
-	border: white;
+	background: black;
+	border: black;
 	padding: 0 3px;
 }
 

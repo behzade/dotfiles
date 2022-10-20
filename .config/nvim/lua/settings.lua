@@ -59,8 +59,7 @@ augroup MyColors
 augroup END
     ]])
 
-cmd([[colorscheme github_light]])
-opt.background = "light"
+cmd([[colorscheme github_dark]])
 
 -----------------------------------------------------------
 -- Tabs, indent
