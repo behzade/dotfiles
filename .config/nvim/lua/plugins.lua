@@ -102,8 +102,9 @@ return require("packer").startup(function(use)
                 update_interval = 5000,
                 open = true,
                 sections = {
-                    "files",
                     "git",
+                    "symbols",
+                    "buffers",
                 },
             }
             sidebar.setup(opts)

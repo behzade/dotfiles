@@ -74,10 +74,10 @@ opt.smartindent = true -- autoindent new lines
 -----------------------------------------------------------
 -- disable builtins plugins
 local disabled_built_ins = {
-    "netrw",
-    "netrwPlugin",
-    "netrwSettings",
-    "netrwFileHandlers",
+    -- "netrw",
+    -- "netrwPlugin",
+    -- "netrwSettings",
+    -- "netrwFileHandlers",
     "gzip",
     "zip",
     "zipPlugin",
@@ -109,3 +109,8 @@ opt.foldmethod = "indent"
 opt.fillchars = "fold: "
 opt.foldnestmax = 2
 opt.foldminlines = 3
+
+-- File browser
+vim.g.netrw_browse_split = 0
+vim.g.netrw_banner = 0
+vim.g.netrw_winsize = 25
