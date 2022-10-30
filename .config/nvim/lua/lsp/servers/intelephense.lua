@@ -1,5 +1,4 @@
-local home = os.getenv("HOME")
-
 return {
-    root_dir = function() return home .. "/Projects/supernova-env-dev/vendor" end,
+    root_dir = function() return ParentDir(ParentDir(vim.fn.getcwd())) end,
 }
+

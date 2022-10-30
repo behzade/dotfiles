@@ -27,7 +27,6 @@ return require("packer").startup(function(use)
         "jghauser/mkdir.nvim",
         "mfussenegger/nvim-dap",
         "Shatur/neovim-ayu",
-
     })
 
     use {
@@ -103,8 +102,7 @@ return require("packer").startup(function(use)
                 open = true,
                 sections = {
                     "git",
-                    "symbols",
-                    "buffers",
+                    "diagnostics",
                 },
             }
             sidebar.setup(opts)

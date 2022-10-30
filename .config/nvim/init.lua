@@ -1,3 +1,4 @@
+require("helpers")
 require("plugins")
 require("settings")
 require("treesitter")

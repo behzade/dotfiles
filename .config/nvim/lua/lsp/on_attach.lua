@@ -6,7 +6,7 @@ local navic = require("nvim-navic")
 
 local opts = {
     fname_width = 90,
-    cwd = string.sub(vim.fn.getcwd(), 0, string.find(vim.fn.getcwd(), "/[^/]*$")),
+    cwd = ParentDir(vim.fn.getcwd()),
 }
 
 local lsp_references = function() telescope.lsp_references(opts) end
