@@ -32,7 +32,7 @@ opt.synmaxcol = 240 -- max column for syntax highlight
 opt.relativenumber = true
 opt.undofile = true
 g.tex_flavor = "context" -- use ConTeXt for tex files by default
-opt.guifont = "JetBrainsMono Nerd Font:h10.8"
+opt.guifont = "JetBrainsMono Nerd Font:13"
 opt.signcolumn = 'yes'
 
 -- highlight on yank
@@ -81,36 +81,6 @@ opt.smartindent = true -- autoindent new lines
 
 -----------------------------------------------------------
 -- Startup
------------------------------------------------------------
--- disable builtins plugins
-local disabled_built_ins = {
-    -- "netrw",
-    -- "netrwPlugin",
-    -- "netrwSettings",
-    -- "netrwFileHandlers",
-    "gzip",
-    "zip",
-    "zipPlugin",
-    "tar",
-    "tarPlugin",
-    "getscript",
-    "getscriptPlugin",
-    "vimball",
-    "vimballPlugin",
-    "2html_plugin",
-    "logipat",
-    "rrhelper",
-    "spellfile_plugin",
-    "matchit",
-}
-
-for _, plugin in pairs(disabled_built_ins) do
-    g["loaded_" .. plugin] = 1
-end
-
--- disable nvim intro
-opt.shortmess:append("sI")
-
 -----------------------------------------------------------
 -- Fold
 -----------------------------------------------------------
