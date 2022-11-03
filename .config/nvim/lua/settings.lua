@@ -4,10 +4,10 @@
 -- Neovim API aliases
 -----------------------------------------------------------
 --local map = vim.api.nvim_set_keymap  -- set global keymap
-local cmd = vim.cmd -- execute Vim commands
 local exec = vim.api.nvim_exec -- execute Vimscript
 local g = vim.g -- global variables
 local opt = vim.opt -- global/buffer/windows-scoped options
+local autocmd = vim.api.nvim_create_autocmd
 
 -----------------------------------------------------------
 -- General
@@ -47,19 +47,29 @@ exec(
 )
 
 -----------------------------------------------------------
+-- Terminal
+-----------------------------------------------------------
+autocmd({ "TermOpen" }, {
+    pattern = { "*" },
+    command = "startinsert",
+})
+
+local delete_term_buf = function (event)
+    if (vim.fn.len(vim.fn.win_findbuf(event['buf'])) > 0) then
+        vim.cmd("bdelete " .. event['buf'])
+        vim.cmd("stopinsert")
+    end
+end
+
+autocmd({ "TermClose"}, {
+    pattern = {"*"},
+    callback = delete_term_buf
+})
+
+-----------------------------------------------------------
 -- Colorscheme
 -----------------------------------------------------------
 opt.termguicolors = true -- enable 24-bit RGB colors
--- cmd([[
--- augroup MyColors
---     autocmd!
---     autocmd ColorScheme * highlight FloatermBorder guifg=#000080
---                       \ | highlight FloatBorder guifg=#000080
---                       \ | highlight NormalFloat guibg=white
--- augroup END
---     ]])
-
-cmd([[colorscheme ayu-mirage]])
 
 -----------------------------------------------------------
 -- Tabs, indent

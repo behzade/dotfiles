@@ -55,34 +55,25 @@ set("n", "[h", function() gs.prev_hunk() end)
 set("n", "]h", function() gs.next_hunk() end)
 -- Other
 set("n", "<leader>n", "<cmd>noh<cr>")
-set("n", "<leader>t", "<cmd>SidebarNvimToggle<cr>")
+set("n", "<leader>t", "<cmd>term<cr>")
 set("n", "<leader>s", "<cmd>update<cr>")
 set("n", "qq", "<cmd>cclose<cr>")
 
 set("n", "<leader>ff", telescope_builtins.find_files)
 set("n", "<leader>fs", telescope_builtins.live_grep)
 set("n", "<leader>fg", telescope_builtins.grep_string)
-set("n", "<leader>fb", telescope_extensions.file_browser.file_browser)
 
 set("n", "<leader>p", telescope_extensions.projects.projects)
 -- Git
-set("n", "<leader>gg", require("lazygit"))
-set("n", "<leader>gb", function() gs.toggle_current_line_blame() end)
 set("n", "<leader>gu", function() gs.reset_hunk() end)
 set("n", "<leader>gd", function() gs.diffthis() end)
-set("n", "<leader>gc", telescope_builtins.git_commits)
-set("n", "<leader>gs", telescope_builtins.git_status)
-set("n", "<leader>gb", telescope_builtins.git_bcommits)
+
+set("n", "<leader>gg", "<cmd>terminal lazygit<cr>")
+set("n", "<leader>gb", "<cmd>terminal lazygit -f %<cr>")
+
+set("n", "<leader>b", "<cmd>terminal lf<cr>")
 
 
 set("n", "<leader>k", require("rtl"))
 
-set("n", "``", require("harpoon.ui").toggle_quick_menu)
-set("n", "`1", function() require("harpoon.ui").nav_file(1) end)
-set("n", "`2", function() require("harpoon.ui").nav_file(2) end)
-set("n", "`3", function() require("harpoon.ui").nav_file(3) end)
-set("n", "`4", function() require("harpoon.ui").nav_file(4) end)
-
-set("n", "gm", require("harpoon.mark").add_file)
-
-set({ "n", "t", "v", "i" }, "<c-t>", "<cmd>ToggleTerm<cr>")
+set("t", "<esc>", "<C-\\><C-n>")

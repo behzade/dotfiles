@@ -26,7 +26,6 @@ return require("packer").startup(function(use)
         "ThePrimeagen/harpoon",
         "jghauser/mkdir.nvim",
         "mfussenegger/nvim-dap",
-        "Shatur/neovim-ayu",
     })
 
     use {
@@ -41,7 +40,6 @@ return require("packer").startup(function(use)
     use({
         "nvim-telescope/telescope.nvim",
         config = require("telescope-conf"),
-        requires = { "nvim-telescope/telescope-file-browser.nvim" }
     })
 
     use({
@@ -93,26 +91,6 @@ return require("packer").startup(function(use)
     })
 
     use({
-        "sidebar-nvim/sidebar.nvim",
-        config = function()
-            local sidebar = require("sidebar-nvim")
-            local sidebar_lib = require("sidebar-nvim.lib")
-            local opts = {
-                update_interval = 5000,
-                open = true,
-                sections = {
-                    "git",
-                    "diagnostics",
-                },
-            }
-            sidebar.setup(opts)
-            vim.api.nvim_create_autocmd(
-                "BufEnter",
-                { pattern = "*", callback = sidebar_lib.update }
-            )
-        end,
-    })
-    use({
         "hrsh7th/nvim-cmp",
         requires = {
             "hrsh7th/cmp-nvim-lsp",
@@ -156,8 +134,18 @@ return require("packer").startup(function(use)
             vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
         end
     }
-    use { "akinsho/toggleterm.nvim", tag = 'v2.*', config = function()
-        require("toggleterm").setup()
-    end }
 
+    use {
+        "samjwill/nvim-unception",
+        config = function()
+            vim.g.unception_delete_replaced_buffer = true
+        end
+    }
+
+    use {
+        "Shatur/neovim-ayu",
+        config = function()
+            vim.cmd([[colorscheme ayu-mirage]])
+        end
+    }
 end)
