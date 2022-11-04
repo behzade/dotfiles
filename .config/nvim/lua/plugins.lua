@@ -23,8 +23,6 @@ return require("packer").startup(function(use)
         "jose-elias-alvarez/null-ls.nvim",
         { "nvim-telescope/telescope-fzf-native.nvim", run = 'make' },
         "vim-scripts/ReplaceWithRegister",
-        "ThePrimeagen/harpoon",
-        "jghauser/mkdir.nvim",
         "mfussenegger/nvim-dap",
     })
 

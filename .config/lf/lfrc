@@ -1,10 +1,35 @@
 # General settings
+set icons true
+set reverse true
+set shell fish
+set ignorecase true
+
 set previewer previewer.sh
 set cleaner cleaner.sh
-set icons
-set shell fish
-set sortby time; set info time:size
-set reverse true
+
+set sortby time
+set info time:size
+
+cmd mkdir ${{
+    printf "Dir Name: "
+    read ans
+    mkdir $ans
+}}
+
+cmd mkfile ${{
+    printf "File Name: "
+    read ans
+    touch $ans
+}}
+
+cmd unarchive ${{
+    case "$f" in
+        *.zip) unzip "$f" ;;
+        *.tar.gz) tar -xzvf "$f" ;;
+        *.tar.bz2) tar -xjvf "$f" ;;
+        *.tar) tar -xvf "$f" ;;
+        *) echo "Unsupported archive" ;;
+}}
 
 
 
@@ -18,8 +43,9 @@ cmd drag %dragon-drop -a $fx
 cmd trash %trash-put $fx
 
 # Mappings
-map t toggle
 map <enter> open
 map m cut
-map gm mark-save
 map dd trash
+
+map o mkfile
+map O mkdir

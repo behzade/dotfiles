@@ -13,8 +13,6 @@ set("n", "<c-k>", "<cmd>wincmd k<cr>")
 set("n", "<c-j>", "<cmd>wincmd j<cr>")
 set("n", "<c-l>", "<cmd>wincmd l<cr>")
 set("n", "<c-h>", "<cmd>wincmd h<cr>")
-set('t', '<esc>', [[<C-\><C-n>]])
-set('t', 'jk', [[<C-\><C-n>]])
 set('t', '<C-h>', [[<Cmd>wincmd h<CR>]])
 set('t', '<C-j>', [[<Cmd>wincmd j<CR>]])
 set('t', '<C-k>', [[<Cmd>wincmd k<CR>]])
@@ -65,15 +63,18 @@ set("n", "<leader>fg", telescope_builtins.grep_string)
 
 set("n", "<leader>p", telescope_extensions.projects.projects)
 -- Git
-set("n", "<leader>gu", function() gs.reset_hunk() end)
+set("n", "<leader>u", function() gs.reset_hunk() end)
+
 set("n", "<leader>gd", function() gs.diffthis() end)
+set("n", "<leader>gg", "<cmd>term lazygit<cr>")
+set("n", "<leader>gb", "<cmd>term lazygit -f %<cr>")
 
-set("n", "<leader>gg", "<cmd>terminal lazygit<cr>")
-set("n", "<leader>gb", "<cmd>terminal lazygit -f %<cr>")
-
-set("n", "<leader>b", "<cmd>terminal lf<cr>")
+set("n", "<leader>b", "<cmd>term lf<cr>")
 
 
 set("n", "<leader>k", require("rtl"))
 
-set("t", "<esc>", "<C-\\><C-n>")
+-- use lower case marks as global
+set("n", "gm", [["m".toupper(nr2char(getchar()))]], { expr = true })
+set("n", "`", [["`".toupper(nr2char(getchar()))]], { expr = true })
+set("n", "'", [["'".toupper(nr2char(getchar()))]], { expr = true })
