@@ -58,69 +58,6 @@ alias run='make run'
 starship init fish | source
 
 
-function launch
-    nohup $1 >/dev/null 2>/dev/null & disown;
-end
-
 if test (tty) = "/dev/tty1"
   sway
-end
-
-function nopener 
-    if not test -n "$argv"
-        echo 'no file selected'
-        return
-    end
-    switch $argv
-    case "*:*"
-        set parameters (string split : $argv)
-        commandline "nvim +$parameters[2] $parameters[1]"
-    case "*"
-        commandline "nvim $argv"
-    end
-
-    commandline -f execute
-end
-
-function `gs
-    set file (git status --porcelain  | sed s/^...// | fzf)
-    cd (git rev-parse --show-cdup)
-    nopener $file
-end
-
-function `ff
-    set file (fzf)
-    nopener $file
-end
-
-function `fg
-    if not test -n "$argv"
-        echo 'must pass an argument'
-        return
-    end
-    set file (rg -S --no-heading --line-number $argv | cut -d':' -f1-2 | fzf)
-    nopener $file
-end
-
-function `fz
-    set file (z -l | fzf)
-    nopener $file
-end
-
-function vimrc 
-    pushd ~/.config/nvim
-    nvim init.lua
-    popd
-end
-
-function orgmusic
-    mkdir -p "$argv/opus"
-    for filename in $argv/*;
-        switch $filename
-        case "*.flac"
-            set trackname (basename -- "$filename" .flac)
-            ffmpeg -i $filename -vn -c:a libopus -b:a 128K "$argv/opus/$trackname.ogg"
-        end
-    end
-    beet import "$argv/opus"
 end

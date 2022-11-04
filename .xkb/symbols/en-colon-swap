@@ -6,7 +6,7 @@ xkb_symbols "basic" {
 
     include "us"
 
-    name [Group1] = "English(modified)";
+    name [Group1] = "English";
 
     key <AC10> { [colon, semicolon             ] };
     key <CAPS> { [ ISO_Level3_Shift            ] };
