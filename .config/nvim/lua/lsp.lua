@@ -31,13 +31,16 @@ end
 
 
 local null_ls = require("null-ls")
-null_ls.register(null_ls.builtins.diagnostics.twigcs)
-null_ls.register(null_ls.builtins.formatting.black)
-null_ls.register(null_ls.builtins.formatting.shfmt)
+
 
 null_ls.setup({
     defaults = {
         on_attach = on_attach,
         capabilities = capabilities,
+    },
+    sources = {
+        null_ls.builtins.diagnostics.twigcs,
+        null_ls.builtins.formatting.black,
+        null_ls.builtins.formatting.shfmt,
     }
 })

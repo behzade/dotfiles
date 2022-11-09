@@ -6,8 +6,8 @@
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.5);
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+    background-color: rgba(43, 48, 59, 0.6);
+    border-bottom: 3px solid rgba(100, 114, 125, 0.6);
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
@@ -73,7 +73,6 @@ button:hover {
     border-bottom: 3px solid #ffffff;
 }
 
-#clock,
 #battery,
 #cpu,
 #memory,
@@ -91,6 +90,11 @@ button:hover {
     padding: 0 10px;
     color: #ffffff;
     background-color: #0d131c;
+}
+
+#clock {
+    padding: 0 10px;
+    color: #ffffff;
 }
 
 #window,
