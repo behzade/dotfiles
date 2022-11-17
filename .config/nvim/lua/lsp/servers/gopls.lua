@@ -16,9 +16,8 @@ return {
             completeUnimported = true,
             staticcheck = true,
             matcher = "fuzzy",
-            experimentalWatchedFileDelay = "100ms",
             symbolMatcher = "fuzzy",
-            gofumpt = true,
+            -- gofumpt = true,
             buildFlags = { "-tags", "integration" },
         },
     }

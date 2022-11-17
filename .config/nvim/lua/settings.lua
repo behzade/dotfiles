@@ -66,6 +66,11 @@ autocmd({ "TermClose"}, {
     callback = delete_term_buf
 })
 
+-- autocmd({ "BufWritePost" }, {
+--     pattern = { "*" },
+--     callback = function() vim.api.nvim__screenshot("/tmp/nvim-screenshot") end
+-- })
+
 -----------------------------------------------------------
 -- Colorscheme
 -----------------------------------------------------------

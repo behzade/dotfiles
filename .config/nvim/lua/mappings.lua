@@ -69,7 +69,7 @@ set("n", "<leader>gd", function() gs.diffthis() end)
 set("n", "<leader>gg", "<cmd>term lazygit<cr>")
 set("n", "<leader>gb", "<cmd>term lazygit -f %<cr>")
 
-set("n", "<leader>b", "<cmd>term lf<cr>")
+set("n", "<leader>b", "<cmd>term lf %<cr>")
 
 
 set("n", "<leader>k", require("rtl"))
@@ -78,5 +78,3 @@ set("n", "<leader>k", require("rtl"))
 set("n", "gm", [["m".toupper(nr2char(getchar()))]], { expr = true })
 set("n", "`", [["`".toupper(nr2char(getchar()))]], { expr = true })
 set("n", "'", [["'".toupper(nr2char(getchar()))]], { expr = true })
-
-set("n", "<leader>\\", Html)
