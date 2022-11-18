@@ -68,6 +68,7 @@ set("n", "<leader>u", function() gs.reset_hunk() end)
 set("n", "<leader>gd", function() gs.diffthis() end)
 set("n", "<leader>gg", "<cmd>term lazygit<cr>")
 set("n", "<leader>gb", "<cmd>term lazygit -f %<cr>")
+set("n", "<leader>gs", telescope_builtins.git_status)
 
 set("n", "<leader>b", "<cmd>term lf %<cr>")
 
