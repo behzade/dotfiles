@@ -6,3 +6,8 @@ function ParentDir(dir, level)
         return ParentDir(parent, level - 1)
     end
 end
+
+function Html()
+    vim.api.nvim__screenshot("/tmp/nvim-screenshot")
+    os.execute("cat /tmp/nvim-screenshot | aha --black > /tmp/nvim-screenshot.html")
+end
