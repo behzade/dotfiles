@@ -23,6 +23,7 @@ return require("packer").startup(function(use)
         { "nvim-telescope/telescope-fzf-native.nvim", run = 'make' },
         "vim-scripts/ReplaceWithRegister",
         "mfussenegger/nvim-dap",
+        "mbbill/undotree",
     })
 
     use {
@@ -143,6 +144,13 @@ return require("packer").startup(function(use)
         "Shatur/neovim-ayu",
         config = function()
             vim.cmd([[colorscheme ayu-mirage]])
+        end
+    }
+
+    use {
+        "j-hui/fidget.nvim",
+        config = function ()
+            require('fidget').setup()
         end
     }
 end)
