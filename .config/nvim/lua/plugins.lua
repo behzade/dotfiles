@@ -12,7 +12,6 @@ return require("packer").startup(function(use)
         "tpope/vim-repeat",
         "wellle/targets.vim",
         "lukas-reineke/indent-blankline.nvim",
-        "p00f/nvim-ts-rainbow",
         { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
         "nvim-treesitter/nvim-treesitter-textobjects",
         "ggandor/lightspeed.nvim",
