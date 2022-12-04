@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+https_prefix="https://"
+ssh_prefix="git@"
+
+fix() {
+    cd "$1" || return
+    remote_url=$(git remote get-url origin)
+    if [[ "$remote_url" == $https_prefix* ]] ; then
+        git remote set-url origin "$(echo "${remote_url/$https_prefix/$ssh_prefix}" | sed 's/\//:/')" 
+        echo "Done"
+    fi
+}
+
+for path in "$@"; do
+    fix "$path" &
+done
+
+wait
