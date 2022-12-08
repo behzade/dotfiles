@@ -80,3 +80,5 @@ set("n", "<leader>k", require("rtl"))
 set("n", "gm", [["m".toupper(nr2char(getchar()))]], { expr = true })
 set("n", "`", [["`".toupper(nr2char(getchar()))]], { expr = true })
 set("n", "'", [["'".toupper(nr2char(getchar()))]], { expr = true })
+
+set("n", "<leader>gq", function() vim.lsp.buf.format({ async = true }) end)

@@ -34,6 +34,7 @@ opt.undofile = true
 g.tex_flavor = "context" -- use ConTeXt for tex files by default
 opt.guifont = "JetBrainsMono Nerd Font:13"
 opt.signcolumn = 'yes'
+opt.formatexpr = "v:lua.vim.lsp.formatexpr()"
 
 -- highlight on yank
 exec(

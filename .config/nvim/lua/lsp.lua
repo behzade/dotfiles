@@ -31,16 +31,21 @@ end
 
 
 local null_ls = require("null-ls")
-
+local home_bin = os.getenv("HOME") .. "/.local/bin/"
 
 null_ls.setup({
     defaults = {
         on_attach = on_attach,
         capabilities = capabilities,
+        fallback_severity = vim.diagnostic.severity.WARN,
     },
     sources = {
         null_ls.builtins.diagnostics.twigcs,
         null_ls.builtins.formatting.black,
         null_ls.builtins.formatting.shfmt,
-    }
+        -- null_ls.builtins.diagnostics.phpstan,
+        null_ls.builtins.diagnostics.phpmd,
+        null_ls.builtins.diagnostics.phpcs,
+        null_ls.builtins.formatting.phpcbf,
+    },
 })

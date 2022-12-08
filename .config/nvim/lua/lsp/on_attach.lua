@@ -6,7 +6,7 @@ local navic = require("nvim-navic")
 
 local opts = {
     fname_width = 90,
-    cwd = ParentDir(vim.fn.getcwd(), 1),
+    cwd = ParentDir(vim.fn.getcwd(), 2),
 }
 
 local lsp_references = function() telescope.lsp_references(opts) end

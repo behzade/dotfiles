@@ -33,7 +33,7 @@ output * bg /usr/share/wallpapers/gloom.jpg fill
 #
 # Example configuration:
 #
-set $locker 'swaylock -f -e -c 1d2021 --inside-color 000000b3 -s fill -i /usr/share/wallpapers/dragon.jpg'
+set $locker 'swaylock -f -e -c 1d2021 --inside-color 000000b3 -s fill -i /usr/share/wallpapers/gloom.jpg'
 exec swayidle -w \
     timeout 600 $locker
 #
@@ -276,7 +276,7 @@ exec systembus-notify
 exec keepassxc
 exec copyq
 
-exec slack
+exec slack2
 exec telegram-desktop
 
 exec firefox
