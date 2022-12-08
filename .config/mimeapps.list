@@ -1,8 +1,8 @@
 [Added Associations]
-x-scheme-handler/tg=userapp-Telegram Desktop-ZD81K1.desktop;
+x-scheme-handler/tg=userapp-Telegram Desktop-ZD81K1.desktop;userapp-Telegram Desktop-BZ5KW1.desktop;
 
 [Default Applications]
 application/pdf=org.pwmt.zathura.desktop;
 text/*=nvim.desktop;
 x-scheme-handler/terminal=kitty.desktop;
-x-scheme-handler/tg=userapp-Telegram Desktop-ZD81K1.desktop;
+x-scheme-handler/tg=userapp-Telegram Desktop-BZ5KW1.desktop
