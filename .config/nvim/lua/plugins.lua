@@ -25,6 +25,7 @@ return require("packer").startup(function(use)
         "mfussenegger/nvim-dap",
         "mbbill/undotree",
         "folke/neodev.nvim",
+        "direnv/direnv.vim",
     })
 
     use {
