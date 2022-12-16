@@ -1,10 +1,12 @@
 require("lsp/style")
 require("mason").setup()
 require("mason-lspconfig").setup()
+require("neodev").setup({})
 local lspconfig = require("lspconfig")
 
 local on_attach = require('lsp/on_attach')
 local capabilities = require('lsp/capabilities')
+
 
 local function server_conf(name)
     local has_opts, opts = pcall(require, "lsp/servers/" .. name)

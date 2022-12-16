@@ -24,6 +24,7 @@ return require("packer").startup(function(use)
         "vim-scripts/ReplaceWithRegister",
         "mfussenegger/nvim-dap",
         "mbbill/undotree",
+        "folke/neodev.nvim",
     })
 
     use {
@@ -103,6 +104,7 @@ return require("packer").startup(function(use)
             require("completion")
         end,
     })
+
     use({
         "ahmedkhalf/project.nvim",
         config = function()
@@ -149,7 +151,7 @@ return require("packer").startup(function(use)
 
     use {
         "j-hui/fidget.nvim",
-        config = function ()
+        config = function()
             require('fidget').setup()
         end
     }
