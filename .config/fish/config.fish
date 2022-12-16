@@ -17,6 +17,7 @@ export GPG_TTY=(tty)
 
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/go/bin"
+export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.config/emacs/bin"
 export PATH="$PATH:/opt/context-minimals/texmf-linux-64/bin"
 export TEXMF="/usr/share/context"
