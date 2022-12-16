@@ -56,6 +56,7 @@ alias ncmpcpp='ncmpcpp --quiet'
 
 alias run='make run'
 
+direnv hook fish | source
 starship init fish | source
 
 

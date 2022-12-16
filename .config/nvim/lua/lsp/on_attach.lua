@@ -1,6 +1,6 @@
 local lsp = vim.lsp
 local set = vim.keymap.set
-local Diagnostics = require("lsp/diagnostics")
+local diagnostics = require("lsp/diagnostics")
 local telescope = require("telescope.builtin")
 local navic = require("nvim-navic")
 
@@ -21,8 +21,8 @@ local on_attach = function(client, bufnr)
     set("n", "K", lsp.buf.hover)
     set("n", "gd", function() lsp.buf.definition({ reuse_win = true, on_list = on_list }) end)
     set("n", "gD", lsp_references)
-    set("n", "[d", Diagnostics.prev)
-    set("n", "]d", Diagnostics.next)
+    set("n", "[d", diagnostics.prev)
+    set("n", "]d", diagnostics.next)
     set("n", "<leader>lr", lsp.buf.rename)
     set("n", "<leader>la", lsp.buf.code_action)
     set("n", "<leader>li", lsp_implementations)
