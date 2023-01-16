@@ -1,5 +1,5 @@
 return {
     root_dir = function()
-        return os.getenv("VENDOR_DIR")
+        return os.getenv("PHP_VENDOR_DIR")
     end,
 }

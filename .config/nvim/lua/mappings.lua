@@ -82,3 +82,8 @@ set("n", "`", [["`".toupper(nr2char(getchar()))]], { expr = true })
 set("n", "'", [["'".toupper(nr2char(getchar()))]], { expr = true })
 
 set("n", "<leader>gq", function() vim.lsp.buf.format({ async = true }) end)
+
+set("n", "<c-f>", "<c-f>zz")
+set("n", "<c-b>", "<c-b>zz")
+set("n", "<c-d>", "<c-d>zz")
+set("n", "<c-u>", "<c-u>zz")

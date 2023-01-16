@@ -21,7 +21,7 @@ bindsym $mod+p exec copyq toggle
 ### Output configuration
 #
 # Wallpaper
-output * bg /usr/share/wallpapers/gloom.jpg fill
+output * bg /usr/share/wallpapers/rocket.png fill
 #
 # Example configuration:
 
@@ -33,7 +33,7 @@ output * bg /usr/share/wallpapers/gloom.jpg fill
 #
 # Example configuration:
 #
-set $locker 'swaylock -f -e -c 1d2021 --inside-color 000000b3 -s fill -i /usr/share/wallpapers/gloom.jpg'
+set $locker 'swaylock -f -e -c 1d2021 --inside-color 000000b3 -s fill -i /usr/share/wallpapers/rocket.png'
 exec swayidle -w \
     timeout 600 $locker
 #
@@ -217,7 +217,7 @@ bindsym --locked XF86AudioPrev exec "playerctl2 previous"
 # Remove clutter
 default_border none
 default_floating_border none
-font "JetBrains Mono NerdFont, FontAwesome, 0"
+font "JetBrains Mono NerdFont, FontAwesome, 14"
 hide_edge_borders vertical
 # Floating windows
 for_window [app_id="com.github.hluk.copyq"] floating enable
@@ -262,9 +262,9 @@ bar {
 set $gnome-schema org.gnome.desktop.interface
 
 exec_always {
-    gsettings set $gnome-schema gtk-theme Adwaita-dark
+    gsettings set $gnome-schema gtk-theme Adwaita
     gsettings set $gnome-schema icon-theme candy-icons
-    gsettings set $gnome-schema cursor-theme Adwaita-dark
+    gsettings set $gnome-schema cursor-theme Adwaita
     gsettings set $gnome-schema cursor-size 24
 }
 

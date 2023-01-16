@@ -22,12 +22,18 @@ return require("packer").startup(function(use)
         "jose-elias-alvarez/null-ls.nvim",
         { "nvim-telescope/telescope-fzf-native.nvim", run = 'make' },
         "vim-scripts/ReplaceWithRegister",
-        "mfussenegger/nvim-dap",
         "mbbill/undotree",
-        "folke/neodev.nvim",
         "direnv/direnv.vim",
+        "projekt0n/github-nvim-theme",
     })
 
+    use {
+        "mcchrish/zenbones.nvim",
+        -- Optionally install Lush. Allows for more configuration or extending the colorscheme
+        -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
+        -- In Vim, compat mode is turned on as Lush only works in Neovim.
+        requires = "rktjmp/lush.nvim"
+    }
     use {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
@@ -146,7 +152,7 @@ return require("packer").startup(function(use)
     use {
         "Shatur/neovim-ayu",
         config = function()
-            vim.cmd([[colorscheme ayu-mirage]])
+            -- vim.cmd([[colorscheme ayu-mirage]])
         end
     }
 

@@ -1,7 +1,6 @@
 require("lsp/style")
 require("mason").setup()
 require("mason-lspconfig").setup()
-require("neodev").setup({})
 local lspconfig = require("lspconfig")
 
 local on_attach = require('lsp/on_attach')
@@ -37,10 +36,11 @@ local null_ls = require("null-ls")
 
 local home_bin = os.getenv("HOME") .. "/.local/bin/"
 
-if os.getenv("VENDOR_DIR") then
+if os.getenv("PHP_VENDOR_DIR") then
     null_ls.register(
         null_ls.builtins.diagnostics.phpstan.with({
-            command = home_bin .. "phpstan"
+            command = home_bin .. "phpstan",
+            extra_args = { "-l", "2"},
         })
     )
     null_ls.register(null_ls.builtins.diagnostics.phpmd)
