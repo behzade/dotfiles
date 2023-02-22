@@ -30,6 +30,15 @@ for _, server in pairs(require("mason-lspconfig").get_installed_servers()) do
     lspconfig[server].setup(server_conf(server))
 end
 
+lspconfig["rust_analyzer"].setup(
+    {
+        cmd = {
+            "rustup", "run", "stable", "rust-analyzer"
+        },
+        on_attach = on_attach,
+        capabilities = capabilities,
+    }
+)
 
 local null_ls = require("null-ls")
 
@@ -40,10 +49,10 @@ if os.getenv("PHP_VENDOR_DIR") then
     null_ls.register(
         null_ls.builtins.diagnostics.phpstan.with({
             command = home_bin .. "phpstan",
-            extra_args = { "-l", "2"},
+            extra_args = { "-l", "2" },
         })
     )
-    null_ls.register(null_ls.builtins.diagnostics.phpmd)
+    -- null_ls.register(null_ls.builtins.diagnostics.phpmd)
     null_ls.register(null_ls.builtins.diagnostics.phpcs)
     null_ls.register(null_ls.builtins.formatting.phpcbf)
 end

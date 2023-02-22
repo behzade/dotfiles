@@ -74,8 +74,6 @@ set("n", "<leader>gu", function() gs.reset_hunk() end)
 set("n", "<leader>b", "<cmd>term lf %<cr>")
 
 
-set("n", "<leader>k", require("rtl"))
-
 -- use lower case marks as global
 set("n", "gm", [["m".toupper(nr2char(getchar()))]], { expr = true })
 set("n", "`", [["`".toupper(nr2char(getchar()))]], { expr = true })
@@ -87,3 +85,7 @@ set("n", "<c-f>", "<c-f>zz")
 set("n", "<c-b>", "<c-b>zz")
 set("n", "<c-d>", "<c-d>zz")
 set("n", "<c-u>", "<c-u>zz")
+
+set("n", "<leader>kk", "<plug>RestNvim")
+set("n", "<leader>kh", "<plug>RestNvimPreview")
+set("n", "<leader>kr", "<plug>RestNvim")

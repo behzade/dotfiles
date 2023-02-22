@@ -276,7 +276,7 @@ exec systembus-notify
 exec keepassxc
 exec copyq
 
-exec slack2
+exec slack
 exec telegram-desktop
 
 exec firefox

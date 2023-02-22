@@ -58,6 +58,7 @@ alias run='make run'
 
 direnv hook fish | source
 starship init fish | source
+zoxide init fish | source
 
 
 if test (tty) = "/dev/tty1"

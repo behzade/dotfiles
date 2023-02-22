@@ -25,6 +25,7 @@ return require("packer").startup(function(use)
         "mbbill/undotree",
         "direnv/direnv.vim",
         "projekt0n/github-nvim-theme",
+        "nanotee/zoxide.vim",
     })
 
     use {
@@ -161,5 +162,13 @@ return require("packer").startup(function(use)
         config = function()
             require('fidget').setup()
         end
+    }
+
+    use {
+        "rest-nvim/rest.nvim",
+        config = function()
+            require('rest-nvim').setup()
+        end
+
     }
 end)
