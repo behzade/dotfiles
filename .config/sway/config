@@ -21,7 +21,7 @@ bindsym $mod+p exec copyq toggle
 ### Output configuration
 #
 # Wallpaper
-output * bg /usr/share/wallpapers/rocket.png fill
+output * bg /usr/share/wallpapers/gloom.jpg fill
 #
 # Example configuration:
 
