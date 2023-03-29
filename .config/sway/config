@@ -258,15 +258,16 @@ bar {
 
 
 
-#gtk3 themes
-set $gnome-schema org.gnome.desktop.interface
-
-exec_always {
-    gsettings set $gnome-schema gtk-theme Adwaita
-    gsettings set $gnome-schema icon-theme candy-icons
-    gsettings set $gnome-schema cursor-theme Adwaita
-    gsettings set $gnome-schema cursor-size 24
-}
+exec_always darkman set light
+# #gtk3 themes
+# set $gnome-schema org.gnome.desktop.interface
+#
+# exec_always {
+#     gsettings set $gnome-schema gtk-theme Adwaita
+#     gsettings set $gnome-schema icon-theme candy-icons
+#     gsettings set $gnome-schema cursor-theme Adwaita
+#     gsettings set $gnome-schema cursor-size 24
+# }
 
 # application startup
 exec kanshi
@@ -276,7 +277,6 @@ exec systembus-notify
 exec keepassxc
 exec copyq
 
-exec slack
 exec telegram-desktop
 
 exec firefox
