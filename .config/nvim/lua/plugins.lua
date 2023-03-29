@@ -12,7 +12,7 @@ return require("packer").startup(function(use)
         "tpope/vim-repeat",
         "wellle/targets.vim",
         "lukas-reineke/indent-blankline.nvim",
-        { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
+        { "nvim-treesitter/nvim-treesitter",          run = ":TSUpdate" },
         "nvim-treesitter/nvim-treesitter-textobjects",
         "ggandor/lightspeed.nvim",
         "stevearc/dressing.nvim",
@@ -26,6 +26,8 @@ return require("packer").startup(function(use)
         "direnv/direnv.vim",
         "projekt0n/github-nvim-theme",
         "nanotee/zoxide.vim",
+        "windwp/nvim-spectre",
+        "nvim-tree/nvim-web-devicons"
     })
 
     use {
@@ -170,5 +172,25 @@ return require("packer").startup(function(use)
             require('rest-nvim').setup()
         end
 
+    }
+
+    use {
+        "folke/trouble.nvim",
+        requires = "nvim-tree/nvim-web-devicons",
+        config = function()
+            require("trouble").setup {}
+        end
+    }
+    use {
+        "folke/which-key.nvim",
+        config = function()
+            vim.o.timeout = true
+            vim.o.timeoutlen = 300
+            require("which-key").setup {
+                -- your configuration comes here
+                -- or leave it empty to use the default settings
+                -- refer to the configuration section below
+            }
+        end
     }
 end)
