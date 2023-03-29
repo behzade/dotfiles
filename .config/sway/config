@@ -13,6 +13,7 @@ set $term kitty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 set $menu 'rofi -modi combi -combi-modi window,run,drun,ssh -show combi -opacity 70 -show-icons'
+set $theme 'dark'
 
 ### Clipboard manager
 #
@@ -245,20 +246,7 @@ input "type:keyboard" {
     xkb_options grp:alt_shift_toggle
 }
 
-# Status Bar:
-# Read `man 5 sway-bar` for more information about this section.
-bar {
-    position top
-    swaybar_command waybar
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
-}
-
-
-
-exec_always darkman set light
+exec_always darkman set $theme
 # #gtk3 themes
 # set $gnome-schema org.gnome.desktop.interface
 #
