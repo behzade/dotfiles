@@ -101,7 +101,7 @@ vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
 
-vim.cmd([[colorscheme zenbones]])
+vim.cmd([[colorscheme gruvbox]])
 local mode = io.popen("darkman get"):read("*l")
 if mode then
     opt.background = mode

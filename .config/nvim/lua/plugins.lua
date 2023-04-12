@@ -27,16 +27,10 @@ return require("packer").startup(function(use)
         "projekt0n/github-nvim-theme",
         "nanotee/zoxide.vim",
         "windwp/nvim-spectre",
-        "nvim-tree/nvim-web-devicons"
+        "nvim-tree/nvim-web-devicons",
+        "ellisonleao/gruvbox.nvim"
     })
 
-    use {
-        "mcchrish/zenbones.nvim",
-        -- Optionally install Lush. Allows for more configuration or extending the colorscheme
-        -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
-        -- In Vim, compat mode is turned on as Lush only works in Neovim.
-        requires = "rktjmp/lush.nvim"
-    }
     use {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
@@ -111,7 +105,7 @@ return require("packer").startup(function(use)
             "rafamadriz/friendly-snippets",
         },
         config = function()
-            require("completion")
+            require("completion-conf")
         end,
     })
 
@@ -153,13 +147,6 @@ return require("packer").startup(function(use)
     }
 
     use {
-        "Shatur/neovim-ayu",
-        config = function()
-            -- vim.cmd([[colorscheme ayu-mirage]])
-        end
-    }
-
-    use {
         "j-hui/fidget.nvim",
         config = function()
             require('fidget').setup()
@@ -192,5 +179,17 @@ return require("packer").startup(function(use)
                 -- refer to the configuration section below
             }
         end
+    }
+
+    use {
+        "tpope/vim-dadbod",
+        requires = {
+            "kristijanhusak/vim-dadbod-ui",
+            "kristijanhusak/vim-dadbod-completion",
+        },
+        config = function()
+            require("dadbod-conf").setup()
+        end,
+        -- cmd = { "DBUIToggle", "DBUI", "DBUIAddConnection", "DBUIFindBuffer", "DBUIRenameBuffer", "DBUILastQueryInfo" },
     }
 end)
