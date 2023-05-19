@@ -12,9 +12,9 @@ function hash_filename {
     TMP_FILE="$HOME/.cache/lf/$(echo ${1%.*} | sed -e 's|/|\!|g').$2"
 }
 
-function draw_clear {
-    kitty +kitten icat --transfer-mode file --clear
-}
+# function draw_clear {
+#     kitty +kitten icat --transfer-mode file --clear
+# }
 
 function draw_image {
     a=$(($2-1))
@@ -43,7 +43,6 @@ function make_epub {
 }
 
 check_cache
-draw_clear
 case $(file -b --mime-type "$1") in
     text/*|application/json|application/xml|application/x-extension-html)
     bat --color=always --style=plain --pager=never "$1"

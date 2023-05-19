@@ -45,9 +45,9 @@ local null_ls = require("null-ls")
 
 local home_bin = os.getenv("HOME") .. "/.local/bin/"
 
-warn_diagnostics_postprocess = function(diagnostic)
-    diagnostic.severity = diagnostic.message:find("ERROR") and vim.diagnostic.severity["WARN"]
-end
+-- warn_diagnostics_postprocess = function(diagnostic)
+--     diagnostic.severity = diagnostic.message:find("ERROR") and vim.diagnostic.severity["WARN"]
+-- end
 
 if os.getenv("PHP_VENDOR_DIR") then
     null_ls.register(
