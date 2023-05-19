@@ -1,3 +1,5 @@
 #!/bin/bash
 
-kitty +kitten themes --reload-in=all Gruvbox Light
+rm ~/.config/kitty/current-theme.conf
+ln -s ~/.config/kitty/gruvbox-light.conf ~/.config/kitty/current-theme.conf
+pkill -SIGUSR1 kitty
