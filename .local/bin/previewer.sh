@@ -12,13 +12,9 @@ function hash_filename {
     TMP_FILE="$HOME/.cache/lf/$(echo ${1%.*} | sed -e 's|/|\!|g').$2"
 }
 
-# function draw_clear {
-#     kitty +kitten icat --transfer-mode file --clear
-# }
-
 function draw_image {
     a=$(($2-1))
-    kitty +kitten icat --transfer-mode file --place "${a}x$3@$4x$5" --scale-up "$1" 
+    kitty +kitten icat --transfer-mode file --stdin no --place "${a}x$3@$4x$5" --scale-up "$1" < /dev/null > /dev/tty
 }
 
 function make_video {
