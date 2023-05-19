@@ -180,16 +180,4 @@ return require("packer").startup(function(use)
             }
         end
     }
-
-    use {
-        "tpope/vim-dadbod",
-        requires = {
-            "kristijanhusak/vim-dadbod-ui",
-            "kristijanhusak/vim-dadbod-completion",
-        },
-        config = function()
-            require("dadbod-conf").setup()
-        end,
-        -- cmd = { "DBUIToggle", "DBUI", "DBUIAddConnection", "DBUIFindBuffer", "DBUIRenameBuffer", "DBUILastQueryInfo" },
-    }
 end)
