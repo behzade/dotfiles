@@ -101,8 +101,11 @@ vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
 
-vim.cmd([[colorscheme gruvbox]])
 local mode = io.popen("darkman get"):read("*l")
-if mode then
+if mode == "dark" then
     opt.background = mode
+    vim.cmd([[colorscheme gruvbox]])
+else
+    opt.background = "light"
+    vim.cmd([[colorscheme github_light]])
 end
