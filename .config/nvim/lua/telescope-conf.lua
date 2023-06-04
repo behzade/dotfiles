@@ -6,15 +6,12 @@ return function()
                     ["<A-t>"] = require('telescope.actions.layout').toggle_preview,
                 },
             },
-            layout_strategy = "center",
+            layout_strategy = "bottom_pane",
             sorting_strategy = "ascending",
             layout_config = {
-                prompt_position = "top",
-                center = {
-                    anchor = "S",
-                    width = 0.9,
-                }
+                height = 0.6
             },
+            border = true
         },
     })
     require("telescope").load_extension("fzf")

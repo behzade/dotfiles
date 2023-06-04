@@ -60,8 +60,9 @@ set("n", "qq", "<cmd>cclose<cr>")
 set("n", "<leader>ff", telescope_builtins.find_files)
 set("n", "<leader>fs", telescope_builtins.live_grep)
 set("n", "<leader>fg", telescope_builtins.grep_string)
+set("n", "<leader>fp", telescope_extensions.projects.projects)
+set("n", "<leader>fr", "<cmd>lua require('telescope.builtin').resume(require('telescope.themes').get_ivy({}))<cr>")
 
-set("n", "<leader>p", telescope_extensions.projects.projects)
 -- Git
 set("n", "<leader>u", '<cmd>UndotreeToggle<cr>')
 
@@ -89,3 +90,6 @@ set("n", "<c-u>", "<c-u>zz")
 set("n", "<leader>kk", "<plug>RestNvim")
 set("n", "<leader>kh", "<plug>RestNvimPreview")
 set("n", "<leader>kr", "<plug>RestNvim")
+
+set("i", "<a-bs>", "<esc>cvb", { })
+
