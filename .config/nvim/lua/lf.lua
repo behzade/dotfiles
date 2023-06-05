@@ -13,7 +13,6 @@ local function hijack_directory()
     if vim.fn.isdirectory(path) == 0 then
         return
     end
-    print(path)
     local bufnr = vim.fn.bufnr()
     vim.cmd(string.format('keepjumps keepalt term lf  %s', vim.fn.fnameescape(path)))
     vim.cmd(string.format('silent! bwipeout %d', bufnr))
