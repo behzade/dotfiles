@@ -5,8 +5,8 @@
 -----------------------------------------------------------
 --local map = vim.api.nvim_set_keymap  -- set global keymap
 local exec = vim.api.nvim_exec -- execute Vimscript
-local g = vim.g -- global variables
-local opt = vim.opt -- global/buffer/windows-scoped options
+local g = vim.g                -- global variables
+local opt = vim.opt            -- global/buffer/windows-scoped options
 local autocmd = vim.api.nvim_create_autocmd
 
 -----------------------------------------------------------
@@ -15,23 +15,22 @@ local autocmd = vim.api.nvim_create_autocmd
 opt.mouse = "a"
 opt.shell = "fish"
 opt.clipboard = "unnamedplus"
-opt.swapfile = false -- disable swap file
-opt.wb = false -- disable writeback
-opt.backup = false -- disable backup
-opt.wrap = true -- soft wrap
-opt.showmode = false -- don't show insert mode etc in the status line
-opt.number = true -- show line number
-opt.showmatch = true -- highlight matching parenthesis
+opt.swapfile = false  -- disable swap file
+opt.wb = false        -- disable writeback
+opt.backup = false    -- disable backup
+opt.wrap = true       -- soft wrap
+opt.showmode = false  -- don't show insert mode etc in the status line
+opt.number = true     -- show line number
+opt.showmatch = true  -- highlight matching parenthesis
 opt.splitright = true -- vertical split to the right
 opt.splitbelow = true -- orizontal split to the bottom
 opt.ignorecase = true -- ignore case letters when search
-opt.smartcase = true -- ignore lowercase for the whole pattern
-opt.linebreak = true -- wrap on word boundary
+opt.smartcase = true  -- ignore lowercase for the whole pattern
+opt.linebreak = true  -- wrap on word boundary
 opt.lazyredraw = true -- faster scrolling
-opt.synmaxcol = 240 -- max column for syntax highlight
+opt.synmaxcol = 240   -- max column for syntax highlight
 opt.relativenumber = true
 opt.undofile = true
-g.tex_flavor = "context" -- use ConTeXt for tex files by default
 opt.guifont = "JetBrainsMono Nerd Font:13"
 opt.signcolumn = 'yes'
 opt.formatexpr = "v:lua.vim.lsp.formatexpr()"
@@ -55,22 +54,17 @@ autocmd({ "TermOpen" }, {
     command = "startinsert",
 })
 
-local delete_term_buf = function (event)
+local delete_term_buf = function(event)
     if (vim.fn.len(vim.fn.win_findbuf(event['buf'])) > 0) then
         vim.cmd("bdelete " .. event['buf'])
         vim.cmd("stopinsert")
     end
 end
 
-autocmd({ "TermClose"}, {
-    pattern = {"*"},
+autocmd({ "TermClose" }, {
+    pattern = { "*" },
     callback = delete_term_buf
 })
-
--- autocmd({ "BufWritePost" }, {
---     pattern = { "*" },
---     callback = function() vim.api.nvim__screenshot("/tmp/nvim-screenshot") end
--- })
 
 -----------------------------------------------------------
 -- Colorscheme
@@ -80,9 +74,9 @@ opt.termguicolors = true -- enable 24-bit RGB colors
 -----------------------------------------------------------
 -- Tabs, indent
 -----------------------------------------------------------
-opt.expandtab = true -- use spaces instead of tabs
-opt.shiftwidth = 4 -- shift 4 spaces when tab
-opt.tabstop = 4 -- 1 tab == 4 spaces
+opt.expandtab = true   -- use spaces instead of tabs
+opt.shiftwidth = 4     -- shift 4 spaces when tab
+opt.tabstop = 4        -- 1 tab == 4 spaces
 opt.smartindent = true -- autoindent new lines
 
 -----------------------------------------------------------

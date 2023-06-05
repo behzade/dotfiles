@@ -53,7 +53,7 @@ set("n", "[h", function() gs.prev_hunk() end)
 set("n", "]h", function() gs.next_hunk() end)
 -- Other
 set("n", "<leader>n", "<cmd>noh<cr>")
-set("n", "<leader>t", "<cmd>term<cr>")
+set("n", "<leader>t", "<cmd>keepjumps keepalt term<cr>")
 set("n", "<leader>s", "<cmd>update<cr>")
 set("n", "qq", "<cmd>cclose<cr>")
 
@@ -67,12 +67,12 @@ set("n", "<leader>fr", "<cmd>lua require('telescope.builtin').resume(require('te
 set("n", "<leader>u", '<cmd>UndotreeToggle<cr>')
 
 set("n", "<leader>gd", function() gs.diffthis() end)
-set("n", "<leader>gg", "<cmd>term lazygit<cr>")
-set("n", "<leader>gb", "<cmd>term lazygit -f %<cr>")
+set("n", "<leader>gg", "<cmd>keepjumps keepalt term lazygit<cr>")
+set("n", "<leader>gb", "<cmd>keepjumps keepalt term lazygit -f %<cr>")
 set("n", "<leader>gs", telescope_builtins.git_status)
 set("n", "<leader>gu", function() gs.reset_hunk() end)
 
-set("n", "<leader>b", "<cmd>term lf %<cr>")
+set("n", "<leader>b", "<cmd>keepjumps keepalt term lf %<cr>")
 
 
 -- use lower case marks as global

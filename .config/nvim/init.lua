@@ -1,4 +1,5 @@
 require("settings")
 require("plugins")
+require("lf")
 require("treesitter")
 require("mappings")
