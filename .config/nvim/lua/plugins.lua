@@ -13,7 +13,6 @@ vim.opt.rtp:prepend(lazypath)
 
 
 return require("lazy").setup({
-    "wbthomason/packer.nvim",
     "nvim-lua/plenary.nvim",
     "tpope/vim-repeat",
     "wellle/targets.vim",
@@ -33,7 +32,6 @@ return require("lazy").setup({
     "nanotee/zoxide.vim",
     "windwp/nvim-spectre",
     "nvim-tree/nvim-web-devicons",
-    "ellisonleao/gruvbox.nvim",
 
     {
         "williamboman/mason.nvim",
@@ -149,4 +147,9 @@ return require("lazy").setup({
             require('fidget').setup()
         end
     },
+    {
+        "iamcco/markdown-preview.nvim",
+        build = function() vim.fn["mkdp#util#install"]() end,
+    }
+
 })
