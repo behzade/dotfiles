@@ -42,7 +42,7 @@ alias ssh="kitty +kitten ssh"
 alias off="swaymsg output HDMI-1 dpms off"
 alias on="swaymsg output HDMI-1 dpms on"
 # general use
-alias ls='exa --icons'                                                 # ls
+alias ls='exa --icons --group-directories-first'                                                 # ls
 alias l='exa -lbF --git'                                               # list, size, type, git
 alias ll='exa -lbGF --git'                                             # long list
 alias llm='exa -lbGd --git --sort=modified'                            # long list, modified date sort
