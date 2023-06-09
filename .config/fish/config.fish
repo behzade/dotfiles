@@ -23,7 +23,7 @@ export PATH="$PATH:/opt/context-minimals/texmf-linux-64/bin"
 export TEXMF="/usr/share/context"
 export JAVA_OPTS="-XX:+IgnoreUnrecognizedVMOptions"
 export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
-export LS_COLORS="(vivid generate ayu)"
+export LS_COLORS=(vivid generate ayu)
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 export FZF_DEFAULT_COMMAND='fd --type f'
 
