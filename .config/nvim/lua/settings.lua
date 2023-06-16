@@ -56,13 +56,18 @@ autocmd({ "TermOpen" }, {
 
 local delete_term_buf = function(event)
     if (vim.fn.len(vim.fn.win_findbuf(event['buf'])) > 0) then
-        vim.cmd("bdelete " .. event['buf'])
+        vim.cmd("silent bdelete! " .. event['buf'])
         vim.cmd("stopinsert")
     end
 end
 
 autocmd({ "TermClose" }, {
     pattern = { "*" },
+    callback = delete_term_buf
+})
+
+autocmd({ "User" }, {
+    pattern = { "UnceptionEditRequestReceived" },
     callback = delete_term_buf
 })
 
