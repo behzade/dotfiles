@@ -138,11 +138,12 @@ return require("lazy").setup({
     {
         "samjwill/nvim-unception",
         config = function()
-            vim.g.unception_delete_replaced_buffer = true
+            -- vim.g.unception_delete_replaced_buffer = true
         end
     },
     {
         "j-hui/fidget.nvim",
+        branch = "legacy",
         config = function()
             require('fidget').setup()
         end
