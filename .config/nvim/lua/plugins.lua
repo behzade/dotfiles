@@ -32,6 +32,7 @@ return require("lazy").setup({
     "nanotee/zoxide.vim",
     "windwp/nvim-spectre",
     "nvim-tree/nvim-web-devicons",
+    "docteurklein/php-getter-setter.vim",
 
     {
         "williamboman/mason.nvim",
@@ -39,6 +40,7 @@ return require("lazy").setup({
             "williamboman/mason-lspconfig.nvim",
             "neovim/nvim-lspconfig",
         },
+        build = ":MasonUpdate",
         config = function()
             require('lsp')
         end

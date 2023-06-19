@@ -1,4 +1,14 @@
 require("nvim-treesitter.configs").setup({
+    ensure_installed = {
+        "json",
+        "sql",
+        "go",
+        "gomod",
+        "php",
+        "phpdoc",
+        "yaml",
+        "toml"
+    },
     highlight = {
         enable = true,
     },
