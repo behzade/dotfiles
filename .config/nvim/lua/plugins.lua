@@ -160,7 +160,12 @@ return require("lazy").setup({
             "ray-x/guihua.lua",
         },
         config = function()
-            require("go").setup()
+            require("go").setup({
+                lsp_cfg = {
+                    capabilities = require("lsp/capabilities"),
+                    on_attach = require("lsp/on_attach")
+                }
+            })
         end,
         event = { "CmdlineEnter" },
         ft = { "go", 'gomod' },

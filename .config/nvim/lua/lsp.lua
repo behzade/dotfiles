@@ -27,7 +27,11 @@ local function server_conf(name)
 end
 
 for _, server in pairs(require("mason-lspconfig").get_installed_servers()) do
+    if server == "gopls" then
+        goto continue
+    end
     lspconfig[server].setup(server_conf(server))
+    ::continue::
 end
 
 lspconfig["rust_analyzer"].setup(
@@ -63,6 +67,8 @@ end
 
 null_ls.register(null_ls.builtins.diagnostics.twigcs)
 null_ls.register(null_ls.builtins.formatting.shfmt)
+null_ls.register(null_ls.builtins.formatting.black)
+null_ls.register(null_ls.builtins.diagnostics.curlylint)
 
 null_ls.setup({
     defaults = {
