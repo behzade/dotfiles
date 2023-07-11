@@ -165,7 +165,10 @@ return require("lazy").setup({
                     capabilities = require("lsp/capabilities"),
                     on_attach = require("lsp/on_attach")
                 },
-                lsp_gofumpt = true
+                lsp_gofumpt = true,
+                lsp_inlay_hints = {
+                    enable = false,
+                }
             })
         end,
         event = { "CmdlineEnter" },
