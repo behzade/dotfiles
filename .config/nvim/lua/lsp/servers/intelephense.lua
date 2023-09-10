@@ -1,8 +1,4 @@
-return {
-    root_dir = function()
-        return os.getenv("PHP_VENDOR_DIR")
-    end,
-
+local config = {
     settings = {
         intelephense = {
             environment = {
@@ -93,3 +89,13 @@ return {
         }
     }
 }
+
+local vendor_dir = os.getenv("PHP_VENDOR_DIR")
+
+if vendor_dir ~= nil and vendor_dir ~= "" then
+    config["root_dir"] = function()
+        return vendor_dir
+    end
+end
+
+return config
