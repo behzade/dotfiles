@@ -222,10 +222,12 @@ font "JetBrains Mono NerdFont, FontAwesome, 14"
 hide_edge_borders vertical
 # Floating windows
 for_window [app_id="com.github.hluk.copyq"] floating enable
+for_window [title="^Skype$"] floating enable
 
 # Specific Workspace for app
 assign [class="firefox"] workspace browser
 assign [app_id="firefox"] workspace browser
+assign [class="Google-chrome"] workspace browser
 assign [app_id="Slack"] workspace 10
 assign [class="Slack"] workspace 10
 assign [title="^Skype$"] workspace 9
