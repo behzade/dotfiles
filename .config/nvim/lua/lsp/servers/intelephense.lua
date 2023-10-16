@@ -1,11 +1,6 @@
 local config = {
     settings = {
         intelephense = {
-            environment = {
-                includePaths = {
-                    os.getenv("PHP_VENDOR_DIR") .. "/hypernova/**/tests"
-                }
-            },
             stubs = {
                 "apache",
                 "bcmath",

@@ -181,5 +181,10 @@ return require("lazy").setup({
             "rcarriga/nvim-dap-ui",
             "theHamsta/nvim-dap-virtual-text"
         }
-    }
+    },
+    -- {
+    --     'xeluxee/competitest.nvim',
+    --     dependencies = 'MunifTanjim/nui.nvim',
+    --     config = function() require('competitest').setup() end,
+    -- }
 })

@@ -223,6 +223,7 @@ hide_edge_borders vertical
 # Floating windows
 for_window [app_id="com.github.hluk.copyq"] floating enable
 for_window [title="^Skype$"] floating enable
+for_window [class="vlc"] inhibit_idle fullscreen
 
 # Specific Workspace for app
 assign [class="firefox"] workspace browser

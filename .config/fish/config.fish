@@ -42,7 +42,7 @@ alias ssh="kitty +kitten ssh"
 alias off="swaymsg output HDMI-1 dpms off"
 alias on="swaymsg output HDMI-1 dpms on"
 # general use
-alias ls='exa --icons --group-directories-first'                                                 # ls
+alias ls='exa --icons --group-directories-first --hyperlink'                                                 # ls
 alias l='exa -lbF --git'                                               # list, size, type, git
 alias ll='exa -lbGF --git'                                             # long list
 alias llm='exa -lbGd --git --sort=modified'                            # long list, modified date sort
@@ -67,3 +67,6 @@ zoxide init fish | source
 if test (tty) = "/dev/tty1"
   sway
 end
+
+# opam configuration
+source /home/behzad/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
