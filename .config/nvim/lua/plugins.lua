@@ -33,7 +33,7 @@ return require("lazy").setup({
     "windwp/nvim-spectre",
     "nvim-tree/nvim-web-devicons",
     "docteurklein/php-getter-setter.vim",
-
+    "ribru17/bamboo.nvim",
     {
         "williamboman/mason.nvim",
         dependencies = {

@@ -3,9 +3,6 @@
 -----------------------------------------------------------
 -- Neovim API aliases
 -----------------------------------------------------------
---local map = vim.api.nvim_set_keymap  -- set global keymap
-local exec = vim.api.nvim_exec -- execute Vimscript
-local g = vim.g                -- global variables
 local opt = vim.opt            -- global/buffer/windows-scoped options
 local autocmd = vim.api.nvim_create_autocmd
 
@@ -36,16 +33,7 @@ opt.signcolumn = 'yes'
 opt.formatexpr = "v:lua.vim.lsp.formatexpr()"
 
 -- highlight on yank
-exec(
-    [[
-      augroup YankHighlight
-        autocmd!
-        autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=700}
-      augroup end
-    ]],
-    false
-)
-
+autocmd('TextYankPost', { callback = function() vim.highlight.on_yank({ timeout = 200 }) end, })
 -----------------------------------------------------------
 -- Terminal
 -----------------------------------------------------------
