@@ -23,7 +23,6 @@ return require("lazy").setup({
     "stevearc/dressing.nvim",
     "vim-scripts/restore_view.vim",
     "windwp/nvim-autopairs",
-    "nelsyeung/twig.vim",
     "jose-elias-alvarez/null-ls.nvim",
     "vim-scripts/ReplaceWithRegister",
     "mbbill/undotree",

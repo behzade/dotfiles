@@ -13,6 +13,11 @@ local function hijack_directory()
     if vim.fn.isdirectory(path) == 0 then
         return
     end
+
+    if type(path) == "table" then
+        path = path[0]
+    end
+
     local bufnr = vim.fn.bufnr()
     vim.cmd(string.format('keepjumps keepalt term lf  %s', vim.fn.fnameescape(path)))
     vim.cmd(string.format('silent! bwipeout %d', bufnr))
