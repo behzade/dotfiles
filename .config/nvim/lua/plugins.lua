@@ -23,13 +23,9 @@ return require("lazy").setup({
     "ggandor/lightspeed.nvim",
     "stevearc/dressing.nvim",
     "vim-scripts/restore_view.vim",
-    "jose-elias-alvarez/null-ls.nvim",
     "vim-scripts/ReplaceWithRegister",
-    "mbbill/undotree",
-    "direnv/direnv.vim",
     "projekt0n/github-nvim-theme",
     "nanotee/zoxide.vim",
-    "windwp/nvim-spectre",
     "nvim-tree/nvim-web-devicons",
     "ribru17/bamboo.nvim",
     {
@@ -113,7 +109,7 @@ return require("lazy").setup({
         "ahmedkhalf/project.nvim",
         config = function()
             require("project_nvim").setup({
-                ignore_lsp = { "null-ls", "phpactor", "intelephense" }
+                ignore_lsp = { "phpactor", "intelephense" }
             })
         end,
     },
@@ -154,12 +150,5 @@ return require("lazy").setup({
         event = { "CmdlineEnter" },
         ft = { "go", 'gomod' },
         build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
-    },
-    {
-        "mfussenegger/nvim-dap",
-        dependencies = {
-            "rcarriga/nvim-dap-ui",
-            "theHamsta/nvim-dap-virtual-text"
-        }
     }
 })

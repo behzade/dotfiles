@@ -43,37 +43,3 @@ lspconfig["rust_analyzer"].setup(
         capabilities = capabilities,
     }
 )
-
-local null_ls = require("null-ls")
-
-
-local home_bin = os.getenv("HOME") .. "/.local/bin/"
-
--- warn_diagnostics_postprocess = function(diagnostic)
---     diagnostic.severity = diagnostic.message:find("ERROR") and vim.diagnostic.severity["WARN"]
--- end
-
-if os.getenv("PHP_VENDOR_DIR") then
-    null_ls.register(
-        null_ls.builtins.diagnostics.phpstan.with({
-            command = home_bin .. "phpstan",
-            extra_args = { "-l", "2" },
-        })
-    )
-    -- null_ls.register(null_ls.builtins.diagnostics.phpmd)
-    null_ls.register(null_ls.builtins.diagnostics.phpcs)
-    null_ls.register(null_ls.builtins.formatting.phpcbf)
-end
-
-null_ls.register(null_ls.builtins.diagnostics.twigcs)
-null_ls.register(null_ls.builtins.formatting.shfmt)
-null_ls.register(null_ls.builtins.formatting.black)
-null_ls.register(null_ls.builtins.diagnostics.curlylint)
-
-null_ls.setup({
-    defaults = {
-        on_attach = on_attach,
-        capabilities = capabilities,
-        fallback_severity = vim.diagnostic.severity.WARN,
-    },
-})
