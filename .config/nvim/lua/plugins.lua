@@ -31,7 +31,6 @@ return require("lazy").setup({
     "nanotee/zoxide.vim",
     "windwp/nvim-spectre",
     "nvim-tree/nvim-web-devicons",
-    "docteurklein/php-getter-setter.vim",
     "ribru17/bamboo.nvim",
     {
         "williamboman/mason.nvim",
