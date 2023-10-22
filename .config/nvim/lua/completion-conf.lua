@@ -49,12 +49,6 @@ cmp.setup.cmdline(":", {
     }),
 })
 
-local autopairs = require("nvim-autopairs")
-local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-autopairs.setup({ check_ts = true })
-cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done({ map_char = { tex = "" } }))
-
-
 local keymap = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 keymap("i", "<c-j>", "<cmd>lua require'luasnip'.jump(1)<CR>", opts)

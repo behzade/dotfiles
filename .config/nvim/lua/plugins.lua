@@ -13,6 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 
 return require("lazy").setup({
+    "samjwill/nvim-unception",
     "nvim-lua/plenary.nvim",
     "tpope/vim-repeat",
     "wellle/targets.vim",
@@ -22,7 +23,6 @@ return require("lazy").setup({
     "ggandor/lightspeed.nvim",
     "stevearc/dressing.nvim",
     "vim-scripts/restore_view.vim",
-    "windwp/nvim-autopairs",
     "jose-elias-alvarez/null-ls.nvim",
     "vim-scripts/ReplaceWithRegister",
     "mbbill/undotree",
@@ -118,27 +118,9 @@ return require("lazy").setup({
         end,
     },
     {
-        "windwp/nvim-ts-autotag",
-        config = function()
-            require("nvim-ts-autotag").setup()
-        end
-    },
-    {
-        "norcalli/nvim-colorizer.lua",
-        config = function()
-            require("colorizer").setup()
-        end
-    },
-    {
         "SmiteshP/nvim-navic",
         config = function()
             vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
-        end
-    },
-    {
-        "samjwill/nvim-unception",
-        config = function()
-            -- vim.g.unception_delete_replaced_buffer = true
         end
     },
     {
@@ -179,10 +161,5 @@ return require("lazy").setup({
             "rcarriga/nvim-dap-ui",
             "theHamsta/nvim-dap-virtual-text"
         }
-    },
-    -- {
-    --     'xeluxee/competitest.nvim',
-    --     dependencies = 'MunifTanjim/nui.nvim',
-    --     config = function() require('competitest').setup() end,
-    -- }
+    }
 })
