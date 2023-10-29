@@ -12,8 +12,10 @@ set $term kitty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu 'rofi -modi combi -combi-modi window,run,drun,ssh -show combi -opacity 70 -show-icons'
+set $menu fuzzel
 set $theme 'dark'
+
+output * bg ~/.config/sway/wallpaper.jpg fill
 
 ### Clipboard manager
 #
@@ -22,7 +24,6 @@ bindsym $mod+p exec copyq toggle
 ### Output configuration
 #
 # Wallpaper
-output * bg /usr/share/wallpapers/gloom.jpg fill
 #
 # Example configuration:
 
@@ -34,7 +35,7 @@ output * bg /usr/share/wallpapers/gloom.jpg fill
 #
 # Example configuration:
 #
-set $locker 'swaylock -f -e -c 1d2021 --inside-color 000000b3 -s fill -i /usr/share/wallpapers/rocket.png'
+set $locker 'swaylock -f -e -c 1d2021 --inside-color 000000b3 -s fill -i ~/.config/sway/wallpaper.jpg'
 exec swayidle -w \
     timeout 600 $locker
 #
@@ -44,7 +45,7 @@ exec swayidle -w \
 
 ### Input configuration
 #
-  input "1267:12613:ASUE140C:00_04F3:3145_Touchpad" {
+  input type:touchpad {
       dwt enabled
       tap enabled
       natural_scroll enabled

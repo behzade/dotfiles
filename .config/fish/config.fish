@@ -59,7 +59,6 @@ alias run='make run'
 alias k='kubectl -n monitoring'
 alias h='helm -n monitoring'
 
-direnv hook fish | source
 starship init fish | source
 zoxide init fish | source
 
