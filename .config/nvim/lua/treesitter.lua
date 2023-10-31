@@ -1,17 +1,5 @@
 require("nvim-treesitter.configs").setup({
-    ensure_installed = {
-        "lua",
-        "json",
-        "sql",
-        "go",
-        "gomod",
-        "php",
-        "phpdoc",
-        "yaml",
-        "toml"
-    },
     auto_install = true,
-    sync_install = true,
     highlight = {
         enable = true,
     },

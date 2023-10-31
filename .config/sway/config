@@ -37,7 +37,7 @@ bindsym $mod+p exec copyq toggle
 #
 set $locker 'swaylock -f -e -c 1d2021 --inside-color 000000b3 -s fill -i ~/.config/sway/wallpaper.jpg'
 exec swayidle -w \
-    timeout 600 $locker
+    timeout 300 $locker
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -275,11 +275,10 @@ exec_always darkman set $theme
 exec kanshi
 exec gammastep
 exec dunst
-exec systembus-notify
 exec keepassxc
 exec copyq
-
-exec telegram-desktop -startintray
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec blueman-applet
 
 exec firefox
 
