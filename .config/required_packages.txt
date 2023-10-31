@@ -2,6 +2,10 @@ git
 neovim
 wl-clipboard
 kitty
+ttf-jetbrains-mono-nerd 
+bat
+zoxide
+btop
 fish
 sway
 fuzzel
