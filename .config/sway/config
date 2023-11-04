@@ -15,7 +15,7 @@ set $term kitty
 set $menu fuzzel
 set $theme 'dark'
 
-output * bg ~/.config/sway/wallpaper.jpg fill
+output * bg ~/.config/sway/wallpaper.jpg fit #bd7a08
 
 ### Clipboard manager
 #
@@ -280,7 +280,7 @@ exec copyq
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec blueman-applet
 
-exec firefox
+exec google-chrome-stable
 
 workspace 1
 

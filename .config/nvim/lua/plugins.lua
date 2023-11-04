@@ -158,5 +158,6 @@ return require("lazy").setup({
             require('mini.pairs').setup()
         end
     },
-
+    'nvim-pack/nvim-spectre',
+    'Decodetalkers/csharpls-extended-lsp.nvim'
 })
