@@ -23,7 +23,7 @@ vivid
 exa
 starship
 firefox
-dunst
+swaync
 kanshi
 keepassxc
 gammastep

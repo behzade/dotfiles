@@ -27,6 +27,7 @@ cmp.setup({
         { name = "luasnip" },
         { name = "treesitter" },
         { name = "buffer" },
+        { name = "neorg" }
     }),
     completion = {
         keyword_length = 1;

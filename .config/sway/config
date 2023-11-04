@@ -274,7 +274,7 @@ exec_always darkman set $theme
 # application startup
 exec kanshi
 exec gammastep
-exec dunst
+exec swaync
 exec keepassxc
 exec copyq
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
