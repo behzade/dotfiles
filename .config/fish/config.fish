@@ -56,8 +56,8 @@ alias ncmpcpp='ncmpcpp --quiet'
 
 alias run='make run'
 
-alias k='kubectl -n monitoring'
-alias h='helm -n monitoring'
+alias k='kubectl '
+alias h='helm'
 
 starship init fish | source
 zoxide init fish | source
