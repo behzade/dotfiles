@@ -56,7 +56,7 @@ alias ncmpcpp='ncmpcpp --quiet'
 
 alias run='make run'
 
-alias k='kubectl '
+alias k='kubectl -n taraaz-stg'
 alias h='helm'
 
 starship init fish | source
