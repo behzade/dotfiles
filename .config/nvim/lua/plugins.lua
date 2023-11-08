@@ -16,6 +16,7 @@ return require("lazy").setup({
     "samjwill/nvim-unception",
     "nvim-lua/plenary.nvim",
     "tpope/vim-repeat",
+    "tpope/vim-rsi",
     "wellle/targets.vim",
     "lukas-reineke/indent-blankline.nvim",
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
@@ -181,4 +182,7 @@ return require("lazy").setup({
             }
         end,
     },
+    {
+        "vrischmann/tree-sitter-templ"
+    }
 })

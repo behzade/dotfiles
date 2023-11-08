@@ -43,3 +43,9 @@ lspconfig["rust_analyzer"].setup(
         capabilities = capabilities,
     }
 )
+
+vim.filetype.add({
+ extension = {
+  templ = "templ",
+ },
+})
