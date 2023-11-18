@@ -91,5 +91,4 @@ set("n", "<leader>kk", "<plug>RestNvim")
 set("n", "<leader>kh", "<plug>RestNvimPreview")
 set("n", "<leader>kr", "<plug>RestNvim")
 
-set("i", "<a-bs>", "<esc>cvb", { })
-
+set("i", "<a-bs>", "<esc>cvb", {})

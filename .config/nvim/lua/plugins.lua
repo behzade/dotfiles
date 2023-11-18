@@ -26,7 +26,6 @@ return require("lazy").setup({
     "vim-scripts/restore_view.vim",
     "vim-scripts/ReplaceWithRegister",
     "projekt0n/github-nvim-theme",
-    "nanotee/zoxide.vim",
     "nvim-tree/nvim-web-devicons",
     "ribru17/bamboo.nvim",
     {
@@ -110,7 +109,8 @@ return require("lazy").setup({
         "ahmedkhalf/project.nvim",
         config = function()
             require("project_nvim").setup({
-                ignore_lsp = { "phpactor", "intelephense" }
+                ignore_lsp = { "phpactor", "intelephense" },
+                detection_methods = { "pattern", "lsp" }
             })
         end,
     },
