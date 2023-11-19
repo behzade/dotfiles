@@ -274,13 +274,13 @@ exec_always darkman set $theme
 # application startup
 exec gammastep
 exec swaync
-exec keepassxc
 exec copyq
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec blueman-applet
 exec rclone mount --daemon --vfs-cache-mode full dropbox: ~/mnt/dropbox
 exec rclone mount --daemon --vfs-cache-mode full vault: ~/mnt/vault
 
+exec keepassxc
 exec google-chrome-stable
 
 workspace 1
