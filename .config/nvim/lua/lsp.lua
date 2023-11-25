@@ -44,8 +44,22 @@ lspconfig["rust_analyzer"].setup(
     }
 )
 
+-- vim.tbl_deep_extend('keep',lspconfig, {
+--     defold = {
+--         cmd = {'command'},
+--         filetypes = "defold",
+--         name = "defold"
+--     }
+-- })
+
 vim.filetype.add({
- extension = {
-  templ = "templ",
- },
+    extension = {
+        templ = "templ",
+    },
+})
+
+vim.filetype.add({
+    extension = {
+        script = "lua",
+    },
 })

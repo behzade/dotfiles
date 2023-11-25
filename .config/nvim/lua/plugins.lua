@@ -162,27 +162,6 @@ return require("lazy").setup({
     'nvim-pack/nvim-spectre',
     'Decodetalkers/csharpls-extended-lsp.nvim',
     {
-        "nvim-neorg/neorg",
-        build = ":Neorg sync-parsers",
-        dependencies = { "nvim-lua/plenary.nvim" },
-        config = function()
-            require("neorg").setup {
-                load = {
-                    ["core.defaults"] = {},  -- Loads default behaviour
-                    ["core.concealer"] = {}, -- Adds pretty icons to your documents
-                    ["core.dirman"] = {      -- Manages Neorg workspaces
-                        config = {
-                            workspaces = {
-                                notes = "~/notes",
-                            },
-                        },
-                    },
-                    ["core.completion"] = { config = { engine = "nvim-cmp" } },
-                }
-            }
-        end,
-    },
-    {
         "vrischmann/tree-sitter-templ"
     }
 })

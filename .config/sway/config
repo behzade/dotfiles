@@ -277,8 +277,8 @@ exec swaync
 exec copyq
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec blueman-applet
-exec rclone mount --daemon --vfs-cache-mode full dropbox: ~/mnt/dropbox
-exec rclone mount --daemon --vfs-cache-mode full vault: ~/mnt/vault
+exec rclone mount --daemon --vfs-cache-mode full --vfs-cache-max-age 500d dropbox: ~/mnt/dropbox
+exec rclone mount --daemon --vfs-cache-mode full --vfs-cache-max-age 500d vault: ~/mnt/vault
 
 exec keepassxc
 exec google-chrome-stable

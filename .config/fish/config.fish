@@ -5,7 +5,6 @@ export XDG_CACHE_HOME=$HOME/.cache
 export EDITOR='nvim'
 export VISUAL=$EDITOR
 export OPENER='xdg-open'
-export ZK_NOTEBOOK_DIR="$HOME/Documents/ZK"
 # Python
 export PROJECT_HOME=~/Projects
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
@@ -18,9 +17,6 @@ export GPG_TTY=(tty)
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
-export PATH="$PATH:$HOME/.config/emacs/bin"
-export PATH="$PATH:/opt/context-minimals/texmf-linux-64/bin"
-export TEXMF="/usr/share/context"
 export JAVA_OPTS="-XX:+IgnoreUnrecognizedVMOptions"
 export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
 export LS_COLORS=(vivid generate ayu)
@@ -34,8 +30,6 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 alias sudo="sudo "
 alias mv="mv -i"
 alias vim="nvim"
-alias tmux="tmux -2"
-alias mux="tmuxinator"
 alias top="btop"
 alias icat="kitty +kitten icat"
 alias ssh="kitty +kitten ssh"
@@ -52,12 +46,13 @@ alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale' # all + e
 # specialty views
 alias lS='exa -1'                                                       # one column, just names
 alias lt='exa --tree --level=2'                                         # tree
-alias ncmpcpp='ncmpcpp --quiet'
 
 alias run='make run'
 
-alias k='kubectl -n taraaz-stg'
-alias h='helm'
+alias k='kubectl --context alibaba-stage -n taraaz-stg'
+alias kl='kubectl --context minikube'
+alias h='helm --context alibaba-stage -n taraaz-stg'
+alias hl='helm --context minikube -n taraaz-stg'
 
 starship init fish | source
 zoxide init fish | source
