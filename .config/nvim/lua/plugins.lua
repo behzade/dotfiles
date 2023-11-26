@@ -144,7 +144,7 @@ return require("lazy").setup({
                 },
                 lsp_gofumpt = true,
                 lsp_inlay_hints = {
-                    enable = false,
+                    enable = true,
                 }
             })
         end,
@@ -163,5 +163,5 @@ return require("lazy").setup({
     'Decodetalkers/csharpls-extended-lsp.nvim',
     {
         "vrischmann/tree-sitter-templ"
-    }
+    },
 })

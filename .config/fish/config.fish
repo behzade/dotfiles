@@ -57,6 +57,8 @@ alias hl='helm --context minikube -n taraaz-stg'
 starship init fish | source
 zoxide init fish | source
 
+eval (opam env --switch=default)
+
 
 if test (tty) = "/dev/tty1"
   sway
