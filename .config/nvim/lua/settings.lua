@@ -3,7 +3,7 @@
 -----------------------------------------------------------
 -- Neovim API aliases
 -----------------------------------------------------------
-local opt = vim.opt            -- global/buffer/windows-scoped options
+local opt = vim.opt -- global/buffer/windows-scoped options
 local autocmd = vim.api.nvim_create_autocmd
 
 -----------------------------------------------------------
@@ -90,3 +90,13 @@ vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
 
+opt.list = true
+vim.opt.listchars = { tab = "⇥ ", leadmultispace = "┊   ", trail = "␣", nbsp = "⍽" }
+
+vim.cmd([[colorscheme default]])
+local mode = io.popen("darkman get"):read("*l")
+if mode == "dark" then
+    vim.opt.background = mode
+else
+    vim.opt.background = "light"
+end

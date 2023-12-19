@@ -17,11 +17,9 @@ export GPG_TTY=(tty)
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
-export JAVA_OPTS="-XX:+IgnoreUnrecognizedVMOptions"
-export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
 export LS_COLORS=(vivid generate ayu)
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
-export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_DEFAULT_COMMAND='fd --type f --hidden'
 
 
 export LF_ICONS=(sed ':a;N;$!ba;s/\n//g' ~/.config/diricons)
@@ -51,6 +49,7 @@ alias run='make run'
 
 alias k='kubectl --context alibaba-stage -n taraaz-stg'
 alias kl='kubectl --context minikube'
+alias kp='kubectl --context "at-alibaba-production" -n taraaz'
 alias h='helm --context alibaba-stage -n taraaz-stg'
 alias hl='helm --context minikube -n taraaz-stg'
 

@@ -63,3 +63,9 @@ vim.filetype.add({
         script = "lua",
     },
 })
+
+vim.filetype.add({
+    extension = {
+        gui_script = "lua",
+    },
+})

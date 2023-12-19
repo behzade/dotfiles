@@ -18,16 +18,13 @@ return require("lazy").setup({
     "tpope/vim-repeat",
     "tpope/vim-rsi",
     "wellle/targets.vim",
-    "lukas-reineke/indent-blankline.nvim",
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
     "nvim-treesitter/nvim-treesitter-textobjects",
     "ggandor/lightspeed.nvim",
     "stevearc/dressing.nvim",
     "vim-scripts/restore_view.vim",
     "vim-scripts/ReplaceWithRegister",
-    "projekt0n/github-nvim-theme",
     "nvim-tree/nvim-web-devicons",
-    "ribru17/bamboo.nvim",
     {
         "williamboman/mason.nvim",
         dependencies = {
@@ -129,6 +126,8 @@ return require("lazy").setup({
     },
     {
         "iamcco/markdown-preview.nvim",
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+        ft = { "markdown" },
         build = function() vim.fn["mkdp#util#install"]() end,
     },
     {
@@ -152,16 +151,27 @@ return require("lazy").setup({
         ft = { "go", 'gomod' },
         build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
     },
-    {
-        'echasnovski/mini.pairs',
-        version = '*',
-        config = function()
-            require('mini.pairs').setup()
-        end
-    },
     'nvim-pack/nvim-spectre',
     'Decodetalkers/csharpls-extended-lsp.nvim',
+    "vrischmann/tree-sitter-templ",
     {
-        "vrischmann/tree-sitter-templ"
+        'ellisonleao/gruvbox.nvim',
+        config = function()
+            vim.cmd([[colorscheme gruvbox]])
+        end
+    },
+    {
+        "zbirenbaum/copilot.lua",
+        cmd = "Copilot",
+        event = "InsertEnter",
+        config = function()
+            vim.env["HTTPS_PROXY"] = "http://localhost:10809"
+            require("copilot").setup({
+                suggestion = {
+                    enabled = true,
+                    auto_trigger = true,
+                }
+            })
+        end,
     },
 })
