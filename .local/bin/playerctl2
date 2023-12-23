@@ -1,3 +1,11 @@
 #! /bin/sh
 
+position=$(playerctl position)
+position=${position%.*}
+if [ $1 == "previous" ] && [ $position -gt 5 ] ; then
+    playerctl position 0
+    exit
+fi
+
+
 playerctl --player=spotify,%any,mpd "$@"
