@@ -22,7 +22,6 @@ slurp
 vivid
 exa
 starship
-firefox
 swaync
 kanshi
 keepassxc

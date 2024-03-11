@@ -15,12 +15,14 @@ set $term kitty
 set $menu fuzzel
 set $theme 'dark'
 
-output * bg ~/.config/sway/wallpaper.jpg fit #bd7a08
+output * bg ~/.config/sway/wallpaper.jpg center #bd7a08
 
 ### Clipboard manager
 #
 #
 bindsym $mod+p exec copyq toggle
+bindsym $mod+i exec brightnessctl --device='tpacpi::kbd_backlight' set +1
+bindsym $mod+u exec brightnessctl --device='tpacpi::kbd_backlight' set 1-
 ### Output configuration
 #
 # Wallpaper

@@ -56,12 +56,8 @@ alias hl='helm --context minikube -n taraaz-stg'
 starship init fish | source
 zoxide init fish | source
 
-eval (opam env --switch=default)
 
 
 if test (tty) = "/dev/tty1"
   sway
 end
-
-# opam configuration
-source /home/behzad/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
