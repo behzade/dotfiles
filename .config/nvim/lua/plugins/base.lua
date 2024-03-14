@@ -11,5 +11,4 @@ return {
     "behzade/lf.nvim",
     'nvim-pack/nvim-spectre',
     "vrischmann/tree-sitter-templ",
-    "numToStr/Comment.nvim",
 }
