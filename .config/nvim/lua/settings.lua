@@ -86,11 +86,6 @@ opt.fillchars = "fold: "
 opt.foldnestmax = 2
 opt.foldminlines = 3
 
--- File browser
-vim.g.netrw_browse_split = 0
-vim.g.netrw_banner = 0
-vim.g.netrw_winsize = 25
-
 opt.list = true
 vim.opt.listchars = { tab = "⇥ ", leadmultispace = "┊   ", trail = "␣", nbsp = "⍽" }
 
