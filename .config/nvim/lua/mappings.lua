@@ -1,6 +1,4 @@
 local set = vim.keymap.set
-local gs = require("gitsigns")
-local telescope_builtins = require("telescope.builtin")
 
 -- insert mode
 set("i", "jk", "<esc>")
@@ -46,27 +44,15 @@ set("n", "[g", "g;")
 set("n", "]g", "g,")
 set("n", "[q", "<cmd>cp<cr>")
 set("n", "]q", "<cmd>cn<cr>")
-set("n", "[h", function() gs.prev_hunk() end)
-set("n", "]h", function() gs.next_hunk() end)
 -- Other
 set("n", "<leader>n", "<cmd>noh<cr>")
 set("n", "<leader>t", "<cmd>keepjumps keepalt term<cr>")
 set("n", "<leader>s", "<cmd>update<cr>")
 set("n", "qq", "<cmd>cclose<cr>")
 
-set("n", "<leader>ff", telescope_builtins.find_files)
-set("n", "<leader>fs", telescope_builtins.live_grep)
-set("n", "<leader>fg", telescope_builtins.grep_string)
-set("n", "<leader>fr", "<cmd>lua require('telescope.builtin').resume(require('telescope.themes').get_ivy({}))<cr>")
 
--- Git
-set("n", "<leader>u", '<cmd>UndotreeToggle<cr>')
-
-set("n", "<leader>gd", function() gs.diffthis() end)
 set("n", "<leader>gg", "<cmd>keepjumps keepalt term lazygit<cr>")
 set("n", "<leader>gb", "<cmd>keepjumps keepalt term lazygit -f %<cr>")
-set("n", "<leader>gs", telescope_builtins.git_status)
-set("n", "<leader>gu", function() gs.reset_hunk() end)
 
 set("n", "<leader>b", "<cmd>keepjumps keepalt term lf %<cr>")
 
@@ -83,8 +69,23 @@ set("n", "<c-b>", "<c-b>zz")
 set("n", "<c-d>", "<c-d>zz")
 set("n", "<c-u>", "<c-u>zz")
 
-set("n", "<leader>kk", "<plug>RestNvim")
-set("n", "<leader>kh", "<plug>RestNvimPreview")
-set("n", "<leader>kr", "<plug>RestNvim")
-
 set("i", "<a-bs>", "<esc>cvb", {})
+
+
+-- gitsigns
+local has_gs, gs = pcall(require, "gitsigns")
+if has_gs then
+    set("n", "[h", function() gs.prev_hunk() end)
+    set("n", "]h", function() gs.next_hunk() end)
+    set("n", "<leader>gu", function() gs.reset_hunk() end)
+    set("n", "<leader>gd", function() gs.diffthis() end)
+end
+
+local has_telescope, telescope_builtins = pcall(require, "telescope.builtin")
+if has_telescope then
+    set("n", "<leader>ff", telescope_builtins.find_files)
+    set("n", "<leader>fs", telescope_builtins.live_grep)
+    set("n", "<leader>fg", telescope_builtins.grep_string)
+    set("n", "<leader>fr", function() telescope_builtins.resume(require('telescope.themes').get_ivy({})) end)
+    set("n", "<leader>gs", telescope_builtins.git_status)
+end
