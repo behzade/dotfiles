@@ -1,9 +1,6 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = ","
 local set = vim.keymap.set
 local gs = require("gitsigns")
 local telescope_builtins = require("telescope.builtin")
-local telescope_extensions = require("telescope").extensions
 
 -- insert mode
 set("i", "jk", "<esc>")
@@ -60,7 +57,6 @@ set("n", "qq", "<cmd>cclose<cr>")
 set("n", "<leader>ff", telescope_builtins.find_files)
 set("n", "<leader>fs", telescope_builtins.live_grep)
 set("n", "<leader>fg", telescope_builtins.grep_string)
-set("n", "<leader>fp", telescope_extensions.projects.projects)
 set("n", "<leader>fr", "<cmd>lua require('telescope.builtin').resume(require('telescope.themes').get_ivy({}))<cr>")
 
 -- Git

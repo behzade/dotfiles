@@ -26,11 +26,12 @@ opt.smartcase = true  -- ignore lowercase for the whole pattern
 opt.linebreak = true  -- wrap on word boundary
 opt.lazyredraw = true -- faster scrolling
 opt.synmaxcol = 240   -- max column for syntax highlight
-opt.relativenumber = true
 opt.undofile = true
-opt.guifont = "JetBrainsMono Nerd Font:13"
+opt.guifont = "JetBrainsMono Nerd Font:14"
 opt.signcolumn = 'yes'
 opt.formatexpr = "v:lua.vim.lsp.formatexpr()"
+vim.g.mapleader = " "
+vim.g.maplocalleader = ","
 
 -- highlight on yank
 autocmd('TextYankPost', { callback = function() vim.highlight.on_yank({ timeout = 200 }) end, })
@@ -95,8 +96,8 @@ vim.opt.listchars = { tab = "⇥ ", leadmultispace = "┊   ", trail = "␣", nb
 
 vim.cmd([[colorscheme default]])
 local mode = io.popen("darkman get"):read("*l")
-if mode == "dark" then
-    vim.opt.background = mode
-else
+if mode == "light" then
     vim.opt.background = "light"
+else
+    vim.opt.background = "dark"
 end
