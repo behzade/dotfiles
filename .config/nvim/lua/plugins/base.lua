@@ -1,5 +1,4 @@
 return {
-    "samjwill/nvim-unception",
     "nvim-lua/plenary.nvim",
     "tpope/vim-repeat",
     "tpope/vim-rsi",

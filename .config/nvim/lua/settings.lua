@@ -4,6 +4,7 @@
 -- Neovim API aliases
 -----------------------------------------------------------
 local opt = vim.opt -- global/buffer/windows-scoped options
+local g = vim.g
 local autocmd = vim.api.nvim_create_autocmd
 
 -----------------------------------------------------------
@@ -30,8 +31,8 @@ opt.undofile = true
 opt.guifont = "JetBrainsMono Nerd Font:14"
 opt.signcolumn = 'yes'
 opt.formatexpr = "v:lua.vim.lsp.formatexpr()"
-vim.g.mapleader = " "
-vim.g.maplocalleader = ","
+g.mapleader = " "
+g.maplocalleader = ","
 
 -- highlight on yank
 autocmd('TextYankPost', { callback = function() vim.highlight.on_yank({ timeout = 200 }) end, })
@@ -41,25 +42,6 @@ autocmd('TextYankPost', { callback = function() vim.highlight.on_yank({ timeout 
 autocmd({ "TermOpen" }, {
     pattern = { "*" },
     command = "startinsert",
-})
-
-local delete_term_buf = function(event)
-    if (vim.fn.len(vim.fn.win_findbuf(event.buf)) > 0) then
-        if (event.match ~= "UnceptionEditRequestReceived" and #vim.fn.getbufinfo({ buflisted = 1 })) == 1 then
-            vim.cmd("q")
-        end
-        vim.cmd("silent bdelete! " .. event.buf)
-    end
-end
-
-autocmd({ "TermClose" }, {
-    pattern = { "*" },
-    callback = delete_term_buf
-})
-
-autocmd({ "User" }, {
-    pattern = { "UnceptionEditRequestReceived" },
-    callback = delete_term_buf
 })
 
 -----------------------------------------------------------
@@ -87,12 +69,12 @@ opt.foldnestmax = 2
 opt.foldminlines = 3
 
 opt.list = true
-vim.opt.listchars = { tab = "⇥ ", leadmultispace = "┊   ", trail = "␣", nbsp = "⍽" }
+opt.listchars = { tab = "⇥ ", leadmultispace = "┊   ", trail = "␣", nbsp = "⍽" }
 
 vim.cmd([[colorscheme default]])
 local mode = io.popen("darkman get"):read("*l")
 if mode == "light" then
-    vim.opt.background = "light"
+    opt.background = "light"
 else
-    vim.opt.background = "dark"
+    opt.background = "dark"
 end
