@@ -89,3 +89,10 @@ if has_telescope then
     set("n", "<leader>fr", function() telescope_builtins.resume(require('telescope.themes').get_ivy({})) end)
     set("n", "<leader>gs", telescope_builtins.git_status)
 end
+
+
+local has_dap, dap = pcall(require, "dap")
+if has_dap then
+    set("n", "<leader>dt", dap.toggle_breakpoint)
+    set("n", "<leader>dc", dap.continue)
+end

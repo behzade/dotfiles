@@ -10,5 +10,4 @@ return {
     "nvim-tree/nvim-web-devicons",
     "behzade/lf.nvim",
     'nvim-pack/nvim-spectre',
-    "vrischmann/tree-sitter-templ",
 }
