@@ -17,14 +17,6 @@ return {
             local telescope = require("telescope.builtin")
             local navic = require("nvim-navic")
 
-            local style_opts = {
-                fname_width = 90,
-            }
-
-            local lsp_references = function() telescope.lsp_references(style_opts) end
-            local lsp_implementations = function() telescope.lsp_implementations(style_opts) end
-            local lsp_dynamic_workspace_symbols = function() telescope.lsp_dynamic_workspace_symbols(style_opts) end
-
             local function on_list(options)
                 vim.fn.setqflist({}, ' ', options)
                 vim.api.nvim_command('silent cfirst')
@@ -39,14 +31,14 @@ return {
             local on_attach = function(client, bufnr)
                 set("n", "K", lsp.buf.hover)
                 set("n", "gd", function() lsp.buf.definition({ reuse_win = true, on_list = on_list }) end)
-                set("n", "gD", lsp_references)
+                set("n", "gD", telescope.lsp_references)
                 set("n", "[d", prev)
                 set("n", "]d", next)
                 set("n", "<leader>lr", lsp.buf.rename)
                 set("n", "<leader>la", lsp.buf.code_action)
                 set("n", "<leader>ll", lsp.codelens.run)
-                set("n", "<leader>li", lsp_implementations)
-                set("n", "<leader>ls", lsp_dynamic_workspace_symbols)
+                set("n", "<leader>li", telescope.lsp_implementations)
+                set("n", "<leader>ls", telescope.lsp_dynamic_workspace_symbols)
                 set("n", "<leader>ld", telescope.diagnostics)
 
                 if client.server_capabilities.documentSymbolProvider then
@@ -100,29 +92,9 @@ return {
                 }
             )
 
-            -- vim.tbl_deep_extend('keep',lspconfig, {
-            --     defold = {
-            --         cmd = {'command'},
-            --         filetypes = "defold",
-            --         name = "defold"
-            --     }
-            -- })
-
             vim.filetype.add({
                 extension = {
                     templ = "templ",
-                },
-            })
-
-            vim.filetype.add({
-                extension = {
-                    script = "lua",
-                },
-            })
-
-            vim.filetype.add({
-                extension = {
-                    gui_script = "lua",
                 },
             })
         end
