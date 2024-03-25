@@ -47,16 +47,12 @@ alias lt='exa --tree --level=2'                                         # tree
 
 alias run='make run'
 
-alias k='kubectl --context alibaba-stage -n taraaz-stg'
-alias kl='kubectl --context minikube'
-alias kp='kubectl --context "at-alibaba-production" -n taraaz'
-alias h='helm --context alibaba-stage -n taraaz-stg'
-alias hl='helm --context minikube -n taraaz-stg'
-
 starship init fish | source
 zoxide init fish | source
 
-
+if test -f "$HOME/.config/fish/local.fish"
+    source "$HOME/.config/fish/local.fish"
+end
 
 if test (tty) = "/dev/tty1"
   sway

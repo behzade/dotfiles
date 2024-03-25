@@ -68,7 +68,7 @@ return {
             })
 
             local function server_conf(name)
-                local has_opts, opts = pcall(require, "lsp/servers/" .. name)
+                local has_opts, opts = pcall(require, "plugins/servers/" .. name)
                 local config = {
                     on_attach = on_attach,
                     capabilities = capabilities,
@@ -87,11 +87,7 @@ return {
             end
 
             for _, server in pairs(require("mason-lspconfig").get_installed_servers()) do
-                if server == "gopls" then
-                    goto continue
-                end
                 lspconfig[server].setup(server_conf(server))
-                ::continue::
             end
 
             lspconfig["rust_analyzer"].setup(
