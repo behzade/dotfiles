@@ -93,6 +93,12 @@ end
 
 local has_dap, dap = pcall(require, "dap")
 if has_dap then
-    set("n", "<leader>dt", dap.toggle_breakpoint)
-    set("n", "<leader>dc", dap.continue)
+    local dapui = require("dapui")
+    set("n", "<leader>db", dap.toggle_breakpoint)
+    set("n", "<leader>dd", dap.continue)
+    set("n", "<leader>dl", dap.step_over)
+    set("n", "<leader>dj", dap.step_into)
+    set("n", "<leader>dk", dap.step_out)
+    set("n", "<leader>dh", dap.step_back)
+    set("n", "<leader>dt", dapui.toggle)
 end

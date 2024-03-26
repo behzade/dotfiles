@@ -64,6 +64,9 @@ return {
                 local config = {
                     on_attach = on_attach,
                     capabilities = capabilities,
+                    root_dir = function(fname)
+                        return lspconfig.util.root_pattern('.git')(fname) or lspconfig.util.path.dirname(fname)
+                    end,
                 }
 
                 if not has_opts then
@@ -81,16 +84,6 @@ return {
             for _, server in pairs(require("mason-lspconfig").get_installed_servers()) do
                 lspconfig[server].setup(server_conf(server))
             end
-
-            lspconfig["rust_analyzer"].setup(
-                {
-                    cmd = {
-                        "rustup", "run", "stable", "rust-analyzer"
-                    },
-                    on_attach = on_attach,
-                    capabilities = capabilities,
-                }
-            )
 
             vim.filetype.add({
                 extension = {
