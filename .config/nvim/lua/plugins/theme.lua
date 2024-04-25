@@ -1,8 +1,8 @@
 return {
     {
-        'ellisonleao/gruvbox.nvim',
+        "mvpopuk/inspired-github.vim",
         config = function()
-            vim.cmd([[colorscheme gruvbox]])
+            vim.cmd([[colorscheme inspired-github]])
         end
     },
 }
