@@ -15,6 +15,9 @@ set $term kitty
 set $menu fuzzel
 set $theme 'dark'
 
+focus_follows_mouse no
+
+
 output * bg ~/.config/sway/wallpaper.jpg center #bd7a08
 
 ### Clipboard manager
@@ -227,6 +230,8 @@ hide_edge_borders vertical
 for_window [app_id="com.github.hluk.copyq"] floating enable
 for_window [title="^Skype$"] floating enable
 for_window [class="vlc"] inhibit_idle fullscreen
+for_window [instance="Godot_Engine"] floating enable
+for_window [class="Godot"] floating enable
 
 # Specific Workspace for app
 assign [class="firefox"] workspace browser
@@ -240,6 +245,20 @@ assign [class="Steam"] workspace 8
 assign [class="Insomnia"] workspace 3
 assign [app_id="DBeaver"] workspace 2
 assign [title=".*Dbeaver.*"] workspace 2
+
+set $disp1 eDP-1
+set $disp2 HDMI-A-2
+workspace 1 output $disp1
+workspace 2 output $disp1
+workspace 3 output $disp1
+workspace 4 output $disp1
+workspace 5 output $disp1
+workspace 6 output $disp2 $disp1
+workspace 7 output $disp2 $disp1
+workspace 8 output $disp2 $disp1
+workspace 9 output $disp1
+workspace 10 output $disp1
+workspace browser output $disp1
 
 # Gap
 gaps inner 5
