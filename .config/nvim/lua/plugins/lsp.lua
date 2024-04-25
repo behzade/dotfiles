@@ -82,6 +82,7 @@ return {
                 lspconfig[server].setup(server_conf(server))
             end
             lspconfig.gleam.setup({})
+            lspconfig.rust_analyzer.setup({})
 
             vim.filetype.add({
                 extension = {
