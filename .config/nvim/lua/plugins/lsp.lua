@@ -81,8 +81,17 @@ return {
             for _, server in pairs(require("mason-lspconfig").get_installed_servers()) do
                 lspconfig[server].setup(server_conf(server))
             end
-            lspconfig.gleam.setup({})
-            lspconfig.rust_analyzer.setup({})
+            lspconfig.rust_analyzer.setup({
+                settings = {
+                    ["rust-analyzer"] = {
+                        cargo = {
+                            allFeatures = true,
+                        },
+                    },
+                },
+                on_attach = on_attach,
+                capabilities = capabilities,
+            }) -- TODO: better config for non installed through mason servers
 
             vim.filetype.add({
                 extension = {

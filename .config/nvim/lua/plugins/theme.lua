@@ -1,8 +1,8 @@
 return {
     {
-        "mvpopuk/inspired-github.vim",
+        "pappasam/papercolor-theme-slim",
         config = function()
-            vim.cmd([[colorscheme inspired-github]])
+            vim.cmd([[colorscheme PaperColorSlim]])
         end
     },
 }
