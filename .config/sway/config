@@ -182,8 +182,8 @@ exec swayidle -w \
 
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
-    bindsym --to-code $mod+minus [app_id="dropdown1"] scratchpad show
-    bindsym --to-code $mod+equal [app_id="dropdown2"] scratchpad show
+    bindsym --to-code $mod+minus [app_id="dropdown1"] scratchpad show, resize set 1366 780, move position center
+    bindsym --to-code $mod+equal [app_id="dropdown2"] scratchpad show, resize set 1366 780, move position center
     # bindsym --to-code F12 scratchpad show
 #
 # Resizing containers:
@@ -298,8 +298,6 @@ exec swaync
 exec copyq
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec blueman-applet
-exec rclone mount --daemon --vfs-cache-mode full --vfs-cache-max-age 500d dropbox: ~/mnt/dropbox
-exec rclone mount --daemon --vfs-cache-mode full --vfs-cache-max-age 500d vault: ~/mnt/vault
 
 exec keepassxc
 exec google-chrome-stable
