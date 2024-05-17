@@ -247,7 +247,7 @@ assign [app_id="DBeaver"] workspace 2
 assign [title=".*Dbeaver.*"] workspace 2
 
 set $disp1 eDP-1
-set $disp2 HDMI-A-2
+set $disp2 HDMI-A-1
 workspace 1 output $disp1
 workspace 2 output $disp1
 workspace 3 output $disp1
