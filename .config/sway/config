@@ -59,6 +59,7 @@ exec swayidle -w \
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
+
 ### Key bindings
 #
 # Basics:
@@ -185,6 +186,7 @@ exec swayidle -w \
     bindsym --to-code $mod+minus [app_id="dropdown1"] scratchpad show, resize set 1366 780, move position center
     bindsym --to-code $mod+equal [app_id="dropdown2"] scratchpad show, resize set 1366 780, move position center
     # bindsym --to-code F12 scratchpad show
+
 #
 # Resizing containers:
 #
@@ -232,6 +234,7 @@ for_window [title="^Skype$"] floating enable
 for_window [class="vlc"] inhibit_idle fullscreen
 for_window [instance="Godot_Engine"] floating enable
 for_window [class="Godot"] floating enable
+for_window [class="age2_x1.exe"] floating enable
 
 # Specific Workspace for app
 assign [class="firefox"] workspace browser
@@ -241,7 +244,6 @@ assign [app_id="Slack"] workspace 10
 assign [class="Slack"] workspace 10
 assign [title="^Skype$"] workspace 9
 assign [class="Spotify"] workspace 9
-assign [class="Steam"] workspace 8
 assign [class="Insomnia"] workspace 3
 assign [app_id="DBeaver"] workspace 2
 assign [title=".*Dbeaver.*"] workspace 2
