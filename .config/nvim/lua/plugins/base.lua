@@ -10,4 +10,5 @@ return {
     "nvim-tree/nvim-web-devicons",
     "behzade/lf.nvim",
     'nvim-pack/nvim-spectre',
+    'mfussenegger/nvim-jdtls',
 }
