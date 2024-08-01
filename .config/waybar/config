@@ -11,7 +11,7 @@
     ],
     "modules-right": [
         "custom/mpris-media",
-        "pulseaudio",
+        "wireplumber",
         "network",
         "cpu",
         "memory",
@@ -169,5 +169,8 @@
         "on-click": "swaync-client -t -sw",
         "on-click-right": "swaync-client -d -sw",
         "escape": true
+    },
+    "wireplumber" : {
+        "on-click": "pavucontrol",
     }
 }
