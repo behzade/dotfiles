@@ -10,7 +10,7 @@
         "clock"
     ],
     "modules-right": [
-        "custom/mpris-media",
+        "custom/media",
         "wireplumber",
         "network",
         "cpu",
@@ -121,18 +121,10 @@
     "battery#bat2": {
         "bat": "BAT2"
     },
-    "network": {
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
-    },
     "sway/language": {
         "format": "{short}"
     },
-    "custom/mpris-media": {
+    "custom/media": {
         "format": "{icon}{}",
         "return-type": "json",
         "format-icons": {
@@ -172,5 +164,15 @@
     },
     "wireplumber" : {
         "on-click": "pavucontrol",
+    },
+    "network": {
+        "on-click": "iwgtk",
+        "format-wifi": "({signalStrength}%) ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "max-length": 50
     }
 }
