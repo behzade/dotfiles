@@ -1,4 +1,5 @@
 [Added Associations]
+x-scheme-handler/tonsite=org.telegram.desktop.desktop;
 
 [Default Applications]
 application/pdf=org.pwmt.zathura.desktop;
@@ -17,3 +18,4 @@ x-scheme-handler/mailto=google-chrome.desktop;
 x-scheme-handler/terminal=kitty.desktop;
 x-scheme-handler/unknown=google-chrome.desktop
 x-scheme-handler/eclipse+command=_usr_lib_dbeaver_.desktop
+x-scheme-handler/tonsite=org.telegram.desktop.desktop
