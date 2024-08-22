@@ -33,6 +33,12 @@ M.on_attach    = function(client, bufnr)
     if client.server_capabilities.documentSymbolProvider then
         navic.attach(client, bufnr)
     end
+
+    if client.name == "yamlls" then
+        client.resolved_capabilities = {
+            document_formatting = true
+        }
+    end
 end
 
 M.capabilities = function()

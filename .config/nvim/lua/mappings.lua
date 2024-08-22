@@ -71,6 +71,8 @@ set("n", "<c-u>", "<c-u>zz")
 
 set("i", "<a-bs>", "<esc>cvb", {})
 
+set("n", "<leader>pp", "<cmd>!bunx prettier --write %<cr>")
+
 
 -- gitsigns
 local has_gs, gs = pcall(require, "gitsigns")
@@ -102,3 +104,8 @@ if has_dap then
     set("n", "<leader>dh", dap.step_back)
     set("n", "<leader>dt", dapui.toggle)
 end
+
+set("n", "<leader>vf", function()
+    vim.cmd([[syntax match ZeroWidthNonJoiner "\u200c" conceal]])
+    vim.cmd([[syntax match ZeroWidthNonJoiner "‌" conceal]])
+end)

@@ -31,6 +31,7 @@ opt.undofile = true
 opt.guifont = "JetBrainsMono Nerd Font:14"
 opt.signcolumn = 'yes'
 opt.formatexpr = "v:lua.vim.lsp.formatexpr()"
+opt.termbidi = true
 g.mapleader = " "
 g.maplocalleader = ","
 
@@ -78,3 +79,5 @@ if mode == "light" then
 else
     opt.background = "dark"
 end
+
+opt.conceallevel = 2
