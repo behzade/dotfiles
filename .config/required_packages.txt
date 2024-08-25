@@ -1,42 +1,127 @@
-base-devel
-iwd
-git
-vcsh
-neovim
-wl-clipboard
-kitty
-ttf-jetbrains-mono-nerd 
-ttf-dejavu
-bat
-fzf
-zoxide
-btop
-fish
-sway
-swayidle
-xorg-xwayland
-fuzzel
-copyq
-grim
-slurp
-vivid
-exa
-starship
-swaync
-kanshi
-keepassxc
-gammastep
-blueman
-imv
-mpv
-blueman
-dragon-drop
-lazygit
-trash-cli
-pipewire
-pipewire-pulse
-pipewire-jack
-libsecret
-gocryptfs
-handlr
-lf
+alsa-utils 1.2.12-1
+base 3-2
+base-devel 1-1
+bat 0.24.0-2
+blueman 2.4.3-1
+brightnessctl 0.5.1-3
+btop 1.3.2-1
+bun-bin 1.1.24-1
+candy-icons-git r1211.eba39ae-1
+code 1.92.1-1
+coppwr 1.6.0-1
+copyq 9.0.0-1
+darkman 2.0.1-1
+dbeaver 24.1.5-1
+docker 1:27.1.2-1
+docker-compose 2.29.2-1
+dosfstools 4.2-4
+dragon-drop 1.2.0-2
+dwarfs-bin 0.10.1-2
+efibootmgr 18-3
+emacs 29.4-1
+expressvpn 3.76.0.4_1-1
+expressvpn-gui 0.6.10-1
+eza 0.19.0-1
+fd 10.1.0-1
+fish 3.7.1-2
+fuzzel 1.10.2-1
+fzf 0.54.3-1
+gammastep 2.0.9-3
+git 2.46.0-1
+gnome-disk-utility 46.0-1
+gnome-themes-extra 3.28+r6+g45b1d457-2
+go 2:1.23.0-1
+gocryptfs 2.4.0-2
+google-chrome 128.0.6613.84-1
+gradle 8.10-1
+grim 1.4.1-2
+grub 2:2.12-2
+handlr-regex 0.11.2-1
+hdf5 1.14.4.3-1
+imv 4.5.0-2
+insomnium-bin 0.2.3-1
+interception-dual-function-keys 1.5.0-5
+ir-standard-fonts 20170121-3
+iwd 2.19-1
+iwgtk 0.9-1
+jabref 5.15-1
+jdk21-openjdk 21.0.4.u7-1
+jq 1.7.1-2
+kanshi 1.7.0-1
+keepassxc 2.7.9-3
+kitty 0.36.1-1
+krita 5.2.3-1
+lazygit 0.43.1-1
+less 1:661-1
+lf 32-1
+libinput-gestures 2.76-1
+linux 6.10.6.arch1-1
+linux-firmware 20240809.59460076-1
+linux-headers 6.10.6.arch1-1
+lxappearance 0.6.3-5
+man-db 2.12.1-1
+mpv 1:0.38.0-6
+mpv-mpris 1.1-2
+neofetch 7.1.0-2
+neovim-nightly-bin 0.11.0+dev+648+g3bd7492a6-1
+nodejs 22.7.0-1
+npm 10.8.2-1
+nvme-cli 2.10.2-1
+openconnect 1:9.12-2
+openresolv 3.13.2-2
+otf-font-awesome 6.6.0-1
+p7zip 1:17.05-2
+pandoc-cli 0.1.1.1-117
+pavucontrol 1:6.1-1
+pipewire 1:1.2.3-1
+pipewire-jack 1:1.2.3-1
+pipewire-pulse 1:1.2.3-1
+pyenv 1:2.4.10-1
+python310 3.10.14-2
+qbittorrent 4.6.6-1
+ripgrep 14.1.0-1
+rust 1:1.80.1-1
+skypeforlinux-bin 8.126.0.208-1
+slurp 1.5.0-1
+starship 1.20.1-1
+steam 1.0.0.81-2
+sway 1:1.9-5
+swayidle 1.8.0-2
+swaylock 1.8.0-1
+swaync 0.10.1-3
+syncthing 1.27.10-1
+tableplus-bin 0.1.254-1
+telegram-desktop 5.4.1-1
+tldr 3.3.0-1
+trash-cli 0.24.5.26-1
+ttf-dejavu 2.37+18+g9b5d1b2f-7
+ttf-jetbrains-mono-nerd 3.2.1-2
+typst 1:0.11.1-1
+typstfmt-bin 0.2.10-1
+unarc-git r1.adc333d-1
+unrar 1:7.0.9-1
+unzip 6.0-21
+v2ray 5.16.1-1
+vazir-code-fonts 1.1.2-2
+vcsh 2.0.10-1
+virtualfish 2.5.9-1
+vivid 0.10.1-1
+waybar 0.10.4-2
+wezterm 20240203.110809.5046fc22-2
+wget 1.24.5-3
+wine-mono 9.2.0-1
+wine-staging 9.8-1
+wl-clipboard 1:2.2.1-2
+wlroots 0.18.0-1
+xdg-desktop-portal 1.18.4-1
+xdg-desktop-portal-wlr 0.7.1-1
+xorg-xwayland 24.1.2-1
+yay-bin 12.3.5-1
+yay-bin-debug 12.3.5-1
+yt-dlp 2024.08.06-1
+zathura 0.5.8-1
+zathura-pdf-mupdf 0.4.4-1
+zbar 0.23.93-1
+zed 0.149.5-1
+zip 3.0-11
+zoxide 0.9.4-2
