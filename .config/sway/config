@@ -284,12 +284,12 @@ bar {
 }
 
 #gtk3 themes
-set $gnome-schema org.gnome.desktop.interface
+set $gnome_schema org.gnome.desktop.interface
 
 exec_always {
-    gsettings set $gnome-schema color-scheme 'prefer-dark'
-    gsettings set $gnome-schema gtk-theme Adwaita-dark
-    gsettings set $gnome-schema icon-theme candy-icons
+    gsettings set $gnome_schema color-scheme 'prefer-dark'
+    gsettings set $gnome_schema gtk-theme Adwaita-dark
+    gsettings set $gnome_schema icon-theme candy-icons
 }
 
 # application startup
