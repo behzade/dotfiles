@@ -18,7 +18,7 @@ set $theme 'dark'
 focus_follows_mouse no
 
 
-output * bg ~/.config/sway/wallpaper.jpg center #bd7a08
+output * bg ~/.config/sway/wallpaper.png center #bd7a08
 
 ### Clipboard manager
 #
@@ -263,6 +263,8 @@ workspace 8 output $disp2 $disp1
 workspace 9 output $disp1
 workspace 10 output $disp1
 workspace browser output $disp1
+
+output HDMI-A-1 scale 2
 
 # Gap
 gaps inner 5
