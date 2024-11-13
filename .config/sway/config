@@ -42,7 +42,7 @@ bindsym $mod+u exec brightnessctl --device='tpacpi::kbd_backlight' set 1-
 #
 # Example configuration:
 #
-set $locker 'swaylock -f -e -c 1d2021 --inside-color 000000b3 -s fill -i ~/.config/sway/wallpaper.jpg'
+set $locker 'swaylock -f -e -c 1d2021 --inside-color 000000b3 -s fill -i ~/.config/sway/wallpaper.png'
 exec swayidle -w \
     timeout 300 $locker
 #
@@ -250,8 +250,8 @@ assign [class="Insomnia"] workspace 3
 assign [app_id="DBeaver"] workspace 2
 assign [title=".*Dbeaver.*"] workspace 2
 
-set $disp2 HDMI-A-1
-set $disp1 eDP-1
+set $disp1 HDMI-A-1
+set $disp2 eDP-1
 workspace 1 output $disp1
 workspace 2 output $disp1
 workspace 3 output $disp1
