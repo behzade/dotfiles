@@ -265,6 +265,7 @@ workspace 10 output $disp1
 workspace browser output $disp1
 
 output HDMI-A-1 scale 2
+output DP-1 scale 2
 
 # Gap
 gaps inner 5
