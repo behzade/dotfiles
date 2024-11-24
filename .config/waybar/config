@@ -25,6 +25,13 @@
     "hyprland/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
+    "hyprland/workspaces": {
+        "show-special": true,
+        "format-icons": {
+		"active": "",
+		"default": ""
+        }
+    },
     "hyprland/scratchpad": {
         "format": "{icon} {count}",
         "show-empty": false,
