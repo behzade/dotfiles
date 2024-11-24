@@ -1,10 +1,10 @@
 {
     "spacing": 4, 
     "modules-left": [
-        "sway/workspaces",
-        "sway/mode",
-        "sway/scratchpad",
-        "sway/window"
+        "hyprland/workspaces",
+        "hyprland/mode",
+        "hyprland/scratchpad",
+        "hyprland/window"
     ],
     "modules-center": [
         "clock"
@@ -17,16 +17,15 @@
         "memory",
         "temperature",
         "backlight",
-        "sway/language",
+        "hyprland/language",
         "battery",
         "battery#bat2",
         "tray",
-        "custom/notification"
     ],
-    "sway/mode": {
+    "hyprland/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
-    "sway/scratchpad": {
+    "hyprland/scratchpad": {
         "format": "{icon} {count}",
         "show-empty": false,
         "format-icons": [
@@ -121,7 +120,7 @@
     "battery#bat2": {
         "bat": "BAT2"
     },
-    "sway/language": {
+    "hyprland/language": {
         "format": "{short}"
     },
     "custom/media": {
@@ -140,26 +139,6 @@
         "on-scroll-down": "playerctl2 next",
         "on-click-middle": "playerctl2 loop track",
         "on-click-right": "playerctl2 loop none",
-        "escape": true
-    },
-    "custom/notification": {
-        "tooltip": false,
-        "format": "{icon}",
-        "format-icons": {
-            "notification": "<span foreground='red'><sup></sup></span>",
-            "none": "",
-            "dnd-notification": "<span foreground='red'><sup></sup></span>",
-            "dnd-none": "",
-            "inhibited-notification": "<span foreground='red'><sup></sup></span>",
-            "inhibited-none": "",
-            "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-            "dnd-inhibited-none": ""
-        },
-        "return-type": "json",
-        "exec-if": "which swaync-client",
-        "exec": "swaync-client -swb",
-        "on-click": "swaync-client -t -sw",
-        "on-click-right": "swaync-client -d -sw",
         "escape": true
     },
     "wireplumber" : {

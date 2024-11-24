@@ -1,5 +1,4 @@
 export XDG_SESSION_TYPE='wayland' 
-export XDG_CURRENT_DESKTOP='sway'
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_CACHE_HOME=$HOME/.cache
 export EDITOR='nvim'
@@ -17,6 +16,8 @@ export GPG_TTY=(tty)
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$PATH:$HOME/.cache/.bun/bin"
+
 export LS_COLORS=(vivid generate ayu)
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 export FZF_DEFAULT_COMMAND='fd --type f --hidden'
@@ -31,8 +32,6 @@ alias vim="nvim"
 alias top="btop"
 alias icat="kitty +kitten icat"
 alias ssh="kitty +kitten ssh"
-alias off="swaymsg output HDMI-1 dpms off"
-alias on="swaymsg output HDMI-1 dpms on"
 # general use
 alias ls='exa --icons --group-directories-first --hyperlink'                                                 # ls
 alias l='exa -lbF --git'                                               # list, size, type, git
@@ -50,10 +49,12 @@ alias run='make run'
 starship init fish | source
 zoxide init fish | source
 
+direnv hook fish | source
+
 if test -f "$HOME/.config/fish/local.fish"
     source "$HOME/.config/fish/local.fish"
 end
 
 if test (tty) = "/dev/tty1"
-  sway
+    uwsm start default
 end

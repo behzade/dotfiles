@@ -62,6 +62,16 @@ return {
                 capabilities = capabilities,
             }) -- TODO: better config for non installed through mason servers
 
+            lspconfig.gleam.setup({
+                on_attach = on_attach,
+                capabilities = capabilities,
+            })
+
+            lspconfig.protols.setup({
+                on_attach = on_attach,
+                capabilities = capabilities,
+            })
+
             vim.filetype.add({
                 extension = {
                     templ = "templ",

@@ -1,21 +1,21 @@
 [Added Associations]
 x-scheme-handler/tonsite=org.telegram.desktop.desktop;
-
 [Default Applications]
 application/pdf=org.pwmt.zathura.desktop;
 application/x-php=nvim.desktop;
 application/x-subrip=nvim.desktop;
+audio/x-m4b=mpv;
 image/*=imv.desktop;
 text/*=nvim.desktop;
-text/html=google-chrome.desktop
+text/html=google-chrome.desktop;
 video/*=mpv.desktop;
 video/mp4=mpv.desktop;
 video/x-matroska=mpv.desktop;
-x-scheme-handler/about=google-chrome.desktop
-x-scheme-handler/http=google-chrome.desktop
-x-scheme-handler/https=google-chrome.desktop
+x-scheme-handler/about=google-chrome.desktop;
+x-scheme-handler/eclipse+command=_usr_lib_dbeaver_.desktop;
+x-scheme-handler/http=google-chrome.desktop;
+x-scheme-handler/https=google-chrome.desktop;
 x-scheme-handler/mailto=google-chrome.desktop;
 x-scheme-handler/terminal=kitty.desktop;
-x-scheme-handler/unknown=google-chrome.desktop
-x-scheme-handler/eclipse+command=_usr_lib_dbeaver_.desktop
-x-scheme-handler/tonsite=org.telegram.desktop.desktop
+x-scheme-handler/tonsite=org.telegram.desktop.desktop;
+x-scheme-handler/unknown=google-chrome.desktop;
