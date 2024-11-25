@@ -18,8 +18,10 @@ M.on_attach    = function(client, bufnr)
     local next = function() diagnostic.goto_next(diagnostic_opts) end
     local prev = function() diagnostic.goto_prev(diagnostic_opts) end
 
+    local gd = function() lsp.buf.definition({ reuse_win = true, on_list = on_list }) end
+
     set("n", "K", lsp.buf.hover)
-    set("n", "gd", function() lsp.buf.definition({ reuse_win = true, on_list = on_list }) end)
+    set("n", "gd", gd)
     set("n", "gD", telescope.lsp_references)
     set("n", "[d", prev)
     set("n", "]d", next)
@@ -29,6 +31,7 @@ M.on_attach    = function(client, bufnr)
     set("n", "<leader>li", telescope.lsp_implementations)
     set("n", "<leader>ls", telescope.lsp_dynamic_workspace_symbols)
     set("n", "<leader>ld", telescope.diagnostics)
+    set("n", "<C-LeftMouse>", gd)
 
     if client.server_capabilities.documentSymbolProvider then
         navic.attach(client, bufnr)

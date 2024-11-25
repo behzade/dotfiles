@@ -46,6 +46,8 @@ alias lt='exa --tree --level=2'                                         # tree
 
 alias run='make run'
 
+alias dr='devbox run'
+
 starship init fish | source
 zoxide init fish | source
 

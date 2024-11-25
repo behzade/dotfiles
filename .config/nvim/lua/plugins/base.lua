@@ -11,4 +11,5 @@ return {
     "behzade/lf.nvim",
     'nvim-pack/nvim-spectre',
     'mfussenegger/nvim-jdtls',
+    'NLKNguyen/papercolor-theme',
 }

@@ -10,7 +10,7 @@
         "clock"
     ],
     "modules-right": [
-        "custom/media",
+        "mpris",
         "wireplumber",
         "network",
         "cpu",
@@ -130,23 +130,18 @@
     "hyprland/language": {
         "format": "{short}"
     },
-    "custom/media": {
-        "format": "{icon}{}",
-        "return-type": "json",
-        "format-icons": {
-            "Paused": " ",
-            "Playing": " ",
-            "Stopped": "ﱢ "
+    "mpris": {
+        "format": "{player_icon} {dynamic}",
+        "dynamic-len": 30,
+        "format-paused": "{status_icon} <i>{dynamic}</i>",
+        "player-icons": {
+            "default": "▶",
+            "mpv": "🎵"
         },
-        "max-length": 25,
-        "exec": "playerctl2 metadata --format '{\"text\": \"{{title}} \", \"tooltip\": \"{{playerName}} : {{artist}} - {{album}} - {{title}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}'",
-        "interval": 1,
-        "on-click": "playerctl2 play-pause",
-        "on-scroll-up": "playerctl2 previous",
-        "on-scroll-down": "playerctl2 next",
-        "on-click-middle": "playerctl2 loop track",
-        "on-click-right": "playerctl2 loop none",
-        "escape": true
+        "status-icons": {
+            "paused": "⏸"
+        },
+        // "ignored-players": ["firefox"]
     },
     "wireplumber" : {
         "on-click": "pavucontrol",

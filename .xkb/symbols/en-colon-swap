@@ -8,7 +8,7 @@ xkb_symbols "basic" {
     include "us"
 
 
-    key <AC10> { [colon, semicolon             ] };
+    key <AC10> { [ colon, semicolon            ] };
     key <CAPS> { [ ISO_Level3_Shift            ] };
     key <AC04> { [ f, F , XF86MonBrightnessDown,  XF86MonBrightnessDown          ] };
     key <AC05> { [ g, G, XF86MonBrightnessUp, XF86MonBrightnessUp            ] };
