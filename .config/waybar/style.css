@@ -44,6 +44,10 @@ button:hover {
     background-color: #eb4d4b;
 }
 
+#workspaces .visible {
+    background-color: #2e2e2e;
+}
+
 #mode {
     background-color: #64727D;
     border-bottom: 3px solid #ffffff;
