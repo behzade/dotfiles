@@ -24,7 +24,7 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden'
 
 
 export LF_ICONS=(sed ':a;N;$!ba;s/\n//g' ~/.config/diricons)
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+export SSH_AUTH_SOCK="/run/user/1000/gcr/ssh"
 
 alias sudo="sudo "
 alias mv="mv -i"
