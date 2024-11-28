@@ -5,6 +5,7 @@ end
 export XDG_SESSION_TYPE='wayland' 
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_CACHE_HOME=$HOME/.cache
+export XDG_CONFIG_HOME=$HOME/.config
 export EDITOR='nvim'
 export VISUAL=$EDITOR
 export OPENER='xdg-open'

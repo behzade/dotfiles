@@ -1,0 +1,4 @@
+os:
+  editPreset: 'nvim-remote'
+
+promptToReturnFromSubprocess: false
