@@ -6,7 +6,7 @@ local config = {
         "JetBrains Mono",
         { family = "Vazir Code Hack" },
     }),
-    font_size = 16,
+    font_size = 15,
     color_scheme = "GruvboxDarkHard",
     cursor_blink_ease_in = "Constant",
     cursor_blink_ease_out = "Constant",

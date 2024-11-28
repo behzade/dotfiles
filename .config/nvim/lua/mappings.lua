@@ -70,6 +70,8 @@ set("i", "<a-bs>", "<esc>cvb", {})
 
 set("n", "<leader>pp", "<cmd>!bunx prettier --write %<cr>")
 
+-- git
+set("n", "<leader>gg", "<cmd>LazyGit<cr>")
 
 -- gitsigns
 local has_gs, gs = pcall(require, "gitsigns")
@@ -86,8 +88,8 @@ if has_telescope then
     set("n", "<leader>fs", telescope_builtins.live_grep)
     set("n", "<leader>fg", telescope_builtins.grep_string)
     set("n", "<leader>fr", function() telescope_builtins.resume(require('telescope.themes').get_ivy({})) end)
-    set("n", "<leader>gs", telescope_builtins.git_status)
 
+    set("n", "<leader>gs", telescope_builtins.git_status)
     set("n", "<leader>li", telescope_builtins.lsp_implementations)
     set("n", "<leader>ls", telescope_builtins.lsp_dynamic_workspace_symbols)
     set("n", "<leader>ld", telescope_builtins.diagnostics)
@@ -100,8 +102,16 @@ if has_fzf then
     set("n", "<leader>fr", fzf.resume)
     set("n", "<leader>fs", fzf.live_grep)
     set("n", "<leader>fg", fzf.grep)
-    set("n", "<leader>gs", fzf.git_status)
 
+
+    -- git
+    set("n", "<leader>gs", fzf.git_status)
+    set("n", "<leader>gb", fzf.git_bcommits)
+    set("n", "<leader>gc", fzf.git_commits)
+    set("n", "<leader>gt", fzf.git_tags)
+    set("n", "<leader>gr", fzf.git_branches)
+
+    -- lsp
     set("n", "<leader>li", fzf.lsp_implementations)
     set("n", "<leader>ls", fzf.lsp_live_workspace_symbols)
     set("n", "<leader>ld", fzf.diagnostics_workspace)
