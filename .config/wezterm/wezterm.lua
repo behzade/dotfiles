@@ -3,10 +3,10 @@ local wezterm = require("wezterm")
 local config = {
     bidi_enabled = true,
     font = wezterm.font_with_fallback({
-        "JetBrains Mono NerdFont",
+        "JetBrains Mono",
         { family = "Vazir Code Hack" },
     }),
-    font_size = 14,
+    font_size = 16,
     color_scheme = "GruvboxDarkHard",
     cursor_blink_ease_in = "Constant",
     cursor_blink_ease_out = "Constant",

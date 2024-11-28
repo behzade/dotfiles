@@ -54,7 +54,7 @@ set("n", "qq", "<cmd>cclose<cr>")
 set("n", "<leader>gg", "<cmd>keepjumps keepalt term lazygit<cr>")
 set("n", "<leader>gb", "<cmd>keepjumps keepalt term lazygit -f %<cr>")
 
-set("n", "<leader>b", "<cmd>keepjumps keepalt term lf %<cr>")
+set("n", "<leader>b", require("oil").open_float)
 
 
 -- use lower case marks as global
@@ -90,6 +90,26 @@ if has_telescope then
     set("n", "<leader>fg", telescope_builtins.grep_string)
     set("n", "<leader>fr", function() telescope_builtins.resume(require('telescope.themes').get_ivy({})) end)
     set("n", "<leader>gs", telescope_builtins.git_status)
+
+    set("n", "<leader>li", telescope_builtins.lsp_implementations)
+    set("n", "<leader>ls", telescope_builtins.lsp_dynamic_workspace_symbols)
+    set("n", "<leader>ld", telescope_builtins.diagnostics)
+    set("n", "gD", telescope_builtins.lsp_references)
+end
+
+local has_fzf, fzf = pcall(require, "fzf-lua")
+if has_fzf then
+    set("n", "<leader>ff", fzf.files)
+    set("n", "<leader>fr", fzf.resume)
+    set("n", "<leader>fs", fzf.live_grep)
+    set("n", "<leader>fg", fzf.grep)
+    set("n", "<leader>gs", fzf.git_status)
+
+    set("n", "<leader>li", fzf.lsp_implementations)
+    set("n", "<leader>ls", fzf.lsp_live_workspace_symbols)
+    set("n", "<leader>ld", fzf.diagnostics_workspace)
+    set("n", "gD", fzf.lsp_references)
+    set("n", "<leader>lf", fzf.lsp_finder)
 end
 
 

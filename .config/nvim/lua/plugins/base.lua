@@ -8,8 +8,6 @@ return {
     "vim-scripts/restore_view.vim",
     "vim-scripts/ReplaceWithRegister",
     "nvim-tree/nvim-web-devicons",
-    "behzade/lf.nvim",
     'nvim-pack/nvim-spectre',
     'mfussenegger/nvim-jdtls',
-    'NLKNguyen/papercolor-theme',
 }

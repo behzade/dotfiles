@@ -4,7 +4,6 @@ local lsp      = vim.lsp
 M.on_attach    = function(client, bufnr)
     local set = vim.keymap.set
 
-    local telescope = require("telescope.builtin")
     local navic = require("nvim-navic")
 
     local function on_list(options)
@@ -22,15 +21,11 @@ M.on_attach    = function(client, bufnr)
 
     set("n", "K", lsp.buf.hover)
     set("n", "gd", gd)
-    set("n", "gD", telescope.lsp_references)
     set("n", "[d", prev)
     set("n", "]d", next)
     set("n", "<leader>lr", lsp.buf.rename)
     set("n", "<leader>la", lsp.buf.code_action)
     set("n", "<leader>ll", lsp.codelens.run)
-    set("n", "<leader>li", telescope.lsp_implementations)
-    set("n", "<leader>ls", telescope.lsp_dynamic_workspace_symbols)
-    set("n", "<leader>ld", telescope.diagnostics)
     set("n", "<C-LeftMouse>", gd)
 
     if client.server_capabilities.documentSymbolProvider then
