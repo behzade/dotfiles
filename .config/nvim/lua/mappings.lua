@@ -51,9 +51,6 @@ set("n", "<leader>s", "<cmd>update<cr>")
 set("n", "qq", "<cmd>cclose<cr>")
 
 
-set("n", "<leader>gg", "<cmd>keepjumps keepalt term lazygit<cr>")
-set("n", "<leader>gb", "<cmd>keepjumps keepalt term lazygit -f %<cr>")
-
 set("n", "<leader>b", require("oil").open_float)
 
 
