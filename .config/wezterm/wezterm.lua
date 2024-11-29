@@ -7,7 +7,7 @@ local config = {
         { family = "Vazir Code Hack" },
     }),
     font_size = 15,
-    color_scheme = "GruvboxDarkHard",
+    color_scheme = 'Tokyo Night',
     cursor_blink_ease_in = "Constant",
     cursor_blink_ease_out = "Constant",
 }

@@ -23,7 +23,7 @@ export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.cache/.bun/bin"
 
-export LS_COLORS=(vivid generate ayu)
+export LS_COLORS=(vivid generate gruvbox-dark)
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border --preview="bat --color=always {}"'
 export FZF_DEFAULT_COMMAND='fd --type f --hidden'
 
