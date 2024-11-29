@@ -29,7 +29,6 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden'
 
 
 set -x LF_ICONS (tr -d '\n' < ~/.config/diricons)
-export SSH_AUTH_SOCK="/private/tmp/com.apple.launchd.eJilEVTDdw/Listeners"
 
 alias sudo="sudo "
 alias mv="mv -i"
