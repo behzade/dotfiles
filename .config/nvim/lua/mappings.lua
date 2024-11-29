@@ -46,7 +46,6 @@ set("n", "[q", "<cmd>cp<cr>")
 set("n", "]q", "<cmd>cn<cr>")
 -- Other
 set("n", "<leader>n", "<cmd>noh<cr>")
-set("n", "<leader>t", "<cmd>keepjumps keepalt term<cr>")
 set("n", "<leader>s", "<cmd>update<cr>")
 set("n", "qq", "<cmd>cclose<cr>")
 
@@ -71,7 +70,8 @@ set("i", "<a-bs>", "<esc>cvb", {})
 set("n", "<leader>pp", "<cmd>!bunx prettier --write %<cr>")
 
 -- git
-set("n", "<leader>gg", "<cmd>LazyGit<cr>")
+local neogit = require("neogit")
+set("n", "<leader>gg", function() neogit.open({ kind = "floating" }) end)
 
 -- gitsigns
 local has_gs, gs = pcall(require, "gitsigns")
@@ -136,3 +136,7 @@ set("n", "<leader>vf", function()
     vim.cmd([[syntax match ZeroWidthNonJoiner "\u200c" conceal]])
     vim.cmd([[syntax match ZeroWidthNonJoiner "‌" conceal]])
 end)
+
+local treesj = require("treesj")
+set("n", "<space>m", treesj.toggle)
+

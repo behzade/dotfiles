@@ -78,4 +78,14 @@ return {
         end
     },
     "nvim-treesitter/nvim-treesitter-textobjects",
+    {
+        'Wansmer/treesj',
+        keys = { '<space>m'},
+        dependencies = { 'nvim-treesitter/nvim-treesitter' }, -- if you install parsers with `nvim-treesitter`
+        config = function()
+            require('treesj').setup({
+                use_default_keymaps = false,
+            })
+        end,
+    }
 }
