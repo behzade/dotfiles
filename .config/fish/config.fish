@@ -24,7 +24,7 @@ export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.cache/.bun/bin"
 
 export LS_COLORS=(vivid generate ayu)
-export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border --preview="bat --color=always {}"'
 export FZF_DEFAULT_COMMAND='fd --type f --hidden'
 
 
