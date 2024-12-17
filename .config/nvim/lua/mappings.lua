@@ -69,9 +69,16 @@ set("i", "<a-bs>", "<esc>cvb", {})
 
 set("n", "<leader>pp", "<cmd>!bunx prettier --write %<cr>")
 
--- git
-local neogit = require("neogit")
-set("n", "<leader>gg", function() neogit.open({ kind = "floating" }) end)
+-- toggleterm
+local Terminal = require('toggleterm.terminal').Terminal
+local lazygit  = Terminal:new({ cmd = "lazygit", hidden = true, direction = "float", count = 5 })
+
+local function _lazygit_toggle()
+    lazygit:toggle()
+end
+
+set("n", "<c-g>", _lazygit_toggle)
+set("t", "<c-g>", _lazygit_toggle)
 
 -- gitsigns
 local has_gs, gs = pcall(require, "gitsigns")
@@ -101,7 +108,7 @@ if has_fzf then
     set("n", "<leader>ff", fzf.files)
     set("n", "<leader>fr", fzf.resume)
     set("n", "<leader>fs", fzf.live_grep)
-    set("n", "<leader>fg", fzf.grep)
+    set("n", "<leader>fg", fzf.grep_cword)
 
 
     -- git
@@ -139,4 +146,3 @@ end)
 
 local treesj = require("treesj")
 set("n", "<space>m", treesj.toggle)
-

@@ -56,8 +56,6 @@ alias dr='devbox run'
 starship init fish | source
 zoxide init fish | source
 
-direnv hook fish | source
-
 
 if test (tty) = "/dev/tty1"
     uwsm start default
