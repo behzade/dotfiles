@@ -1,0 +1,9 @@
+theme = tokyonight-storm
+
+font-family = "JetBrainsMono Nerd Font Mono"
+font-size = 15
+
+mouse-hide-while-typing = true
+
+keybind = global:ctrl+enter=new_window
+keybind = global:cmd+grave_accent=toggle_quick_terminal
