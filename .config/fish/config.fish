@@ -23,6 +23,8 @@ export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.cache/.bun/bin"
 
+export QT_QPA_PLATFORMTHEME=qt6ct
+
 export LS_COLORS=(vivid generate gruvbox-dark)
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border --preview="bat --color=always {}"'
 export FZF_DEFAULT_COMMAND='fd --type f --hidden'
@@ -55,7 +57,6 @@ alias dr='devbox run'
 
 starship init fish | source
 zoxide init fish | source
-
 
 if test (tty) = "/dev/tty1"
     uwsm start default

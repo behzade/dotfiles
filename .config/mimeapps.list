@@ -1,11 +1,14 @@
 [Added Associations]
+image/jpeg=imv-4.desktop;imv-3.desktop;imv-2.desktop;
 x-scheme-handler/tonsite=org.telegram.desktop.desktop;
+
 [Default Applications]
 application/pdf=org.pwmt.zathura.desktop;
 application/x-php=nvim.desktop;
 application/x-subrip=nvim.desktop;
 audio/x-m4b=mpv;
 image/*=imv.desktop;
+image/jpeg=imv-4.desktop;
 text/*=nvim.desktop;
 text/html=google-chrome.desktop;
 video/*=mpv.desktop;
