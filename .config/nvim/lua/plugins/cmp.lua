@@ -40,6 +40,7 @@ return {
                     { name = "luasnip" },
                     { name = "treesitter" },
                     { name = "buffer" },
+                    { name = "lazydev"},
                 }),
                 completion = {
                     keyword_length = 1,
