@@ -36,8 +36,6 @@ alias sudo="sudo "
 alias mv="mv -i"
 alias vim="nvim"
 alias top="btop"
-alias icat="kitty +kitten icat"
-alias ssh="kitty +kitten ssh"
 # general use
 alias ls='exa --icons --group-directories-first'                                                 # ls
 alias l='exa -lbF --git'                                               # list, size, type, git
