@@ -1,10 +1,10 @@
 {
     "spacing": 4, 
     "modules-left": [
-        "hyprland/workspaces",
-        "hyprland/mode",
-        "hyprland/scratchpad",
-        "hyprland/window"
+        "sway/workspaces",
+        "sway/mode",
+        "sway/scratchpad",
+        "sway/window"
     ],
     "modules-center": [
         "clock"
@@ -17,22 +17,22 @@
         "memory",
         "temperature",
         "backlight",
-        "hyprland/language",
+        "sway/language",
         "battery",
         "battery#bat2",
         "tray",
     ],
-    "hyprland/mode": {
+    "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
-    "hyprland/workspaces": {
+    "sway/workspaces": {
         "show-special": true,
         "format-icons": {
 		"active": "",
 		"default": ""
         }
     },
-    "hyprland/scratchpad": {
+    "sway/scratchpad": {
         "format": "{icon} {count}",
         "show-empty": false,
         "format-icons": [
@@ -127,7 +127,7 @@
     "battery#bat2": {
         "bat": "BAT2"
     },
-    "hyprland/language": {
+    "sway/language": {
         "format": "{short}"
     },
     "mpris": {
