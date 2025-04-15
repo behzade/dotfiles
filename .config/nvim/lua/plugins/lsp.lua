@@ -72,6 +72,12 @@ return {
                 capabilities = capabilities,
             })
 
+            lspconfig.csharp_ls.setup(
+                {
+                    on_attach = on_attach,
+                    capabilities = capabilities,
+                })
+
             vim.filetype.add({
                 extension = {
                     templ = "templ",

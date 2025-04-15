@@ -83,8 +83,8 @@ set("t", "<c-g>", _lazygit_toggle)
 -- gitsigns
 local has_gs, gs = pcall(require, "gitsigns")
 if has_gs then
-    set("n", "[h", function() gs.prev_hunk() end)
-    set("n", "]h", function() gs.next_hunk() end)
+    set("n", "[h", function() gs.nav_hunk('prev') end)
+    set("n", "]h", function() gs.nav_hunk('next') end)
     set("n", "<leader>gu", function() gs.reset_hunk() end)
     set("n", "<leader>gd", function() gs.diffthis() end)
 end
@@ -146,3 +146,9 @@ end)
 
 local treesj = require("treesj")
 set("n", "<space>m", treesj.toggle)
+
+local has_avante, avante = pcall(require, "avante")
+if has_avante then
+    set("n", "<leader>lm", avante.toggle_sidebar)
+    set("n", "<leader>ln", function() avante.toggle_sidebar({ ask = true }) end)
+end

@@ -4,15 +4,22 @@ return {
     lazy = false,
     version = false, -- set this if you want to always pull the latest change
     opts = {
-        provider = "ollama",
-        vendors = {
-            ollama = {
-                __inherited_from = "openai",
-                api_key_name = "",
-                endpoint = "http://127.0.0.1:11434/v1",
-                model = "phi3",
-            },
+        provider = "gemini",
+        gemini = {
+            -- model = "gemini-2.0-flash",
+            model = "gemini-2.5-pro-exp-03-25",
         },
+        behaviour = {
+            enable_cursor_planning_mode = false, -- Whether to enable Cursor Planning Mode. Default to false.
+        }
+        -- vendors = {
+        --     openrouter = {
+        --         __inherited_from = 'openai',
+        --         endpoint = 'https://openrouter.ai/api/v1',
+        --         api_key_name = 'OPENROUTER_API_KEY',
+        --         model = 'deepseek/deepseek-chat',
+        --     },
+        -- },
     },
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
     build = "make",
