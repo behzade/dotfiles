@@ -10,6 +10,12 @@ return {
             require('local_plugins.daemon').setup()
         end,
 
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter",
+            "stevearc/dressing.nvim",
+            "nvim-lua/plenary.nvim",
+        }
+
         -- Optional: If you want to load it on a command or event
         -- cmd = "CursorCloneShowSidebar",
         -- event = "VeryLazy",
