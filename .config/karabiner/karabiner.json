@@ -4,6 +4,44 @@
             "complex_modifications": {
                 "rules": [
                     {
+                        "description": "Ctrl+i → Volume Up, Ctrl+u → Volume Down, Ctrl+t → Play/Pause",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "i",
+                                    "modifiers": {
+                                        "mandatory": ["control"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "consumer_key_code": "volume_increment" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "u",
+                                    "modifiers": {
+                                        "mandatory": ["control"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "consumer_key_code": "volume_decrement" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "t",
+                                    "modifiers": {
+                                        "mandatory": ["control"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "consumer_key_code": "play_or_pause" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Cmd+Enter to open WezTerm",
                         "enabled": false,
                         "manipulators": [

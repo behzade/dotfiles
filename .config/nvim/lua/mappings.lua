@@ -147,8 +147,4 @@ end)
 local treesj = require("treesj")
 set("n", "<space>m", treesj.toggle)
 
-local has_avante, avante = pcall(require, "avante")
-if has_avante then
-    set("n", "<leader>lm", avante.toggle_sidebar)
-    set("n", "<leader>ln", function() avante.toggle_sidebar({ ask = true }) end)
-end
+set("n", "<leader>lm", require("daemon.ui").show)

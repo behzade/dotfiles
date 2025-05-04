@@ -1,23 +1,16 @@
--- Inside your lazy.nvim plugins list
 return {
     {
-        -- Tell lazy where the plugin source is
-        dir = '~/.config/nvim/lua/local_plugins/daemon',
+        dir = '~/Projects/personal/plugin-workshop/daemon',
 
-        -- Configure it AFTER it's loaded
         config = function()
-            -- Use the correct Lua module path to load the init.lua file
-            require('local_plugins.daemon').setup()
+            require('daemon').setup()
         end,
 
         dependencies = {
             "nvim-treesitter/nvim-treesitter",
             "stevearc/dressing.nvim",
             "nvim-lua/plenary.nvim",
-        }
 
-        -- Optional: If you want to load it on a command or event
-        -- cmd = "CursorCloneShowSidebar",
-        -- event = "VeryLazy",
+        }
     }
 }

@@ -81,3 +81,21 @@ else
 end
 
 opt.conceallevel = 2
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = {
+    'javascript',
+    'typescript',
+    'typescriptreact', -- For TSX
+    'javascriptreact', -- For JSX
+    'json',
+    'vue', -- Often uses 2 spaces as well, add if needed
+    -- Add other relevant filetypes like 'svelte', 'html', etc. if desired
+  },
+  callback = function(args)
+    vim.bo[args.buf].tabstop = 2      -- 2 spaces for tabs (visual width)
+    vim.bo[args.buf].shiftwidth = 2   -- 2 spaces for indentation
+    vim.bo[args.buf].expandtab = true -- Use spaces instead of hard tabs
+  end,
+  desc = "Set buffer-local options for JS/TS/JSON files"
+})
