@@ -1,7 +1,7 @@
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
-set $mod Mod4
+set $mod Mod1
 # Home row direction keys, like vim
 set $left h
 set $down j
@@ -275,7 +275,7 @@ smart_gaps on
 # Keyboard
 input "type:keyboard" {
     xkb_layout cust,ir
-    xkb_options grp:alt_shift_toggle
+    xkb_options grp:ctrl_space_toggle
 }
 
 # Status Bar:
