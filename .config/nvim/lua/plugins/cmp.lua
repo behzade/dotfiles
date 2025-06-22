@@ -55,7 +55,11 @@ return {
                 }),
                 completion = {
                     keyword_length = 1,
-                }
+                },
+                window = {
+                    completion = cmp.config.window.bordered(),
+                    documentation = cmp.config.window.bordered(),
+                },
             })
 
             -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).

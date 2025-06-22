@@ -9,24 +9,10 @@ return {
         config = function()
             require("mason").setup()
             require("mason-lspconfig").setup()
-            local lspconfig = require("lspconfig")
-
-
-            local lsp = vim.lsp
 
             local on_attach = require("util/lsp").on_attach
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
             capabilities.textDocument.completion.completionItem.snippetSupport = true
-
-            lsp.handlers["textDocument/hover"] = lsp.with(lsp.handlers.hover, {
-                border = "single",
-            })
-            lsp.handlers["textDocument/signatureHelp"] = lsp.with(lsp.handlers.signature_help, {
-                border = "single",
-            })
-            lsp.handlers["textDocument/previewLocation"] = lsp.with(lsp.handlers.preview_location, {
-                border = "single",
-            })
 
             local function server_conf(name)
                 local has_opts, opts = pcall(require, "plugins/servers/" .. name)
@@ -48,35 +34,8 @@ return {
             end
 
             for _, server in pairs(require("mason-lspconfig").get_installed_servers()) do
-                lspconfig[server].setup(server_conf(server))
+                vim.lsp.config(server, server_conf(server))
             end
-            lspconfig.rust_analyzer.setup({
-                settings = {
-                    ["rust-analyzer"] = {
-                        cargo = {
-                            allFeatures = true,
-                        },
-                    },
-                },
-                on_attach = on_attach,
-                capabilities = capabilities,
-            }) -- TODO: better config for non installed through mason servers
-
-            lspconfig.gleam.setup({
-                on_attach = on_attach,
-                capabilities = capabilities,
-            })
-
-            lspconfig.protols.setup({
-                on_attach = on_attach,
-                capabilities = capabilities,
-            })
-
-            lspconfig.csharp_ls.setup(
-                {
-                    on_attach = on_attach,
-                    capabilities = capabilities,
-                })
 
             vim.filetype.add({
                 extension = {
