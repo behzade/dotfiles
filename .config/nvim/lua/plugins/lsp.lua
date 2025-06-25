@@ -10,9 +10,10 @@ return {
             require("mason").setup()
             require("mason-lspconfig").setup()
 
-            local on_attach = require("util/lsp").on_attach
-            local capabilities = require('cmp_nvim_lsp').default_capabilities()
-            capabilities.textDocument.completion.completionItem.snippetSupport = true
+            local lsp_util = require("util/lsp")
+
+            local on_attach = lsp_util.on_attach
+            local capabilities = lsp_util.capabilities()
 
             local function server_conf(name)
                 local has_opts, opts = pcall(require, "plugins/servers/" .. name)
@@ -48,13 +49,6 @@ return {
         "SmiteshP/nvim-navic",
         config = function()
             vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
-        end
-    },
-    {
-        "j-hui/fidget.nvim",
-        branch = "legacy",
-        config = function()
-            require('fidget').setup()
         end
     },
     {
