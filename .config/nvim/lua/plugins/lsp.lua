@@ -13,13 +13,11 @@ return {
             local lsp_util = require("util/lsp")
 
             local on_attach = lsp_util.on_attach
-            local capabilities = lsp_util.capabilities()
 
             local function server_conf(name)
                 local has_opts, opts = pcall(require, "plugins/servers/" .. name)
                 local config = {
                     on_attach = on_attach,
-                    capabilities = capabilities,
                 }
 
                 if not has_opts then

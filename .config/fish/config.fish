@@ -28,6 +28,7 @@ export QT_QPA_PLATFORMTHEME=qt6ct
 export LS_COLORS=(vivid generate gruvbox-dark)
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border --preview="bat --color=always {}"'
 export FZF_DEFAULT_COMMAND='fd --type f --hidden'
+export ZK_NOTEBOOK_DIR=$HOME/Documents/ze
 
 
 set -x LF_ICONS (tr -d '\n' < ~/.config/diricons)
@@ -37,17 +38,17 @@ alias mv="mv -i"
 alias vim="nvim"
 alias top="btop"
 # general use
-alias ls='exa --icons --group-directories-first'                                                 # ls
-alias l='exa -lbF --git'                                               # list, size, type, git
-alias ll='exa -lbGF --git'                                             # long list
-alias llm='exa -lbGd --git --sort=modified'                            # long list, modified date sort
-alias la='exa -lbhHigUmuSa --time-style=long-iso --git --color-scale'  # all list
-alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale' # all + extended list
+alias ls='eza --icons --group-directories-first'                                                 # ls
+alias l='eza -lbF --git'                                               # list, size, type, git
+alias ll='eza -lbGF --git'                                             # long list
+alias llm='eza -lbGd --git --sort=modified'                            # long list, modified date sort
+alias la='eza -lbhHigUmuSa --time-style=long-iso --git --color-scale'  # all list
+alias lx='eza -lbhHigUmuSa@ --time-style=long-iso --git --color-scale' # all + extended list
 alias nv='open -a neovide .'
 
 # specialty views
-alias lS='exa -1'                                                       # one column, just names
-alias lt='exa --tree --level=2'                                         # tree
+alias lS='eza -1'                                                       # one column, just names
+alias lt='eza --tree --level=2'                                         # tree
 
 alias run='make run'
 
@@ -59,3 +60,7 @@ zoxide init fish | source
 if test (tty) = "/dev/tty1"
     uwsm start default
 end
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH

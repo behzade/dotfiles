@@ -1,9 +1,8 @@
-theme = tokyonight-storm
+theme = deep
+window-colorspace = display-p3
+keybind = global:ctrl+grave_accent=toggle_quick_terminal
 
 font-family = "JetBrainsMono Nerd Font Mono"
 font-size = 15
 
 mouse-hide-while-typing = true
-
-keybind = global:ctrl+enter=new_window
-keybind = global:cmd+grave_accent=toggle_quick_terminal

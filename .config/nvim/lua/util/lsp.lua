@@ -39,11 +39,4 @@ M.on_attach = function(client, bufnr)
     end
 end
 
-M.capabilities = function()
-    local capabilities = require('cmp_nvim_lsp').default_capabilities()
-    capabilities.textDocument.completion.completionItem.snippetSupport = true
-
-    return capabilities
-end
-
 return M
