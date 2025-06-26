@@ -61,6 +61,7 @@ return {
             direction = "float",
         },
         keys = {
+            {[[<c-\>]]},
             {
                 "<leader>gg",
                 function()

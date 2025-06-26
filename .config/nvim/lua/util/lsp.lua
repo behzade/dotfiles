@@ -25,12 +25,10 @@ M.on_attach = function(client, bufnr)
     local gd = function() lsp.buf.definition({ reuse_win = true, on_list = on_list }) end
 
     -- Add descriptions to the keymap options table
-    set("n", "K", lsp.buf.hover, { desc = "Hover Documentation" })
+    -- set("n", "K", lsp.buf.hover, { desc = "Hover Documentation" })
     set("n", "gd", gd, { desc = "Go to Definition" })
     set("n", "[d", prev, { desc = "Previous Diagnostic" })
     set("n", "]d", next, { desc = "Next Diagnostic" })
-    set("n", "<leader>lr", lsp.buf.rename, { desc = "[L]SP [R]ename" })
-    set("n", "<leader>la", lsp.buf.code_action, { desc = "[L]SP Code [A]ction" })
     set("n", "<leader>ll", lsp.codelens.run, { desc = "[L]SP Code[L]ens" })
     set("n", "<C-LeftMouse>", gd, { desc = "Go to Definition" })
 
