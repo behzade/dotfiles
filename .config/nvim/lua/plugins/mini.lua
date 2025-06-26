@@ -104,7 +104,6 @@ return {
         config = function()
             require("mini.files").setup({ windows = { preview = true } })
             require("mini.comment").setup()
-            require("mini.pairs").setup()
             require("mini.move").setup()
             require("mini.surround").setup()
             require("mini.splitjoin").setup()
@@ -119,30 +118,33 @@ return {
 
             setup_cmd_autocomplete()
             setup_clue()
-            setup_hipatterns()
+            -- setup_hipatterns()
 
             require("mini.snippets").setup()
-            require("mini.pick").setup()
+            local mini_pick = require("mini.pick")
+            mini_pick.setup()
+            vim.ui.select = mini_pick.ui_select
+
             require("mini.extra").setup()
         end,
         keys = {
-            { "<leader>e",   function() require("mini.files").open(vim.fn.expand("%")) end, desc = "[E]xplore" },
-            { "<leader>ff",  "<cmd>Pick files<cr>",                                         desc = "[F]ind [F]iles" },
-            { "<leader>fb",  "<cmd>Pick buffers<cr>",                                       desc = "[F]ind [B]uffers" },
-            { "<leader>fr",  "<cmd>Pick resume<cr>",                                        desc = "[F]ind [R]esume" },
-            { "<leader>fs",  "<cmd>Pick grep_live<cr>",                                     desc = "[F]ind [S]tring" },
-            { "<leader>fg",  "<cmd>Pick grep<cr>",                                          desc = "[F]ind [G]rep" },
-            { "<leader>fo",  "<cmd>Pick options<cr>",                                       desc = "[F]ind [O]ptions" },
-            { "<leader>fh",  "<cmd>Pick help<cr>",                                          desc = "[F]ind [H]elp" },
+            { "<leader>e",  function() require("mini.files").open(vim.fn.expand("%")) end, desc = "[E]xplore" },
+            { "<leader>ff", "<cmd>Pick files<cr>",                                         desc = "[F]ind [F]iles" },
+            { "<leader>fb", "<cmd>Pick buffers<cr>",                                       desc = "[F]ind [B]uffers" },
+            { "<leader>fr", "<cmd>Pick resume<cr>",                                        desc = "[F]ind [R]esume" },
+            { "<leader>fs", "<cmd>Pick grep_live<cr>",                                     desc = "[F]ind [S]tring" },
+            { "<leader>fg", "<cmd>Pick grep<cr>",                                          desc = "[F]ind [G]rep" },
+            { "<leader>fo", "<cmd>Pick options<cr>",                                       desc = "[F]ind [O]ptions" },
+            { "<leader>fh", "<cmd>Pick help<cr>",                                          desc = "[F]ind [H]elp" },
 
             { "<leader>gc", "<cmd>Pick git_commits<cr>",                                   desc = "[G]it [C]ommits" },
             { "<leader>gh", "<cmd>Pick git_hunks<cr>",                                     desc = "[G]it [H]unks" },
             { "<leader>gb", "<cmd>Pick git_branches<cr>",                                  desc = "[G]it [B]ranches" },
 
-            { "<leader>ld",  "<cmd>Pick diagnostic<cr>",                                    desc = "[L]sp [D]iagnostics" },
-            { "gD",          '<cmd>Pick lsp scope="references"<cr>',                        desc = "Lsp References" },
-            { "<leader>ls",  '<cmd>Pick lsp scope="workspace_symbol"<cr>',                  desc = "[L]sp [S]ymbols" },
-            { "<leader>li",  '<cmd>Pick lsp scope="implementation"<cr>',                    desc = "[L]sp [I]mplementations" },
+            { "<leader>ld", "<cmd>Pick diagnostic<cr>",                                    desc = "[L]sp [D]iagnostics" },
+            { "gD",         '<cmd>Pick lsp scope="references"<cr>',                        desc = "Lsp References" },
+            { "<leader>ls", '<cmd>Pick lsp scope="workspace_symbol"<cr>',                  desc = "[L]sp [S]ymbols" },
+            { "<leader>li", '<cmd>Pick lsp scope="implementation"<cr>',                    desc = "[L]sp [I]mplementations" },
         }
     },
 

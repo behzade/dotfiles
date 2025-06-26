@@ -1,17 +1,17 @@
 return {
     {
-        "folke/tokyonight.nvim",
-        lazy = false,
+        "ellisonleao/gruvbox.nvim",
         priority = 1000,
-        opts = {},
         config = function()
-            vim.cmd [[colorscheme tokyonight]]
-        end
+            vim.cmd [[colorscheme gruvbox]]
+        end,
+        opts = {
+            contrast = "hard",
+        }
     },
     "tpope/vim-repeat",
     "tpope/vim-rsi",
     "wellle/targets.vim",
-    "stevearc/dressing.nvim",
     {
         "nvim-lualine/lualine.nvim",
         event = "VeryLazy",
@@ -52,7 +52,12 @@ return {
     },
     {
         "supermaven-inc/supermaven-nvim",
-        opts = {}
+        opts = {},
+        event = "VeryLazy",
+        keys = {
+            { "<tab>" },
+            { [[<c-]>]] }
+        }
     },
     {
         'akinsho/toggleterm.nvim',
@@ -61,7 +66,7 @@ return {
             direction = "float",
         },
         keys = {
-            {[[<c-\>]]},
+            { [[<c-\>]] },
             {
                 "<leader>gg",
                 function()
@@ -73,7 +78,7 @@ return {
     },
     {
         'rmagatti/auto-session',
-        event = "VeryLazy", -- IMPORTANT: Lazy-load it so it doesn't slow startup
+        lazy = false,
         opts = {
             log_level = 'error',
             auto_session_suppress_dirs = { '~/', '~/Downloads', '/' },
