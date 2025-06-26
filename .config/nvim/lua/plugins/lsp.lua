@@ -10,14 +10,17 @@ return {
             require("mason").setup()
             require("mason-lspconfig").setup()
 
-            local lsp_util = require("util/lsp")
+            local lsp_util = require("util.lsp")
 
             local on_attach = lsp_util.on_attach
+            local capabilities =  vim.lsp.protocol.make_client_capabilities()
+            capabilities.textDocument.completion.completionItem.snippetSupport = true
 
             local function server_conf(name)
                 local has_opts, opts = pcall(require, "plugins/servers/" .. name)
                 local config = {
                     on_attach = on_attach,
+                    capabilities = capabilities,
                 }
 
                 if not has_opts then
@@ -32,7 +35,9 @@ return {
                 return config
             end
 
-            for _, server in pairs(require("mason-lspconfig").get_installed_servers()) do
+
+            local utils = require("util.files")
+            for _, server in pairs(utils.get_files_in_config_dir('plugins/servers')) do
                 vim.lsp.config(server, server_conf(server))
             end
 
