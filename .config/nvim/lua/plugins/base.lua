@@ -55,8 +55,7 @@ return {
         opts = {},
         event = "VeryLazy",
         keys = {
-            { "<tab>" },
-            { [[<c-]>]] }
+            { [[<c-]>]], mode={"i", "s" }}
         }
     },
     {
