@@ -51,31 +51,6 @@ return {
         opts = {},
     },
     {
-        "supermaven-inc/supermaven-nvim",
-        opts = {},
-        event = "VeryLazy",
-        keys = {
-            { [[<c-]>]], mode={"i", "s" }}
-        }
-    },
-    {
-        'akinsho/toggleterm.nvim',
-        opts = {
-            open_mapping = [[<c-\>]],
-            direction = "float",
-        },
-        keys = {
-            { [[<c-\>]] },
-            {
-                "<leader>gg",
-                function()
-                    require("util.lazygit").lazygit_toggle()
-                end,
-                desc = "Lazy[G]it",
-            }
-        },
-    },
-    {
         'rmagatti/auto-session',
         lazy = false,
         opts = {
