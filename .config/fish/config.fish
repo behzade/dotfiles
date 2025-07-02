@@ -2,6 +2,7 @@ if test -f "$HOME/.config/fish/local.fish"
     source "$HOME/.config/fish/local.fish"
 end
 
+export ELECTRON_OZONE_PLATFORM_HINT=auto
 export XDG_SESSION_TYPE='wayland' 
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_CACHE_HOME=$HOME/.cache
