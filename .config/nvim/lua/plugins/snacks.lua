@@ -44,7 +44,7 @@ return {
 
             { "<leader>ld",  function() Snacks.picker.diagnostics() end,         desc = "[L]sp [D]iagnostics" },
             { "gD",          function() Snacks.picker.lsp_references() end,      nowait = true,                   desc = "References" },
-            { "<leader>ls",  function() Snacks.picker.lsp_symbols() end,         desc = "[L]sp [S]ymbols" },
+            { "<leader>ls",  function() Snacks.picker.lsp_workspace_symbols() end,         desc = "[L]sp [S]ymbols" },
             { "<leader>li",  function() Snacks.picker.lsp_implementations() end, desc = "[L]sp [I]mplementations" },
 
             { "<leader>bd",  function() Snacks.bufdelete() end,                  desc = "[B]uffer [D]elete" },
