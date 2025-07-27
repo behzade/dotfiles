@@ -15,26 +15,11 @@ return {
     {
         "nvim-lualine/lualine.nvim",
         event = "VeryLazy",
-        opts = {
-            options = {
-                globalstatus = true,
-            },
-            tabline = {
-                lualine_a = { 'buffers' },
-                lualine_b = { 'lsp_status`' },
-                lualine_z = { 'tabs' }
-            }
-        },
         config = function()
             require("lualine").setup({
                 options = {
                     globalstatus = true,
                 },
-                tabline = {
-                    lualine_a = { 'buffers' },
-                    lualine_b = { 'lsp_status`' },
-                    lualine_z = { 'tabs' }
-                }
             })
             for i = 1, 9 do
                 vim.keymap.set('n', '<leader>b' .. i, '<Cmd>LualineBuffersJump ' .. i .. '<CR>',
@@ -108,6 +93,23 @@ return {
             { "R",     mode = { "o", "x" },      function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
             { "<c-s>", mode = { "c" },           function() require("flash").toggle() end,            desc = "Toggle Flash Search" },
         },
+    },
+    {
+        "ahmedkhalf/project.nvim",
+        config = function()
+            require("project_nvim").setup({
+            })
+        end
+    },
+    {
+        "kylechui/nvim-surround",
+        version = "^3.0.0", -- Use for stability; omit to use `main` branch for the latest features
+        event = "VeryLazy",
+        config = function()
+            require("nvim-surround").setup({
+                -- Configuration here, or leave empty to use defaults
+            })
+        end
     }
 
 }
