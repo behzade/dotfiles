@@ -1,6 +1,16 @@
 [Added Associations]
 image/jpeg=imv-4.desktop;imv-3.desktop;imv-2.desktop;
 x-scheme-handler/tonsite=org.telegram.desktop.desktop;
+x-scheme-handler/http=zen.desktop;
+x-scheme-handler/https=zen.desktop;
+x-scheme-handler/chrome=zen.desktop;
+text/html=zen.desktop;
+application/x-extension-htm=zen.desktop;
+application/x-extension-html=zen.desktop;
+application/x-extension-shtml=zen.desktop;
+application/xhtml+xml=zen.desktop;
+application/x-extension-xhtml=zen.desktop;
+application/x-extension-xht=zen.desktop;
 
 [Default Applications]
 application/pdf=org.pwmt.zathura.desktop;
@@ -10,15 +20,22 @@ audio/x-m4b=mpv;
 image/*=imv.desktop;
 image/jpeg=imv-4.desktop;
 text/*=nvim.desktop;
-text/html=google-chrome.desktop;
+text/html=google-chrome.desktop
 video/*=mpv.desktop;
 video/mp4=mpv.desktop;
 video/x-matroska=mpv.desktop;
-x-scheme-handler/about=google-chrome.desktop;
+x-scheme-handler/about=google-chrome.desktop
 x-scheme-handler/eclipse+command=_usr_lib_dbeaver_.desktop;
-x-scheme-handler/http=google-chrome.desktop;
-x-scheme-handler/https=google-chrome.desktop;
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
 x-scheme-handler/mailto=google-chrome.desktop;
 x-scheme-handler/terminal=kitty.desktop;
 x-scheme-handler/tonsite=org.telegram.desktop.desktop;
-x-scheme-handler/unknown=google-chrome.desktop;
+x-scheme-handler/unknown=google-chrome.desktop
+x-scheme-handler/chrome=zen.desktop
+application/x-extension-htm=zen.desktop
+application/x-extension-html=zen.desktop
+application/x-extension-shtml=zen.desktop
+application/xhtml+xml=zen.desktop
+application/x-extension-xhtml=zen.desktop
+application/x-extension-xht=zen.desktop

@@ -242,6 +242,7 @@ for_window [class="age2_x1.exe"] floating enable
 assign [class="firefox"] workspace browser
 assign [app_id="firefox"] workspace browser
 assign [class="Google-chrome"] workspace browser
+assign [app_id="zen"] workspace browser
 assign [app_id="google-chrome"] workspace browser
 assign [app_id="Slack"] workspace 10
 assign [class="Slack"] workspace 10
