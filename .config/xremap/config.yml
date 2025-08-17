@@ -1,0 +1,31 @@
+# ~/.config/xremap/config.yml
+
+keymap:
+  # Block 1: Mappings ONLY for terminal applications.
+  # Here, Super+C is remapped to the terminal's native copy command (Ctrl+Shift+C).
+  - name: "Terminal macOS-like Copy/Paste"
+    application:
+      only:
+        - "Alacritty"
+        - "kitty"
+        - "foot"
+        - "gnome-terminal"
+        - "wezterm"
+        - "ghostty"
+    remap:
+      "Super-c": "C-Shift-c"  # Map Super+C to Ctrl+Shift+C (Copy)
+      "Super-v": "C-Shift-v"  # Map Super+V to Ctrl+Shift+V (Paste)
+  - name: "Chrome macOS-like shortcuts"
+    application:
+      only:
+        - "google-chrome"
+    remap:
+      "Super-z": "C-z"          # Undo
+      "Super-Shift-z": "C-Shift-z" # Redo
+      "Super-f": "C-f"          # Find
+      "Super-w": "C-w"          # Close Tab
+      "Super-t": "C-t"          # New Tab
+      "Super-x": "C-x"          # Cut
+      "Super-c": "C-c"          # Copy
+      "Super-v": "C-v"          # Paste
+      "Super-a": "C-a"          # Select
