@@ -74,6 +74,7 @@ exec swayidle -w \
 
     # Start your launcher
     bindsym --to-code $mod+d exec $menu
+    bindsym --to-code MOD1+d exec $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -133,7 +134,7 @@ exec swayidle -w \
     bindsym --to-code $mod+7 workspace number 7
     bindsym --to-code $mod+8 workspace number 8
     bindsym --to-code $mod+9 workspace number 9
-    bindsym --to-code $mod+0 workspace browser
+    bindsym --to-code $mod+grave workspace browser
     # Move focused container to workspace
     bindsym --to-code $mod+Shift+1 move container to workspace number 1
     bindsym --to-code $mod+Shift+2 move container to workspace number 2
@@ -144,7 +145,7 @@ exec swayidle -w \
     bindsym --to-code $mod+Shift+7 move container to workspace number 7
     bindsym --to-code $mod+Shift+8 move container to workspace number 8
     bindsym --to-code $mod+Shift+9 move container to workspace number 9
-    bindsym --to-code $mod+Shift+0 move container to workspace browser
+    bindsym --to-code $mod+Shift+grave move container to workspace browser
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
 
