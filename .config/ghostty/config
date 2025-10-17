@@ -1,6 +1,6 @@
-theme = GruvboxDarkHard
+theme = Gruvbox Dark Hard
 window-colorspace = display-p3
-keybind = global:ctrl+grave_accent=toggle_quick_terminal
+keybind = global:cmd+grave_accent=toggle_quick_terminal
 
 font-family = "JetBrainsMono Nerd Font Mono"
 font-size = 13

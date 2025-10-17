@@ -56,3 +56,23 @@ opt.tabstop = 4        -- 1 tab == 4 spaces
 opt.smartindent = true -- autoindent new lines
 
 vim.diagnostic.config({ virtual_text = true })
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  group = vim.api.nvim_create_augroup("uv_python_ft_detect", { clear = true }),
+  pattern = "*",
+  callback = function(args)
+    -- Ensure the buffer is valid and has at least one line
+    if not vim.api.nvim_buf_is_valid(args.buf) or vim.api.nvim_buf_line_count(args.buf) < 1 then
+      return
+    end
+
+    local first_line = vim.api.nvim_buf_get_lines(args.buf, 0, 1, false)[1] or ""
+    local shebang = "#!/usr/bin/env -S uv run --script"
+
+    -- Use string.find with `plain = true` for a literal search.
+    -- The check `== 1` ensures the shebang is at the very start of the line.
+    if first_line:find(shebang, 1, true) == 1 then
+      vim.bo[args.buf].filetype = "python"
+    end
+  end,
+})

@@ -30,6 +30,7 @@ M.on_attach = function(client, bufnr)
     set("n", "[d", prev, { desc = "Previous Diagnostic" })
     set("n", "]d", next, { desc = "Next Diagnostic" })
     set("n", "<leader>ll", lsp.codelens.run, { desc = "[L]SP Code[L]ens" })
+    set("n", "<leader>lr", lsp.buf.rename, { desc = "[L]SP Rename" })
     set("n", "<C-LeftMouse>", gd, { desc = "Go to Definition" })
 
     if client.server_capabilities.documentSymbolProvider then

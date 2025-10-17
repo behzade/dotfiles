@@ -1,4 +1,5 @@
 return {
+    { "neovim/nvim-lspconfig" },
     {
         "williamboman/mason.nvim",
         build = ":MasonUpdate",
@@ -12,21 +13,11 @@ return {
             capabilities.textDocument.completion.completionItem.snippetSupport = true
             capabilities.semanticTokensProvider = nil
 
-            local function server_conf(name)
-                local has_opts, opts = pcall(require, "plugins/servers/" .. name)
-                if not has_opts then
-                    vim.notify("Invalid config for " .. name, vim.log.levels.ERROR)
-                    return {}
-                end
-                opts.on_attach = on_attach
-                opts.capabilities = capabilities
 
-                return opts
-            end
-
-            local utils = require("util.files")
-            for _, server in pairs(utils.get_files_in_config_dir('plugins/servers')) do
-                vim.lsp.config(server, server_conf(server))
+            for _, server in pairs(
+                { "lua_ls", "biome", "emmet_language_server", "gopls", "html", "intelephense", "lua_ls", "ruff", "rust_analyzer", "sumneko_lua", "tailwindcss", "ts_ls", "ty", "zk" }
+            ) do
+                vim.lsp.config(server, { on_attach = on_attach, capabilities = capabilities })
                 vim.lsp.enable(server)
             end
 

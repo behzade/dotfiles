@@ -29,7 +29,7 @@ export QT_QPA_PLATFORMTHEME=qt6ct
 export LS_COLORS=(vivid generate gruvbox-dark)
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border --preview="bat --color=always {}"'
 export FZF_DEFAULT_COMMAND='fd --type f --hidden'
-export ZK_NOTEBOOK_DIR=$HOME/Documents/ze
+export ZK_NOTEBOOK_DIR=/Volumes/zk
 
 
 set -x LF_ICONS (tr -d '\n' < ~/.config/diricons)
@@ -54,6 +54,7 @@ alias lt='eza --tree --level=2'                                         # tree
 alias run='make run'
 
 alias dr='devbox run'
+alias xargs='xargs '
 
 starship init fish | source
 zoxide init fish | source
@@ -65,3 +66,11 @@ end
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
+
+# opencode
+fish_add_path /Users/behzad/.opencode/bin
+
+# Added by LM Studio CLI (lms)
+set -gx PATH $PATH /Users/behzad/.lmstudio/bin
+# End of LM Studio CLI section
+

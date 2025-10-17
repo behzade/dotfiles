@@ -1,8 +1,23 @@
+vim.filetype.add({
+    extension = {
+        bst = "basalt",
+    },
+})
 return {
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
         config = function()
+            local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+            parser_config.basalt = {
+                install_info = {
+                    url = "/Users/behzad/Projects/personal/tree-sitter-basalt/",
+                    files = { "src/parser.c" },
+                    branch = "main",
+                },
+                filetype = "basalt",
+            }
+
             require("nvim-treesitter.configs").setup({
                 auto_install = true,
                 highlight = {
@@ -76,8 +91,4 @@ return {
         end
     },
     "nvim-treesitter/nvim-treesitter-textobjects",
-    {
-        "nvim-treesitter/nvim-treesitter-context",
-        opts = { enable = true }
-    },
 }
