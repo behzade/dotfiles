@@ -9,11 +9,12 @@ return {
         build = ":TSUpdate",
         config = function()
             local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+            local parser_root = vim.fs.joinpath(vim.fn.stdpath("config"), "parsers", "tree-sitter-basalt")
             parser_config.basalt = {
                 install_info = {
-                    url = "/Users/behzad/Projects/personal/tree-sitter-basalt/",
+                    url = parser_root,
                     files = { "src/parser.c" },
-                    branch = "main",
+                    requires_generate_from_grammar = true,
                 },
                 filetype = "basalt",
             }
