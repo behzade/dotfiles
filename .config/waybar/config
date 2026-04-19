@@ -1,10 +1,8 @@
 {
     "spacing": 4, 
     "modules-left": [
-        "sway/workspaces",
-        "sway/mode",
-        "sway/scratchpad",
-        "sway/window"
+        "niri/workspaces",
+        "niri/window"
     ],
     "modules-center": [
         "clock"
@@ -17,30 +15,13 @@
         "memory",
         "temperature",
         "backlight",
-        "custom/kb_layout",
+        "niri/language",
         "battery",
         "battery#bat2",
         "tray",
     ],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
-    },
-    "sway/workspaces": {
-        "show-special": true,
-        "format-icons": {
-		"active": "",
-		"default": ""
-        }
-    },
-    "sway/scratchpad": {
-        "format": "{icon} {count}",
-        "show-empty": false,
-        "format-icons": [
-            "",
-            ""
-        ],
-        "tooltip": true,
-        "tooltip-format": "{app}: {title}"
     },
     "mpd": {
         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
@@ -127,12 +108,10 @@
     "battery#bat2": {
         "bat": "BAT2"
     },
-    "custom/kb_layout": {
-        "return-type": "json",
-        "exec": "~/.config/waybar/scripts/niri-kb-layout",
-        "interval": 1,
-        "format": "{}",
-        "tooltip": true
+    "niri/language": {
+        "format": "{short}",
+        "format-us": "EN",
+        "format-ir": "FA"
     },
     "mpris": {
         "format": "{player_icon} {dynamic}",

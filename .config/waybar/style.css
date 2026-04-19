@@ -69,7 +69,6 @@ button:hover {
 #idle_inhibitor,
 #scratchpad,
 #language,
-#custom-kb_layout,
 #custom-notification,
 #mpd {
     padding: 5px 10px;
@@ -95,7 +94,6 @@ button:hover {
 #idle_inhibitor:hover,
 #scratchpad:hover,
 #language:hover,
-#custom-kb_layout:hover,
 #mpd:hover {
     background-color: #020330;
 }
@@ -153,16 +151,4 @@ label:focus {
 
 #scratchpad.empty {
 	background-color: transparent;
-}
-
-#custom-kb_layout.english {
-    color: #9ece6a;
-}
-
-#custom-kb_layout.persian {
-    color: #e0af68;
-}
-
-#custom-kb_layout.unknown {
-    color: #7aa2f7;
 }
