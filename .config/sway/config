@@ -74,7 +74,6 @@ exec swayidle -w \
 
     # Start your launcher
     bindsym --to-code $mod+d exec $menu
-    bindsym --to-code MOD1+d exec $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -150,8 +149,6 @@ exec swayidle -w \
     # We just use 1-10 as the default.
 
     bindsym --to-code $mod+tab workspace back_and_forth
-
-    bindsym --to-code $mod+q kill
 #
 # Layout stuff:
 #
@@ -257,6 +254,7 @@ assign [title=".*Dbeaver.*"] workspace 2
 
 output HDMI-A-1 scale 2
 output DP-1 scale 2
+output DP-2 scale 2
 
 gaps inner 5
 smart_gaps on

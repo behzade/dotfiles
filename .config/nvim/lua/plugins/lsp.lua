@@ -4,10 +4,11 @@ return {
         "williamboman/mason.nvim",
         build = ":MasonUpdate",
         dependencies = {
-            "williamboman/mason-lspconfig.nvim",
+            "mason-org/mason-lspconfig.nvim",
         },
         config = function()
             require("mason").setup()
+            require("mason-lspconfig").setup()
 
             local mason_lspconfig = require("mason-lspconfig")
             mason_lspconfig.setup()

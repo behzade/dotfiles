@@ -24,7 +24,7 @@ return {
                 sections = {
                     lualine_a = { 'mode' },
                     lualine_b = { 'branch', 'diff', 'diagnostics' },
-                    lualine_c = { 'filename'},
+                    lualine_c = { 'filename' },
                     lualine_x = { 'encoding', 'fileformat', 'filetype' },
                     lualine_y = { 'progress' },
                     lualine_z = { 'location' },
@@ -107,14 +107,6 @@ return {
         end
     },
     {
-        "olimorris/codecompanion.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "nvim-treesitter/nvim-treesitter",
-        },
-        opts = {},
-    },
-    {
         "folke/sidekick.nvim",
         opts = {
             -- add any options here
@@ -190,5 +182,19 @@ return {
                 desc = "Sidekick Toggle Claude",
             },
         },
-    }
+    },
+    {
+        "folke/zen-mode.nvim",
+        opts = {
+            on_close = function()
+                if vim.g.journal_mode then
+                    vim.cmd("qa")
+                end
+            end,
+        }
+    },
+    {
+      "supermaven-inc/supermaven-nvim",
+      opts = {}
+    },
 }
