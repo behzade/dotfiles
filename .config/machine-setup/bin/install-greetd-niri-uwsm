@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT="${HOME}/.config/machine-setup"
+
+sudo install -d /etc/greetd
+sudo install -d /usr/local/share/wayland-sessions
+sudo install -m 0644 "$ROOT/greetd/config.toml" /etc/greetd/config.toml
+sudo install -m 0644 "$ROOT/wayland-sessions/niri-uwsm.desktop" /usr/local/share/wayland-sessions/niri-uwsm.desktop
+sudo systemctl enable greetd.service
+
+echo "Installed greetd config and Niri (UWSM) session entry."
+echo "Reboot or run: sudo systemctl disable getty@tty1.service --now && sudo systemctl start greetd.service"

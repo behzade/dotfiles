@@ -17,7 +17,7 @@
         "memory",
         "temperature",
         "backlight",
-        "sway/language",
+        "custom/kb_layout",
         "battery",
         "battery#bat2",
         "tray",
@@ -127,8 +127,12 @@
     "battery#bat2": {
         "bat": "BAT2"
     },
-    "sway/language": {
-        "format": "{short}"
+    "custom/kb_layout": {
+        "return-type": "json",
+        "exec": "~/.config/waybar/scripts/niri-kb-layout",
+        "interval": 1,
+        "format": "{}",
+        "tooltip": true
     },
     "mpris": {
         "format": "{player_icon} {dynamic}",

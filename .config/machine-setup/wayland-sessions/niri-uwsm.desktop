@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Niri (UWSM)
+Comment=Niri managed by UWSM
+Exec=uwsm start -- niri.desktop
+Type=Application
+DesktopNames=niri

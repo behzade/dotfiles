@@ -59,10 +59,6 @@ alias xargs='xargs '
 starship init fish | source
 zoxide init fish | source
 
-if test (tty) = "/dev/tty1"
-    uwsm start default
-end
-
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
