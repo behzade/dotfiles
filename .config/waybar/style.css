@@ -1,6 +1,6 @@
 * {
     font-family: JetBrains Mono Nerd Font, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 window#waybar {
@@ -27,8 +27,8 @@ button:hover {
 }
 
 #workspaces {
-    margin: 6px 8px 6px 12px;
-    padding: 3px;
+    margin: 4px 8px 4px 10px;
+    padding: 2px;
     background: rgba(24, 30, 43, 0.96);
     border: 1px solid rgba(122, 162, 247, 0.16);
     border-radius: 14px;
@@ -36,7 +36,7 @@ button:hover {
 
 #workspaces button {
     min-width: 22px;
-    padding: 4px 8px;
+    padding: 3px 8px;
     margin: 0 2px;
     color: #7f8aa3;
     background: transparent;
@@ -80,8 +80,8 @@ button:hover {
 #idle_inhibitor,
 #language,
 #mpd {
-    margin: 6px 3px;
-    padding: 6px 12px;
+    margin: 4px 3px;
+    padding: 4px 11px;
     color: #d8dee9;
     background: rgba(24, 30, 43, 0.96);
     border: 1px solid rgba(122, 162, 247, 0.12);
@@ -91,15 +91,15 @@ button:hover {
 
 #window {
     margin-left: 8px;
-    padding-left: 14px;
-    padding-right: 14px;
+    padding-left: 12px;
+    padding-right: 12px;
     color: #c0caf5;
     background: rgba(28, 35, 49, 0.98);
     border-color: rgba(122, 162, 247, 0.24);
 }
 
 #clock {
-    margin-right: 12px;
+    margin-right: 10px;
     color: #e5e9f0;
     background: rgba(31, 39, 56, 0.98);
     border-color: rgba(158, 206, 106, 0.18);
