@@ -12,7 +12,6 @@ input {
     keyboard {
         xkb {
             layout "cust,ir"
-            options "grp:ctrl_space_toggle"
         }
 
         // Enable numlock on startup, omitting this setting disables it.
@@ -571,7 +570,7 @@ binds {
     // a matching layout switch hotkey configured in xkb options above.
     // Having both at once on the same hotkey will break the switching,
     // since it will switch twice upon pressing the hotkey (once by xkb, once by niri).
-    // Mod+Space       { switch-layout "next"; }
+    Mod+Space         { switch-layout "next"; }
     // Mod+Shift+Space { switch-layout "prev"; }
 
     Print { screenshot; }
