@@ -15,21 +15,38 @@ export PROJECT_HOME=~/Projects
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export VIRTUALFISH_HOME="$XDG_DATA_HOME/virtualenvs"
 
-export LESSKEY="$XDG_CONFIG_HOME"/less/lesskey, export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
+set -gx LESSKEY "$XDG_CONFIG_HOME/less/lesskey"
+set -gx LESSHISTFILE "$XDG_CACHE_HOME/less/history"
 
 export GPG_TTY=(tty)
 
-export PATH="$PATH:$HOME/.local/bin"
-export PATH="$PATH:$HOME/go/bin"
-export PATH="$PATH:$HOME/.cargo/bin"
-export PATH="$PATH:$HOME/.cache/.bun/bin"
+fish_add_path $HOME/.local/bin
+fish_add_path $HOME/go/bin
+fish_add_path $HOME/.cargo/bin
+fish_add_path $HOME/.cache/.bun/bin
+
+set -l cleaned_path
+for p in $PATH
+    if contains -- $p /Users/behzad/.opencode/bin /Users/behzad/.lmstudio/bin /Applications/Ghostty.app/Contents/MacOS
+        continue
+    end
+
+    if not contains -- $p $cleaned_path
+        set cleaned_path $cleaned_path $p
+    end
+end
+set -gx PATH $cleaned_path
 
 export QT_QPA_PLATFORMTHEME=qt6ct
 
 export LS_COLORS=(vivid generate gruvbox-dark)
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border --preview="bat --color=always {}"'
 export FZF_DEFAULT_COMMAND='fd --type f --hidden'
-export ZK_NOTEBOOK_DIR=/Volumes/zk
+if test -d /Volumes/zk
+    set -gx ZK_NOTEBOOK_DIR /Volumes/zk
+else
+    set -e ZK_NOTEBOOK_DIR
+end
 
 
 set -x LF_ICONS (tr -d '\n' < ~/.config/diricons)
@@ -61,12 +78,4 @@ zoxide init fish | source
 
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
-set --export PATH $BUN_INSTALL/bin $PATH
-
-# opencode
-fish_add_path /Users/behzad/.opencode/bin
-
-# Added by LM Studio CLI (lms)
-set -gx PATH $PATH /Users/behzad/.lmstudio/bin
-# End of LM Studio CLI section
-
+fish_add_path $BUN_INSTALL/bin

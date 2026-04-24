@@ -22,7 +22,6 @@
 !/.config/fish/conf.d/fzf.fish
 !/.config/fish/conf.d/tokyonight_moon.fish
 !/.config/fish/config.fish
-!/.config/fish/fish_variables
 !/.config/fish/functions
 !/.config/fish/functions/__batman_color_dim.fish
 !/.config/fish/functions/__batman_color_fst.fish
